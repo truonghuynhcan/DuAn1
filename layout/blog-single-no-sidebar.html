@@ -1,0 +1,862 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js" lang=""> <!<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+  <title>Shopaholic - e-Commerce HTML5 Template</title>
+  <meta name="description" content="Shopaholic - e-Commerce HTML5 Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/et-line-icons.css">  
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css"> 
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/blog/blog-single.css">
+
+  <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script><![endif]-->
+
+
+</head>
+
+
+<body class="blog page single">
+
+
+  <header id="masthead" class="masthead">
+
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-5 top-left text-left">
+            <p class="top-contact">
+              <i class="ti-email"></i><span><a href="#">support@company.com</a></span>
+              <i class="ti-mobile"></i><span>+61 3 8376 6284</span>
+            </p><!-- /.top-contact -->
+
+          </div><!-- /.top-left -->
+
+          <div class="col-sm-7 top-right text-right">
+            <div id="currency" class="currency dropdown">
+              <a href="#" class="current-title">USD $</a>
+              <ul class="unsorted-list">
+                <li>EURO &euro;</li>
+                <li>POUND &pound;</li>
+                <li>Franc &#x20a3;</li>
+              </ul>
+            </div>
+
+            <div id="language" class="language dropdown">
+              <a href="#" class="current-title">English</a>
+              <ul class="unsorted-list">
+                <li>Chiense</li>
+                <li>French</li>
+                <li>Spanish</li>
+                <li>Mandarin</li>
+              </ul>
+            </div>
+
+            <div class="wish-list">
+              <a href="#" class="current-title">Wishlist</a>
+              <span class="count">0</span>
+              <span><i class="ti-heart"></i></span>
+            </div>
+
+            <div class="checkout"><a href="checkout.html">Checkout <i class="ti-check-box"></i></a></div><!-- /.checkout -->
+
+            <div class="my-account dropdown">
+              <a href="#">My Account<i class="ti-user"></i></a>
+              <ul class="unsorted-list">
+                <li><a href="register.html">Log In</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">My Wishlist</a></li>
+                <li><a href="cart.html">My Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+              </ul>
+            </div><!-- /.my-account -->
+            
+          </div><!-- /.top-right -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.header-top -->
+
+    <div class="header-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <h1><a class="navbar-brand hidden-xs" href="./"><img src="images/logo.png" alt="Site Logo"></a></h1>
+          </div>
+          <div class="col-sm-7">
+            <div class="top-search-form">
+              <form action="#" method="post" class="menu-form">
+                <fieldset> 
+                  <select name="category" id="category">
+                    <option selected="selected">All Categories</option>
+                    <option>Men's Wear</option>
+                    <option>Women's Wear</option>
+                    <option>Kid's Wear</option>
+                    <option>Men's Fashion</option>
+                    <option>Women's Fashion</option>
+                    <option>Kid's Fashion</option>
+                    <option>Home Applience</option>
+                    <option>Electronics</option>
+                    <option>Gadgets</option>
+                    <option>Mobile</option>
+                    <option>Laptop</option>
+                    <option>Others</option>
+                  </select>
+                </fieldset>
+
+                <input type="text" placeholder="Keywords ..." class="form-control">
+                <button type="submit" class="btn"><i class="fa fa-search"></i></button>
+              </form>  
+            </div><!-- /.top-search-form -->
+          </div>
+          <div class="col-sm-2">
+            <div class="shop-cart">             
+              <a class="cart-control" href="#" title="View your shopping cart">
+                <i class="ti-bag"></i>
+                <span class="count">3</span>
+                <span>Cart - </span> 
+                <span class="currency">$</span>
+                <span class="amount">345.00</span>
+              </a><!-- /.cart-control -->
+
+              <div class="cart-items">
+                <div class="widget_shopping_cart_content">
+                  <div class="cart-top">
+                    <div class="item media">
+                      <button class="btn"><i class="fa fa-close"></i></button>
+                      <div class="item-thumbnail media-left">
+                        <img src="images/menu/cart/1.png" alt="Item Thimbnail">
+                      </div><!-- /.item-thumbnail -->
+                      <div class="item-details media-body">
+                        <div class="rating"><input type="hidden" class="rating-tooltip-manual" data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5"/></div><!-- /.rating -->
+                        <h4 class="item-title"><a href="#">Product Name Here</a></h4><!-- /.item-title -->
+                        <div class="item-price">
+                          <div class="item-price">
+                            <span class="currency">$</span>
+                            <span class="price">65</span> 
+                            <span class="item-count">3</span><!-- /.item-count -->
+                          </div><!-- /.item-price -->
+                        </div><!-- /.item-price -->
+                      </div><!-- /.item-details -->
+                    </div><!-- /.item -->
+
+                    <div class="item media">
+                      <button class="btn"><i class="fa fa-close"></i></button>
+                      <div class="item-thumbnail media-left">
+                        <img src="images/menu/cart/2.png" alt="Item Thimbnail">
+                      </div><!-- /.item-thumbnail -->
+                      <div class="item-details media-body">
+                        <div class="rating"><input type="hidden" class="rating-tooltip-manual" data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5"/></div><!-- /.rating -->
+
+                        <h4 class="item-title"><a href="#">Product Name Here</a></h4><!-- /.item-title -->
+                        <div class="item-price">
+                          <div class="item-price">
+                            <span class="currency">$</span>
+                            <span class="price">65</span> 
+                            <span class="item-count">3</span><!-- /.item-count -->
+                          </div><!-- /.item-price -->
+                        </div><!-- /.item-price -->
+                      </div><!-- /.item-details -->
+                    </div><!-- /.item -->
+                  </div><!-- /.cart-top -->
+
+                  <div class="cart-middle">
+                    <button class="btn pull-left"><i class="ti-trash"></i> Empty Cart</button>
+                    <div class="price-total pull-right">
+                      <span>Sub total:</span>
+                      <span class="currency">$</span><span class="price">2500.00</span>
+                    </div><!-- /.price-total -->
+                  </div><!-- /.cart-middle -->
+
+                  <div class="cart-bottom">
+                    <a href="cart.html" class="btn pull-left"><i class="icons icon-basket-loaded"></i> View Cart</a>
+                    <a href="checkout.html" class="btn pull-right">Checkout</a>
+                  </div><!-- /.cart-bottom -->
+                </div><!-- /.widget_shopping_cart_content -->
+              </div><!-- /.scart-items -->
+            </div>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.header-middle -->
+
+    <div class="header-bottom">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand visible-xs" href="./">
+            <img src="images/logo.png" alt="Site Logo">
+          </a><!-- /.navbar-brand -->
+        </div>
+
+        <nav id="main-menu" class="menu collapse navbar-collapse pull-left">
+          <ul class="nav navbar-nav">
+            <li class="menu-item menu-item-has-children active">
+              <a href="#">Home</a>
+              <ul class="sub-menu children">
+                <li class="menu-item"><a href="index-01.html">Home 01</a></li>
+                <li class="menu-item"><a href="index-02.html">Home 02</a></li>
+                <li class="menu-item"><a href="index-03.html">Home 03</a></li>
+                <li class="menu-item"><a href="index-04.html">Home 04</a></li>
+                <li class="menu-item"><a href="index-05.html">Home 05</a></li>
+                <li class="menu-item"><a href="index-06.html">Home 06</a></li>
+                <li class="menu-item"><a href="index-07.html">Home 07</a></li>
+                <li class="menu-item"><a href="index-08.html">Home 08</a></li>
+                <li class="menu-item"><a href="index-09.html">Home 09</a></li>
+                <li class="menu-item"><a href="index-10.html">Home 10</a></li>
+                <li class="menu-item"><a href="index-11.html">Home 11</a></li>
+              </ul>
+            </li>
+
+            <li class="menu-item menu-item-has-children menu-item-has-mega-menu">
+              <a href="#">Shop</a>
+              <ul class="mega-menu sub-menu">
+                <li>
+                  <div class="container">
+                    <div class="menu-item col-sm-3">
+                      <h6 class="menu-title">Shop Pages</h6>
+                      <ul class="menu-list">
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li> 
+                        <li><a href="shop-3column.html">Shop 3 Column</a></li>
+                        <li><a href="shop-4column.html">Shop 4 Column</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <h6 class="menu-title">Shop Pages</h6>
+
+                      <ul class="menu-list">
+                        <li><a href="shop-list.html">Shop List 01</a></li>
+                        <li><a href="shop-list-no-sidebar.html">Shop List 02</a></li>
+                        <li><a href="shop-details-01.html">Shop Details 01</a></li>
+                        <li><a href="shop-details-02.html">Shop Details 02</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <h6 class="menu-title">Accessories</h6>
+
+                      <ul class="menu-list">
+                        <li><a href="#">Innerwears</a></li>
+                        <li><a href="#">T-Shirts & Shorts</a></li>
+                        <li><a href="#">Caps & Scarf</a></li>
+                        <li><a href="#">Trousers</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <div class="menu-content">
+                        <a href="#">
+                          <img src="images/menu/shop.png" alt="Image">
+                          <h3 class="content-title">
+                            <span>-65%</span>
+                            Discount
+                          </h3>
+                        </a>
+                      </div><!-- /.menu-content -->
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item menu-item-has-children">
+              <a href="#">Features</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Banners</a>
+                  <ul class="sub-menu">
+                    <li><a href="banner-01.html">Banner 01</a></li>
+                    <li><a href="banner-02.html">Banner 02</a></li>
+                    <li><a href="banner-03.html">Banner 03</a></li>
+                    <li><a href="banner-04.html">Banner 04</a></li>
+                    <li><a href="banner-05.html">Banner 05</a></li>
+                    <li><a href="banner-06.html">Banner 06</a></li>
+                    <li><a href="banner-07.html">Banner 07</a></li>
+                    <li><a href="banner-08.html">Banner 08</a></li>
+                    <li><a href="banner-09.html">Banner 09</a></li>
+                    <li><a href="banner-10.html">Banner 10</a></li>                 
+                  </ul>
+                </li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Menu Styles</a>
+                  <ul class="sub-menu">
+                    <li><a href="menu-01.html">Menu 01</a></li>
+                    <li><a href="menu-02.html">Menu 02</a></li>
+                    <li><a href="menu-03.html">Menu 03</a></li>
+                    <li><a href="menu-04.html">Menu 04</a></li>
+                    <li><a href="menu-05.html">Menu 05</a></li>
+                  </ul>
+                </li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Footers</a>
+                  <ul class="sub-menu">
+                    <li><a href="footer-01.html">Footer 01</a></li>
+                    <li><a href="footer-02.html">Footer 02</a></li>
+                    <li><a href="footer-03.html">Footer 03</a></li>
+                  </ul>
+                </li>      
+              </ul>
+            </li>
+
+            <li class="menu-item menu-item-has-children menu-item-has-mega-menu">
+              <a href="#">Pages</a>
+              <ul class="mega-menu sub-menu">
+                <li>
+                  <div class="container">
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list">
+                        <li><a href="404.html">404</a></li>
+                        <li><a href="about-01.html">About</a></li> 
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list">
+                        <li><a href="coming-soon.html">Coming Soon</a></li> 
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="register.html">Register / Login</a></li>  
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list">
+                        <li><a href="service-01.html">Service</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li> 
+                        <li><a href="shop-3column.html">Shop 3 Column</a></li>
+                        <li><a href="shop-4column.html">Shop 4 Column</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list">
+                        <li><a href="shop-list.html">Shop List 01</a></li>
+                        <li><a href="shop-list-no-sidebar.html">Shop List 02</a></li>
+                        <li><a href="shop-details-01.html">Shop Details 01</a></li>
+                        <li><a href="shop-details-02.html">Shop Details 02</a></li>
+                      </ul> 
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>            
+
+            <li class="menu-item menu-item-has-children menu-item-has-mega-menu">
+              <a href="#">Shortcodes</a>
+              <ul class="mega-menu sub-menu">
+                <li>
+                  <div class="container">
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list with-icon">
+                        <li><a href="alert.html"><i class="ti-info-alt"></i> Alert</a></li>
+                        <li><a href="buttons.html"><i class="ti-link"></i> Buttons</a></li>
+                        <li><a href="lists.html"><i class="ti-quote-right"></i> Lists &amp; Panels</a></li>
+                        <li><a href="blockquotes.html"><i class="ti-quote-right"></i> Blockquotes</a></li>
+                        <li><a href="counters.html"><i class="ti-alarm-clock"></i> Counters</a></li>
+                        <li><a href="progress.html"><i class="ti-align-left"></i> Progress Bars</a></li>
+                        <li><a href="deviders.html"><i class="ti-layout-line-solid"></i> Deviders</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list with-icon">
+                        <li><a href="alert.html"><i class="ti-info-alt"></i> Alert</a></li>
+                        <li><a href="buttons.html"><i class="ti-link"></i> Buttons</a></li>
+                        <li><a href="lists.html"><i class="ti-quote-right"></i> Lists &amp; Panels</a></li>
+                        <li><a href="blockquotes.html"><i class="ti-quote-right"></i> Blockquotes</a></li>
+                        <li><a href="counters.html"><i class="ti-alarm-clock"></i> Counters</a></li>
+                        <li><a href="progress.html"><i class="ti-align-left"></i> Progress Bars</a></li>
+                        <li><a href="deviders.html"><i class="ti-layout-line-solid"></i> Deviders</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list with-icon">
+                        <li><a href="alert.html"><i class="ti-info-alt"></i> Alert</a></li>
+                        <li><a href="buttons.html"><i class="ti-link"></i> Buttons</a></li>
+                        <li><a href="lists.html"><i class="ti-quote-right"></i> Lists &amp; Panels</a></li>
+                        <li><a href="blockquotes.html"><i class="ti-quote-right"></i> Blockquotes</a></li>
+                        <li><a href="counters.html"><i class="ti-alarm-clock"></i> Counters</a></li>
+                        <li><a href="progress.html"><i class="ti-align-left"></i> Progress Bars</a></li>
+                        <li><a href="deviders.html"><i class="ti-layout-line-solid"></i> Deviders</a></li>
+                      </ul> 
+                    </div>
+
+                    <div class="menu-item col-sm-3">
+                      <ul class="menu-list with-icon">
+                        <li><a href="alert.html"><i class="ti-info-alt"></i> Alert</a></li>
+                        <li><a href="buttons.html"><i class="ti-link"></i> Buttons</a></li>
+                        <li><a href="lists.html"><i class="ti-quote-right"></i> Lists &amp; Panels</a></li>
+                        <li><a href="blockquotes.html"><i class="ti-quote-right"></i> Blockquotes</a></li>
+                        <li><a href="counters.html"><i class="ti-alarm-clock"></i> Counters</a></li>
+                        <li><a href="progress.html"><i class="ti-align-left"></i> Progress Bars</a></li>
+                        <li><a href="deviders.html"><i class="ti-layout-line-solid"></i> Deviders</a></li>
+                      </ul> 
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item menu-item-has-children">
+              <a href="#">Blog</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Classic</a>
+                  <ul class="sub-menu">
+                    <li><a href="classic-01.html">Right Sidebar</a></li>
+                    <li><a href="classic-02.html">Left Sidebar</a></li>
+                    <li><a href="classic-03.html">No Sidebar</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Grid</a>
+                  <ul class="sub-menu">
+                    <li><a href="grid-2column-01.html">2 Column 01</a></li>
+                    <li><a href="grid-2column-02.html">2 Column 02</a></li>
+                    <li><a href="grid-3column-01.html">3 Column 01</a></li>
+                    <li><a href="grid-3column-02.html">3 Column 02</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Masonary</a>
+                  <ul class="sub-menu">
+                    <li><a href="masonry-2column-01.html">2 Column 01</a></li>
+                    <li><a href="masonry-2column-02.html">2 Column 02</a></li>
+                    <li><a href="masonry-3column-01.html">3 Column 01</a></li>
+                    <li><a href="masonry-3column-02.html">3 Column 02</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Blog Single</a>
+                  <ul class="sub-menu">
+                    <li><a href="blog-single-classic.html">Single Classic</a></li>
+                    <li><a href="blog-single-no-sidebar.html">Single Fullwidth</a></li>
+                    <li><a href="blog-single-left-sidebar.html">Left Sidebar</a></li>
+                    <li><a href="blog-single-right-sidebar.html">Right Sidebar</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item menu-item-has-children">
+              <a href="#">Portfolio</a>
+              <ul class="sub-menu">
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Grid 2 Column</a>
+                  <ul class="sub-menu">
+                    <li><a href="portfolio-grid-2column-01.html">2 Column 01</a></li>
+                    <li><a href="portfolio-grid-2column-02.html">2 Column 02</a></li>
+                  </ul>
+                </li>   
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Grid 3 Column</a>
+                  <ul class="sub-menu">
+                    <li><a href="portfolio-grid-3column.html">3 Column 01</a></li>
+                    <li><a href="portfolio-grid-3column-02.html">3 Column 02</a></li>
+                  </ul>
+                </li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Grid 4 Column</a>
+                  <ul class="sub-menu">
+                    <li><a href="portfolio-grid-4column.html">4 Column 01</a></li>
+                    <li><a href="portfolio-grid-4column-02.html">4 Column 02</a></li>
+                  </ul>
+                </li>    
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Masonry 3 Column</a>
+                  <ul class="sub-menu">
+                    <li><a href="portfolio-masonry-3column.html">3 Column 01</a></li>
+                    <li><a href="portfolio-masonry-3column-02.html">3 Column 02</a></li>
+                  </ul>
+                </li>                                                 
+
+                <li><a href="portfolio-list.html">List Style</a></li>
+
+                <li class="menu-item menu-item-has-children">
+                  <a href="#">Portfolio Detail</a>
+                  <ul class="sub-menu">
+                    <li><a href="portfolio-details.html">Details 01</a></li>
+                    <li><a href="portfolio-details-02.html">Details 02</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item"><a href="#">Buy</a></li> 
+
+          </ul><!-- /.navbar-nav -->
+        </nav><!-- /.navbar-collapse -->
+
+        <div class="menu-social pull-right">
+          <a href="#"><i class="ti-twitter-alt"></i></a>
+          <a href="#"><i class="ti-facebook"></i></a>
+          <a href="#"><i class="ti-pinterest-alt"></i></a>
+          <a href="#"><i class="ti-vimeo-alt"></i></a>
+        </div><!-- /.menu-social -->
+      </div><!-- /.container -->
+    </div><!-- /.header-bottom -->
+
+  </header><!-- /#masthead -->
+
+
+
+
+  <section class="page-name-sec page-name-sec-01">
+    <div class="section-padding">
+      <div class="container">
+        <h3 class="page-title">Our Blog</h3><!-- /.page-title -->
+
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="description">
+              Duis sed odio sit amet nibh vulputate cursus a sit amet. 
+            </p><!-- /.description -->
+          </div>
+
+          <div class="col-sm-6">
+            <ol class="breadcrumb text-right">
+              <li><a href="#">Home</a></li>
+              <li class="active">Blog</li>
+            </ol><!-- /.breadcrumb -->
+          </div>
+
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.section-padding -->
+  </section><!-- /.page-name-sec -->
+
+
+
+  <section class="blog-posts">
+    <div class="section-padding">
+      <div class="container">
+        <article class="post type-post format-standard">
+          <div class="entry-thumbnail">
+            <img src="images/blog/01/4.jpg" alt="blog">
+          </div>
+
+          <div class="post-content media">
+            <div class="entry-meta media-left">
+              <time datetime="2016-02-15"><span class="date">15</span> <span class="month">Feb</span></time>
+            </div><!-- /.entry-meta -->
+
+            <div class="entry-content media-body">
+              <h2 class="entry-title">
+                AN AMERICAN PERSON STORY
+              </h2><!-- /.entry-header -->
+
+              <div class="meta-info">
+                <span class="author"><i class="ti-user"></i><a href="#">John Doe</a></span>
+                <span class="cat-links"><i class="ti-tag"></i><a href="#">WordPress</a>, <a href="#">Coding</a></span>
+                <span class="comments-link"><i class="ti-comment"></i><a href="#">25 Comments</a></span>
+              </div><!-- /.meta-info -->
+
+              <p class="description">
+                Both as artists little more than mediocrities with almost no genuine feeling for what makes painting a great art. The real attractiveness of both lies entirely outside the sphere of pure art, in the realms of genre illustration
+                <br><br>
+                Benozzo was gifted with a rare facility not only of execution but of invention, with a spontaneity, a freshness, a liveliness in telling a story that wake the child in us, and the lover of the fairy tale. Later in life, his more precious gifts deserted him, but who wants to resist the fascination of his early works, painted, as they seem, by a Fra Angelico who had forgotten heaven and become enamoured of the earth and the spring time 
+                <br><br>
+                In his Riccardi Palace frescoes, he has sunk already to portraying the Florentine apprentice’s dream of a holiday in the country on St. John’s Day; but what a naïf ideal of luxury and splendour it is! With these, the glamour in which he saw the world began to fade away from him, and in his Pisan frescoes 
+              </p>
+              <blockquote class="post-quote">
+                "Recedes replaced by the worse of all genre painting, non significant detail and positive bad taste have London or New York or Berlin"
+              </blockquote><!-- /.post-quote -->
+              <p>
+                It may be said he here continues mediæval tradition, which is quite true, but this very fact indicates his real place, which, in spite of his adopting so many of the fifteenth-century improvements, is not with the artists of the Renaissance, but with the story-tellers and costumed fairy-tale painters of the transition, with Spinello Aretino and Gentile da Fabriano, for instance
+              </p><!-- /.description -->
+
+              <div class="post-bottom">
+                <div class="post-tag">
+                  <span>Tags:</span>
+                  <a href="#">Shop</a>,
+                  <a href="#">Dress</a>,
+                  <a href="#">Men</a>,
+                  <a href="#">Women</a>
+                </div><!-- /.post-tag -->
+
+                <div class="post-social pull-right">
+                  <a href="#"><i class="ti-twitter"></i></a>
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-sharethis"></i></a>
+                </div><!-- /.post-social -->
+              </div><!-- /.post-bottom -->
+
+
+
+              <div class="about-author media">
+                <div class="author-avatar media-left">
+                  <img src="images/blog/author.jpg" alt="Author Image">
+                </div><!-- /.author-avatar -->
+
+                <div class="author-details media-body">
+                  <h5 class="author-name">Sarah Wallace</h5>
+                  <div class="author-social">
+                    <a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="facebook-btn"><i class="fa fa-facebook"></i></a> 
+                    <a href="#" class="google-plus-btn"><i class="fa fa-pinterest"></i></a> 
+                  </div><!-- /.author-social -->
+                  <p class="description">
+                    Aenean sollicitudin, lorem quis bibendum auctor, elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                  </p>
+                </div><!-- /.author-details -->
+              </div><!-- /.about-author -->
+
+
+              <div class="comments">
+
+                <h2 class="title">Comments <span class="count">24</span></h2>
+
+                <ol class="comment-list">
+                  <li class="comment parent media">
+                    <div class="comment-item">
+                      <div class="author-avatar media-left">
+                        <img src="images/blog/comment/1.jpg" alt="Comment Authors">
+                      </div><!-- /.author-avatar -->
+                      <div class="comment-body media-body">
+                        <div class="comment-metadata">
+                          <span class="author"><a href="#">Alice Lynch</a></span>
+                          <span class="time"><time datetime="2016-02-20 21:00">20-02-2016 at 21:37</time> </span>
+                          <span class="reply"><a href="#">Reply</a></span>
+                        </div><!-- /.comment-metadata -->
+                      </div><!--/.comment-body-->
+                      <p class="description">
+                        And yet, once in a while, he renders a head with such character, or a movement with such ease that we wonder whether he had not in him, after all, the making of a real artist.
+                      </p>
+                    </div><!-- /.comment-item -->
+
+                    <ol class="children">
+                      <li class="comment media">
+                        <div class="comment-item">
+                          <div class="author-avatar media-left">
+                            <img src="images/blog/comment/2.jpg" alt="Comment Authors">
+                          </div><!-- /.author-avatar -->
+                          <div class="comment-body media-body">
+                            <div class="comment-metadata">
+                              <span class="author"><a href="#">Angela Weaver</a></span>
+                              <span class="time"><time datetime="2016-02-20 21:00">20-02-2016 at 21:37 </time> </span>
+                              <span class="reply"><a href="#">Reply</a></span>
+                            </div><!-- /.comment-metadata -->
+                          </div><!--/.comment-body-->
+                          <p class="description">
+                            Ghirlandaio was born to far more science and cunning in painting than was current in Benozzo’s early years, and all that industry, all that love of his occupation, all that talent even
+                          </p>
+                        </div><!-- /.comment-item -->
+                      </li>
+                    </ol>
+                  </li>
+
+                  <li class="comment parent media">
+                    <div class="comment-item">
+                      <div class="author-avatar media-left">
+                        <img src="images/blog/comment/3.jpg" alt="Comment Authors">
+                      </div><!-- /.author-avatar -->
+                      <div class="comment-body media-body">
+                        <div class="comment-metadata">
+                          <span class="author"><a href="#">Bobby Watkins</a></span>
+                          <span class="time"><time datetime="2016-02-20 21:00">20-02-2016 at 21:37 </time> </span>
+                          <span class="reply"><a href="#">Reply</a></span>
+                        </div><!-- /.comment-metadata -->
+                      </div><!--/.comment-body-->
+                      <p class="description">
+                        To begin with, they are so undecorative that, in spite of the tone and surface imparted to them by four centuries, they still suggest so many tableaux vivants pushed into the wall side by side
+                      </p>
+                    </div><!-- /.comment-item -->
+                  </li><!-- /.comment parent -->
+                </ol><!-- /.comment-list -->
+
+                <div class="respond">
+                  <h2 class="title">Add Your Comment</h2>
+
+                  <form action="#" method="post" class="comment-form">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <input class="form-control" name="author" type="text" placeholder="First Name*" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <input class="form-control" name="author" type="text" placeholder="Last Name*" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <input class="form-control" name="email" type="email" placeholder="Email*" required>
+                      </div>
+                      <div class="col-sm-6">
+                        <input class="form-control" name="website" type="text" placeholder="URL (Optional)">
+                      </div>
+                    </div>
+                    <textarea id="comment" class="form-control" name="comment" placeholder="Comment*" rows="8"></textarea>
+                    <input class="btn" type="submit" value="Submit Now">
+                  </form><!-- /.comment-form -->
+                </div><!-- /.comment-respond -->
+              </div><!-- /.comment-area -->
+
+            </div><!-- /.entry-content -->        
+          </div><!-- /.post-content -->
+        </article><!--/.post-->
+      </div><!-- /.container -->
+    </div><!-- /.section-padding -->
+  </section><!-- /.blog-posts -->
+
+
+
+  <section class="subscribe-03 background-bg" data-image-src="images/home07/subscribe.jpg">
+    <div class="container">
+      <div class="subscribe-details">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="section-top">
+              <h3 class="section-title">Stay up to date <span></span></h3><!-- /.section-title -->
+            </div>
+          </div>
+          <div class="col-sm-7">
+            <form class="subscribe-form" action="#">
+              <input class="form-control" type="email" placeholder="myemail@email.com">
+              <input class="btn btn-subscribe" type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.subscribe-details -->
+    </div><!-- /.section-padding -->
+  </section>
+
+
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="section-padding">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-4 col-sm-6">
+              <div class="widget widget_about_us">
+                <a class="footer-logo" href="#"><img src="images/logo2.png" alt="Logo"></a>
+                <div class="widget-details">
+                  <p class="description">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                  </p><!-- /.description -->
+                  <address>
+                    121 King Street, Melbourne VIC 3000, Australia
+                  </address>
+                  <span>+61 3 8376 6284</span>
+                  <span><a href="#">support@shopaholic.com</a></span>
+                </div><!-- /.widget-details -->
+              </div><!-- /.widget -->
+            </div>
+
+            <div class="col-md-2 col-sm-6">
+              <div class="widget widget_useful_links">
+                <h4 class="widget-title">Useful links</h4>
+                <div class="widget-details">
+                  <span><i class="ti-control-record"></i><a href="#">About us</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Customer service</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">New Collection</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Best Sellers</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Manufacturers</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Privacy policy</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Terms & condition</a></span>
+                </div><!-- /.widget-details -->
+              </div><!-- /.widget -->
+            </div>
+
+            <div class="col-md-2 col-sm-6">
+              <div class="widget widget_shop_links">
+                <h4 class="widget-title">Shops</h4>
+                <div class="widget-details">
+                  <span><i class="ti-control-record"></i><a href="#">Trending Now</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Women</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Men</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Kids</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Accessories</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Top brands</a></span>
+                  <span><i class="ti-control-record"></i><a href="#">Shoes</a></span>                  
+                </div><!-- /.widget-details -->
+              </div><!-- /.widget -->
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+              <div class="widget widget_instagram_feed">
+                <h4 class="widget-title">Instagram Photos</h4>
+                <div class="widget-details">
+                  <a href="#"><img src="images/instagram/1.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/2.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/3.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/4.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/5.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/6.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/7.png" alt="Instagram Image"></a>
+                  <a href="#"><img src="images/instagram/8.png" alt="Instagram Image"></a>
+                </div><!-- /.widget-details -->
+              </div><!-- /.widget -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div><!-- /.footer-top -->
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <div class="copyright">
+              © <a href="https://demos.jeweltheme.com/shopaholic">Shopaholic</a> 2016 | Develpoed With Love by <a href="https://jeweltheme.com">Jewel Theme</a>
+            </div><!-- /.copyright -->
+          </div>
+
+          <div class="col-sm-6 text-right">
+            <div class="payment-list">
+              <a href="#"><img src="images/payment/1.png" alt="Payment Logo"></a>
+              <a href="#"><img src="images/payment/2.png" alt="Payment Logo"></a>
+              <a href="#"><img src="images/payment/3.png" alt="Payment Logo"></a>
+              <a href="#"><img src="images/payment/4.png" alt="Payment Logo"></a>
+              <a href="#"><img src="images/payment/5.png" alt="Payment Logo"></a>
+            </div>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.footer-bottom -->
+  </footer>
+
+
+
+  <div id="scroll-to-top" class="scroll-to-top">
+    <i class="fa fa-angle-double-up"></i>    
+  </div>
+
+
+
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
