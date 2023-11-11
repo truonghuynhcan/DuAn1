@@ -3,11 +3,14 @@
  * Mở kết nối đến CSDL sử dụng PDO
  */
 function pdo_get_connection(){
-    $dburl = "mysql:host=localhost;dbname=xthca3;charset=utf8";
+    $host = "localhost";
+    $dbname = "galaxybook";
     $username = 'root';
     $password = '';
 
-    $conn = new PDO($dburl, $username, $password);
+    $dburl = "mysql:host=".$host.";dbname=".$dbname.";charset=utf8";
+
+    $conn = new PDO($dburl, $username, $password);  
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
 }
