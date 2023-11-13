@@ -92,7 +92,7 @@ function guimatkhaumoi($taikhoan ,$email, $matkhaumoi){
         $mail->Host = 'smtp.gmail.com';  //SMTP servers
         $mail->SMTPAuth = true; // Enable authentication
         $mail->Username = 'canthps36499@fpt.edu.vn'; // SMTP username
-        $mail->Password = 'canWPPR2004';   // SMTP password
+        $mail->Password = 'kwwu utyg xmoo czep';   // SMTP password
         $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
         $mail->Port = 587;  // port to connect to                
         $mail->setFrom('canthps36499@fpt.edu.vn', 'GalaxyBook' ); 
