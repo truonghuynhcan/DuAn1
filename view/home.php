@@ -4,7 +4,7 @@
             <div class="banner-top">
 
                 <div class="col-sm-3">
-                    <h3 class="banner-title">Shop by category</h3>
+                    <h3 class="banner-title">DANH MỤC</h3>
                     <div class="shop-category">
                         <ul class="category-menu">
                             <li class="menu-item menu-item-has-children">
@@ -12,52 +12,23 @@
                                 <ul>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="#">SLR Camera</a>
-                                        <ul>
-                                            <li><a href="#">All Brands</a></li>
-                                            <li><a href="#">Canon</a></li>
-                                            <li><a href="#">Nikon</a></li>
-                                            <li><a href="#">Samsung</a></li>
-                                        </ul>
+                                        
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="#">SLR Camera (Body Only)</a>
-                                        <ul>
-                                            <li><a href="#">All Brands</a></li>
-                                            <li><a href="#">Canon</a></li>
-                                            <li><a href="#">Nikon</a></li>
-                                        </ul>
+                                       
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="#">Compact Camera</a>
-                                        <ul>
-                                            <li><a href="#">All Brands</a></li>
-                                            <li><a href="#">Canon</a></li>
-                                            <li><a href="#">Fuji</a></li>
-                                            <li><a href="#">Kodak</a></li>
-                                            <li><a href="#">Nikon</a></li>
-                                            <li><a href="#">Samsung</a></li>
-                                            <li><a href="#">Sony</a></li>
-                                        </ul>
+                                       
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="#">Video Camera</a>
-                                        <ul>
-                                            <li><a href="#">All Brands</a></li>
-                                            <li><a href="#">Genius</a></li>
-                                            <li><a href="#">Panasonic</a></li>
-                                            <li><a href="#">Sony</a></li>
-                                        </ul>
+                                        
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="#">Webcam</a>
-                                        <ul>
-                                            <li><a href="#">All Brands</a></li>
-                                            <li><a href="#">A4-Tech</a></li>
-                                            <li><a href="#">Creative</a></li>
-                                            <li><a href="#">Genius</a></li>
-                                            <li><a href="#">Logitech</a></li>
-                                            <li><a href="#">Mercury</a></li>
-                                        </ul>
+                                        
                                     </li>
                                 </ul>
                             </li>

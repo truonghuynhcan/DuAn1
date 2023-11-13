@@ -28,7 +28,7 @@ p,
 	color: #e0d2a2;
 }
 .section-padding {
-	padding: 200px 0;
+	padding: 2rem 0;
 }
 .section-top {
 	margin-bottom: 110px;
@@ -167,7 +167,7 @@ p,
 	background: #eeedf1;
 }
 .page-name-sec .section-padding {
-	padding: 80px 0;
+	padding: 2rem 0;
 }
 .page-title {
 	font-size: 18px;
@@ -1342,7 +1342,7 @@ footer address {
 
 @media screen and (max-width: 1280px) {
 	.section-padding {
-		padding: 140px 0;
+		padding: 1.5rem 0;
 	}
 	.section-details {
 		padding-top: 50px;
@@ -1358,7 +1358,7 @@ footer address {
 		padding-bottom: 140px;
 	}
 	.page-name-sec .section-padding {
-		padding: 50px 0;
+		padding: 1rem 0;
 	}
 	.footer-top .section-padding {
 		padding: 130px 0 60px;
@@ -1387,7 +1387,7 @@ footer address {
 
 @media screen and (max-width: 1024px) {
 	.section-padding {
-		padding: 100px 0;
+		padding: 1.25rem 0;
 	}
 	.site-footer-02 {
 		padding: 55px 0;
@@ -1509,7 +1509,7 @@ footer address {
 		width: 165px !important;
 	}
 	.section-padding {
-		padding: 80px 0;
+		padding: 0.75rem 0;
 	}
 	.section-top {
 		margin-bottom: 50px;

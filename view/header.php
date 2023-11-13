@@ -10,7 +10,7 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
     <link rel="icon" href="layout/images/logoGalaxyBook 2.png" type="image/png">
-    <title>Shopaholic - e-Commerce HTML5 Template</title>
+    <title>GalaxyBook</title>
     <meta name="description" content="Shopaholic - e-Commerce HTML5 Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -24,11 +24,27 @@
     <link rel="stylesheet" href="layout/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="layout/assets/css/style.css">
     <link rel="stylesheet" href="layout/assets/css/themes.css">
-    <link rel="stylesheet" href="layout/assets/css/home/home-11.css">
 
+    <?php
+        if (isset($_GET['pg'])) {
+            switch ($_GET['pg']) {
+                case 'login':
+                case 'forgotpassword':
+                case 'register':
+                    $css = "pages/register.css";
+                    break;
+                    
+                default:
+                    $css = "home/home-11.css";
+            }
+            
+        } else {
+            $css = 'home/home-11.css';
+        }
+        echo '<link rel="stylesheet" href="layout/assets/css/'.$css .'">';
+    ?>
     <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="layout/assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script><![endif]-->
-
 
 </head>
 
@@ -72,14 +88,38 @@
 
 
                         <div class="my-account dropdown">
-                            <a href="#">Tài Khoản<i class="ti-user"></i></a>
+                            <?php
+                                if (isset($_SESSION['user'])){
+                                    echo '
+                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
+                                        <ul class="unsorted-list">
+                                            <li><a href="#">Cá Nhân</a></li>
+                                            <li><a href="#">Yêu Thích</a></li>
+                                            <li><a href="cart.html">Giỏ Hàng</a></li>
+                                            <li><a href="checkout.html">Thanh toán</a></li>
+                                            <li><a href="index.php?pg=logout">Đăng xuất</a></li>
+                                        </ul>
+                                    ';
+                                }else {
+                                    echo '
+                                        <a href="#">Tài khoản<i class="ti-user"></i></a>
+                                        <ul class="unsorted-list">
+                                            <li><a href="index.php?pg=login">Đăng Nhập</a></li>
+                                            <li><a href="index.php?pg=register">Đăng Ký</a></li>
+                                        </ul>
+                                    ';
+                                    
+                                }
+                            ?>
+                            <!-- <a href="#">Tài Khoản<i class="ti-user"></i></a>
                             <ul class="unsorted-list">
-                                <li><a href="register.html">Đăng Nhập</a></li>
-                                <li><a href="#">Thông Tin Cá Nhân</a></li>
+                                <li><a href="index.php?pg=login">Đăng Nhập</a></li>
+                                <li><a href="register.html">Đăng Ký</a></li>
+                                <li><a href="#">Cá Nhân</a></li>
                                 <li><a href="#">Yêu Thích</a></li>
                                 <li><a href="cart.html">Giỏ Hàng</a></li>
                                 <li><a href="checkout.html">Thanh toán</a></li>
-                            </ul>
+                            </ul> -->
                         </div><!-- /.my-account -->
 
                     </div><!-- /.top-right -->
@@ -91,7 +131,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <h1><a class="navbar-brand hidden-xs" href="./"><img src="layout/images/logoGalaxyBook.png"
+                        <h1><a class="navbar-brand hidden-xs" href="index.php"><img src="layout/images/logoGalaxyBook.png"
                                     alt="Site Logo"></a></h1>
                     </div>
                     <div class="col-sm-7">
@@ -115,7 +155,7 @@
                                     </select>
                                 </fieldset>
 
-                                <input type="text" placeholder="Keywords ..." class="form-control">
+                                <input type="text" placeholder="tìm kiếm ..." class="form-control">
                                 <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                             </form>
                         </div><!-- /.top-search-form -->
@@ -211,7 +251,7 @@
                 <nav id="main-menu" class="menu collapse navbar-collapse pull-left">
                     <ul class="nav navbar-nav">
                         <li class="menu-item menu-item-has-children active">
-                            <a href="#">Trang chủ</a>
+                            <a href="index.php">Trang chủ</a>
                         </li>
 
                         <li class="menu-item menu-item-has-children menu-item-has-mega-menu">
