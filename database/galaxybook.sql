@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 11, 2023 lúc 03:58 PM
+-- Thời gian đã tạo: Th10 14, 2023 lúc 05:05 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
   `Gmail` varchar(255) NOT NULL,
   `SDT` varchar(10) NOT NULL,
   `TaiKhoan` varchar(255) NOT NULL,
-  `MatKhau` varchar(255) NOT NULL,
+  `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
   `PhanQuyen` varchar(100) NOT NULL,
   `NgayTao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -59,7 +59,8 @@ CREATE TABLE `binhluan` (
   `Id_NguoiDung` int(5) NOT NULL,
   `Id_Sach` int(5) NOT NULL,
   `NoiDung` text NOT NULL,
-  `NgayBinhLuan` date NOT NULL
+  `NgayBinhLuan` date NOT NULL,
+  `TrangThai` bit(1) DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -74,6 +75,162 @@ CREATE TABLE `hinhanh` (
   `TenAnh` varchar(255) NOT NULL,
   `DuongDan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hinhanh`
+--
+
+INSERT INTO `hinhanh` (`Id`, `Id_Sach`, `TenAnh`, `DuongDan`) VALUES
+(1, 53, 'Sách - Hướng Dẫn Ôn Thi Hiệu Quả Môn Triết Học Mác - Lênin (Dùng Cho Sinh Viên Đại Học Không Chuyên Lí Luận Chính Trị)', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (6).png'),
+(2, 53, 'Sách - Hướng Dẫn Ôn Thi Hiệu Quả Môn Triết Học Mác - Lênin (Dùng Cho Sinh Viên Đại Học Không Chuyên Lí Luận Chính Trị)', '86121d6068d2db4dfb4ad9212c874439.jpg'),
+(3, 53, 'Sách - Hướng Dẫn Ôn Thi Hiệu Quả Môn Triết Học Mác - Lênin (Dùng Cho Sinh Viên Đại Học Không Chuyên Lí Luận Chính Trị)', '0b42e466ca2d11a0b6a10850d489ee50.jpg'),
+(4, 54, 'Sách - Sách Trắng - Công Nghệ Thông Tin Và Truyền Thông Việt Nam 2021', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (5).png'),
+(5, 54, 'Sách - Sách Trắng - Công Nghệ Thông Tin Và Truyền Thông Việt Nam 2021', 'luu-ban-nhap-tu-dong-6-8.png'),
+(6, 54, 'Sách - Sách Trắng - Công Nghệ Thông Tin Và Truyền Thông Việt Nam 2021', 'luu-ban-nhap-tu-dong-3-8.png'),
+(7, 55, 'Sách - Giáo Trình Ngôn Ngữ C++', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (1).png'),
+(8, 55, 'Sách - Giáo Trình Ngôn Ngữ C++', 'tải xuống.jpg'),
+(9, 55, 'Sách - Giáo Trình Ngôn Ngữ C++', 'giaotrinh.jpg'),
+(10, 56, 'Sách Mật mã và An toàn thông tin - Lý thuyết và Ứng dụng', 'vn-50009109-935d79d857d4e5078963c9b8528c5a0a.png'),
+(11, 56, 'Sách Mật mã và An toàn thông tin - Lý thuyết và Ứng dụng', 'images.jpg'),
+(12, 56, 'Sách Mật mã và An toàn thông tin - Lý thuyết và Ứng dụng', 'sachbaomat.jpg'),
+(13, 57, 'Sách - IoT (Internet Vạn Vật) - Kiến Trúc IoT, IoT Công Nghiệp Và Công Nghiệp 4.0, IoT Tổ Ong', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (2).png'),
+(14, 57, 'Sách - IoT (Internet Vạn Vật) - Kiến Trúc IoT, IoT Công Nghiệp Và Công Nghiệp 4.0, IoT Tổ Ong', 'sachiot.jpg'),
+(15, 57, 'Sách - IoT (Internet Vạn Vật) - Kiến Trúc IoT, IoT Công Nghiệp Và Công Nghiệp 4.0, IoT Tổ Ong', 'kientruc.jpg'),
+(16, 58, 'Sách - Các Hình Thức Tấn Công Mạng - Cyberspace', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (3).png'),
+(17, 58, 'Sách - Các Hình Thức Tấn Công Mạng - Cyberspace', 'vn-11134201-23030-vyqdbhh77kovc7.jpg'),
+(18, 58, 'Sách - Các Hình Thức Tấn Công Mạng - Cyberspace', 'sachcachinhthuctancongmang.jpg'),
+(19, 59, 'Sách - Sách A-Z kiến thức + nghề lập trình cho người mới bắt đầu', 'vn-50009109-dff02863661ad890d11f815932898514.png'),
+(20, 59, 'Sách - Sách A-Z kiến thức + nghề lập trình cho người mới bắt đầu', 'nghelaptrinh.jpg'),
+(21, 59, 'Sách - Sách A-Z kiến thức + nghề lập trình cho người mới bắt đầu', 'nguoimoilaptrinh.jpg'),
+(22, 60, 'Sách - Giáo Trình Kỹ Thuật Lập Trình C Căn Bản Và Nâng Cao + Giáo Trình C++ Và Lập Trình Hướng Đối Tượng', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (4).png'),
+(23, 60, 'Sách - Giáo Trình Kỹ Thuật Lập Trình C Căn Bản Và Nâng Cao + Giáo Trình C++ Và Lập Trình Hướng Đối Tượng', 'vn-11134207-7r98o-lncp84tii2d6a0.jpg'),
+(24, 60, 'Sách - Giáo Trình Kỹ Thuật Lập Trình C Căn Bản Và Nâng Cao + Giáo Trình C++ Và Lập Trình Hướng Đối Tượng', 'vn-11134207-7qukw-lkc4arfj8sywe7.jpg'),
+(25, 61, 'Sách - 12 Xu Hướng Công Nghệ Trong Thời Đại 4.0 - TTR Bookstore', 'b51db002695e671eb5365b6ab874d6ac.jpg'),
+(26, 61, 'Sách - 12 Xu Hướng Công Nghệ Trong Thời Đại 4.0 - TTR Bookstore', '8936066694339.jpg'),
+(27, 61, 'Sách - 12 Xu Hướng Công Nghệ Trong Thời Đại 4.0 - TTR Bookstore', 'ttph---nft---khi-ngh_-thu_t-tr_-th_nh-t_i-s_n-s_.jpg'),
+(28, 62, 'Sách - Công Nghiệp Tương Lai - The Industries Of The Future', 'image_195509_1_12548.jpg'),
+(29, 62, 'Sách - Công Nghiệp Tương Lai - The Industries Of The Future', '2020_06_11_15_06_36_11-390x510.jpg'),
+(30, 62, 'Sách - Công Nghiệp Tương Lai - The Industries Of The Future', '8935278606338.jpg'),
+(31, 63, 'Sách Khoa Học Khám Phá Dữ Liệu Lớn NXB Trẻ', '0b58896999acd6fe2f414254881461c0.jpg'),
+(32, 63, 'Sách Khoa Học Khám Phá Dữ Liệu Lớn NXB Trẻ', 'z3393853054263_650cd3e5c3f7b85c8db973d82e98857b.jpg'),
+(33, 63, 'Sách Khoa Học Khám Phá Dữ Liệu Lớn NXB Trẻ', 'du-lieu-lon.png'),
+(34, 64, 'Sách - Deep Learning Cuộc Cách Mạng Học Sâu', '19807f0a6b8a6217de2b6f0fa8943bdf.jpg'),
+(35, 64, 'Sách - Deep Learning Cuộc Cách Mạng Học Sâu', 'cuộc cách mạng sâu.png'),
+(36, 64, 'Sách - Deep Learning Cuộc Cách Mạng Học Sâu', 'cd509305cc9e08e48206edf2cf71b2dc.jpg_720x720q80.jpg'),
+(37, 65, 'Sách - An toàn thông tin - Nghệ thuật ẩn mình', '20190322_1wld2EXO9xjHeMEeBtC3RohT.jpg'),
+(38, 65, 'Sách - An toàn thông tin - Nghệ thuật ẩn mình', 'Series-book-Hacker-cua-Kevin.jpg'),
+(39, 65, 'Sách - An toàn thông tin - Nghệ thuật ẩn mình', 'an-minh-bia-sau.jpg'),
+(40, 66, 'abooks - Gián Điệp Mạng - Cuộc Rượt Đuổi Ngoạn Mục Trong Mê Lộ Máy Tính', '61ffcdde8de820342e6d71d714943cd7.jpg'),
+(41, 66, 'abooks - Gián Điệp Mạng - Cuộc Rượt Đuổi Ngoạn Mục Trong Mê Lộ Máy Tính', '20190322_KBkHUbPqbrClvEpp9obt4mY1.jpg'),
+(42, 66, 'abooks - Gián Điệp Mạng - Cuộc Rượt Đuổi Ngoạn Mục Trong Mê Lộ Máy Tính', '27cc71944fffb6b3a600b4285e328554.jpg'),
+(43, 67, 'Sách - An toàn thông tin - Hacker lược sử [AlphaBooks]', '20230314_eT4GLkb628wp.jpg'),
+(44, 67, 'Sách - An toàn thông tin - Hacker lược sử [AlphaBooks]', '050edf936cb54d6ed1b0dad11d5ceafc.jpg'),
+(45, 67, 'Sách - An toàn thông tin - Hacker lược sử [AlphaBooks]', '20200302_5PLehmst8AfYOhfmb2TxMfDg.jpg'),
+(46, 68, 'Sách - Life 3.0-Loài người trong kỷ nguyên trí tuệ nhân tạo', '8d5d0b05b6f380592970acf1f541b092.jpg'),
+(47, 68, 'Sách - Life 3.0-Loài người trong kỷ nguyên trí tuệ nhân tạo', '1cb8fc82d437688c18e5ed9d84bb8f44.jpg'),
+(48, 68, 'Sách - Life 3.0-Loài người trong kỷ nguyên trí tuệ nhân tạo', '2020_05_06_15_16_50_11-390x510.jpg'),
+(49, 69, 'Sách Cải tổ doanh nghiệp trong thời đại số', 'cde9caed5fd07d159be9220b5850336e.jpg'),
+(50, 69, 'Sách Cải tổ doanh nghiệp trong thời đại số', '4fb4b05b69c6b02d2a9dc47ea7bcd449.jpg'),
+(51, 69, 'Sách Cải tổ doanh nghiệp trong thời đại số', '86c6db1a3ef3013070f7b3567e933d68.jpg'),
+(52, 70, 'Sách - Ký Sự BrSE - Những Nẻo Đường Nghề BrSE (Triệu Anh Tuấn + Nguyễn Văn Trọng)', 'b23106ab026fb3b807d2e370775ef063.jpg'),
+(53, 70, 'Sách - Ký Sự BrSE - Những Nẻo Đường Nghề BrSE (Triệu Anh Tuấn + Nguyễn Văn Trọng)', '080e99104fda1bf3994f3203d8ba0be8.jpg'),
+(54, 70, 'Sách - Ký Sự BrSE - Những Nẻo Đường Nghề BrSE (Triệu Anh Tuấn + Nguyễn Văn Trọng)', '004778341e8c9afeec5812ce317c12b5.jpg'),
+(55, 71, 'Sách - Thành phố thông minh - Nền tảng, nguyên lý và ứng dụng', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5.png'),
+(56, 71, 'Sách - Thành phố thông minh - Nền tảng, nguyên lý và ứng dụng', '5154860543cd067d445577d14db2117d'),
+(57, 71, 'Sách - Thành phố thông minh - Nền tảng, nguyên lý và ứng dụng', '6406d5a286ed7d42d5ae8da52e780757_tn.jpg'),
+(58, 72, 'Khoa học Khám Phá: Trí Tuệ Giả Tạo (Tái Bản)', '20f694c8d55f8b69ea57fa8486a8fb88.jpg'),
+(59, 72, 'Khoa học Khám Phá: Trí Tuệ Giả Tạo (Tái Bản)', 'b0bfb2dce88583fb075df7d5a669f835.jpg'),
+(60, 72, 'Khoa học Khám Phá: Trí Tuệ Giả Tạo (Tái Bản)', '2b49759d75b65b236a1defcb11c60620.jpg'),
+(61, 73, 'Sách Code Dạo Kí Sự - Lập Trình Viên Đâu Phải Chỉ Biết Code', 'code-dao-ki-su-pdf.jpg'),
+(62, 73, 'Sách Code Dạo Kí Sự - Lập Trình Viên Đâu Phải Chỉ Biết Code', '93ea22beb6c13537e39a26a71c390642.jpg'),
+(63, 73, 'Sách Code Dạo Kí Sự - Lập Trình Viên Đâu Phải Chỉ Biết Code', '0344355a9d04ff5903cde202039e9f85.jpg'),
+(64, 74, 'Sách AI - Trí Tuệ Nhân Tạo', '98f0b23303b56ec8d046c48252f46a78.jpg'),
+(65, 74, 'Sách AI - Trí Tuệ Nhân Tạo', 'ai_-tri-tue-nhan-tao_tb-2023.jpg'),
+(66, 74, 'Sách AI - Trí Tuệ Nhân Tạo', 'tri-tue-nhan-tao-thong-minh--giai-thuat-0-882.jpg'),
+(67, 75, 'Sách Clean Code - Mã Sạch Và Con Đường Trở Thành Lập Trình Viên Giỏi', '6d08a857e9e80b470eab7a5136039369.jpg'),
+(68, 75, 'Sách Clean Code - Mã Sạch Và Con Đường Trở Thành Lập Trình Viên Giỏi', '6a170fed3758606d259862d7929fd8bd.jpg'),
+(69, 75, 'Sách Clean Code - Mã Sạch Và Con Đường Trở Thành Lập Trình Viên Giỏi', '82509f20f5787f272e47ece1c16d39d6.jpg'),
+(70, 76, 'Sách Data Science for Business', 'b6bb1e5cf32c088c0077539db3bcc4a9.jpg'),
+(71, 76, 'Sách Data Science for Business', 'sach-ve-data-analysis-6.jpg'),
+(72, 76, 'Sách Data Science for Business', 's-l1200.jpg'),
+(73, 77, 'Thiết kế mạng Intranet', 'image-20220608082014135.jpg'),
+(74, 77, 'Thiết kế mạng Intranet', '3a14e7151ccde8072c4691ab1ff6ed40.jpg'),
+(75, 77, 'Thiết kế mạng Intranet', 'a786168c8d349ab9ae833d71e13e997f.jpg'),
+(76, 78, 'Sách - Giáo Trình Triết Học ( Bìa mềm )', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (7).png'),
+(77, 78, 'Sách - Giáo Trình Triết Học ( Bìa mềm )', 'sanpham1.jpg'),
+(78, 78, 'Sách - Giáo Trình Triết Học ( Bìa mềm )', '7TMkmXk9EgVp.jpg'),
+(79, 79, 'Sách - Giáo Trình Lập Trình PYTHON', 'vn-50009109-439a7dda1c050473da2dfa41338a27f5 (8).png'),
+(80, 79, 'Sách - Giáo Trình Lập Trình PYTHON', 'b962e19641b05c06324b416c6aa5d38b.jpg'),
+(81, 79, 'Sách - Giáo Trình Lập Trình PYTHON', 'b808f0bca744308a05ac3b9e4575151e.jpg'),
+(82, 80, 'Lập trình hướng đối tượng JAVA core dành cho người mới bắt đầu học lập trình', 'ad299b78f8a5289406ab1936faf066f4.jpg'),
+(83, 80, 'Lập trình hướng đối tượng JAVA core dành cho người mới bắt đầu học lập trình', '1324567.jpg'),
+(84, 80, 'Lập trình hướng đối tượng JAVA core dành cho người mới bắt đầu học lập trình', 'fdjgfk.jpg'),
+(85, 81, 'Giáo Trình Lập Trình Android', '4e3f9ae4ee6d6843b4abf31fdc4bdc6e.jpg'),
+(86, 81, 'Giáo Trình Lập Trình Android', 'sfghjj.jpg'),
+(87, 81, 'Giáo Trình Lập Trình Android', 'lap-trinh-android.jpg'),
+(88, 82, 'Giáo Trình Kỹ Thuật Lập Trình C Căn Bản Và Nâng Cao', 'bia_ky_thuat_lap_trinh_c_14-03_fix__1_-b1_950fc2f571cd481abf07d57bf4a12b33_master.jpg'),
+(89, 82, 'Giáo Trình Kỹ Thuật Lập Trình C Căn Bản Và Nâng Cao', 'giao-trinh-ky-thuat-lap-trinh-c-co-so-va-nang-cao_master.jpg'),
+(90, 82, 'Giáo Trình Kỹ Thuật Lập Trình C Căn Bản Và Nâng Cao', 'ky-thuat-lap-trinh-c-can-ban-va-nang-cao_1.jpg'),
+(91, 83, 'Tớ Học Lập Trình - Làm Quen Với PYTHON', '9439676e1b939af6ea351814cb2264fc.jpg'),
+(92, 83, 'Tớ Học Lập Trình - Làm Quen Với PYTHON', '75a00d3297dc56d0e450451504f9c041.jpg'),
+(93, 83, 'Tớ Học Lập Trình - Làm Quen Với PYTHON', '2c0363240c709a2e2c1da5d3d6266202.jpg'),
+(94, 84, 'Trọn bộ 4 quyển tiểu thuyết Hannibal – Thomas Harris', '58f77a32822071b224a4c4d1cf0f894f.jpg'),
+(95, 84, 'Trọn bộ 4 quyển tiểu thuyết Hannibal – Thomas Harris', '6240134b1824b0ae72b23db1d404da0e.jpg'),
+(96, 84, 'Trọn bộ 4 quyển tiểu thuyết Hannibal – Thomas Harris', 'tron-bo-4-quyen-tieu-thuyet-hannibal-giasachonline.com.jpg'),
+(97, 85, 'Móng Vuốt Quạ Đen', '4_130_253c8692fa8341619c8b445a0824bbff.jpg'),
+(98, 85, 'Móng Vuốt Quạ Đen', 'limited-boxset-mong-vuot-qua-den-tap-3--tap-4.jpg'),
+(99, 85, 'Móng Vuốt Quạ Đen', '532e4b13e8a8311013264f61f862932f.jpg_720x720q80.jpg'),
+(100, 86, 'Chuyên Gia Pháp Y', '4d1656afbfd05df93dd2a73149ca99e1.jpg'),
+(101, 86, 'Chuyên Gia Pháp Y', '35564.jpg'),
+(102, 86, 'Chuyên Gia Pháp Y', 'd17962171d35d9b5b238f1d7d68404d8.jpg'),
+(103, 87, 'Scarpetta - Bác Sĩ Pháp Y', 'ba-si-phap-y-1_1.jpg'),
+(104, 87, 'Scarpetta - Bác Sĩ Pháp Y', 'scarpetta-bc3a1c-sc4a9-phc3a1p-y.jpg'),
+(105, 87, 'Scarpetta - Bác Sĩ Pháp Y', 'tumblr_7f34e5286affd97ad1a949a3c48360ad_01cc7702_540.jpg'),
+(106, 88, 'Pháp Y Tần Minh (Trọn Bộ 3 Cuốn)', 'phap-y-tan-minh-.u5505.d20170731.t231046.153850.jpg'),
+(107, 88, 'Pháp Y Tần Minh (Trọn Bộ 3 Cuốn)', 'phap-y-tan-minh-1.u5505.d20170731.t231046.357616.jpg'),
+(108, 88, 'Pháp Y Tần Minh (Trọn Bộ 3 Cuốn)', '1161f486271d9dec6074b86923f8c2a0.jpg'),
+(109, 89, 'Sách - Another (Trọn Bộ 2 Tập)', '1b121462b63d8c8bc53ae99c06fb802e.jpg'),
+(110, 89, 'Sách - Another (Trọn Bộ 2 Tập)', 'another-tron-bo-2-tap.jpg'),
+(111, 89, 'Sách - Another (Trọn Bộ 2 Tập)', 'a0a902b592315bbbdaedf3465aec4268.jpg'),
+(112, 90, 'Sách - Tokyo Hoàng Đạo Án', '787a7fb32b7d1f5af7afd3028b79b525.jpg'),
+(113, 90, 'Sách - Tokyo Hoàng Đạo Án', 'tokyo-hoc3a0ng-c491e1baa1o-c3a1n.jpg'),
+(114, 90, 'Sách - Tokyo Hoàng Đạo Án', '1-1.jpg'),
+(115, 91, 'Sách - Hồ Tuyệt Mệnh', 'ho-tuyet-menh_a57409fd3bb44ab2b24217ad57ef42db_master.jpg'),
+(116, 91, 'Sách - Hồ Tuyệt Mệnh', 'review-ho-tuyet-menh-bia.jpg'),
+(117, 91, 'Sách - Hồ Tuyệt Mệnh', 'review-ho-tuyet-menh-bai.jpg'),
+(118, 92, 'Cầu Thang Gào Thét', 'f515cd2ac8ff094d9d540c7b8241fac1.jpg'),
+(119, 92, 'Cầu Thang Gào Thét', 'a848fcc43ac2cdb89fac889df70a6d0a.jpg'),
+(120, 92, 'Cầu Thang Gào Thét', 'f56bc8d49fb7f48e87f6b9f6de45354b.jpg'),
+(121, 93, 'Malorie – Hành Trình Chạy Trốn Tử Thần', '7b9e4d147a6320944e88da362b315829.jpg'),
+(122, 93, 'Malorie – Hành Trình Chạy Trốn Tử Thần', 'e5bc36e8f88e5fa4bcd69844ce9daef7.jpg'),
+(123, 93, 'Malorie – Hành Trình Chạy Trốn Tử Thần', '2021_06_21_09_45_11_6-390x510.jpg'),
+(124, 94, 'Sách - Ring - Vòng Tròn Ác Nghiệt', 'images_27_.jpg'),
+(125, 94, 'Sách - Ring - Vòng Tròn Ác Nghiệt', '059b9bd4271e5bd8c5d15f4f76fed538.jpg'),
+(126, 94, 'Sách - Ring - Vòng Tròn Ác Nghiệt', '980edd5d1f637b29e1b2f2932a80706b.jpg'),
+(127, 95, 'Nhà giả kim ', 'img117-u3059-d20170616-t100547-729023.jpg'),
+(128, 95, 'Nhà giả kim ', 'P91250Mnha.jpg'),
+(129, 95, 'Nhà giả kim ', 'Nha-gia-kim-Paulo-Coelho-1020x600.jpg'),
+(130, 96, '2.Đắc nhân tâm ', 'd340edda2b0eacb7ddc47537cddb5e08.jpg'),
+(131, 96, '2.Đắc nhân tâm ', 'dac nhan tam.jpg'),
+(132, 96, '2.Đắc nhân tâm ', 'Đắc_nhân_tâm.jpg'),
+(133, 97, 'Mặc kệ thiên hạ, sống như người Nhật ', 'mac_ke_thien_ha___song_nhu_nguoi_nha.jpg'),
+(134, 97, 'Mặc kệ thiên hạ, sống như người Nhật ', 'f5c2b4ae7e8c97d01c03a49f88443d40.jpg'),
+(135, 97, 'Mặc kệ thiên hạ, sống như người Nhật ', 'mac-ke-thien-ha-song-nhu-nguoi-nhat-tai-ban-2022.jpg'),
+(136, 98, 'Đời ngắn đừng ngủ dài ', '19de0644beef19b9b885d0942f7d6f25.jpg'),
+(137, 98, 'Đời ngắn đừng ngủ dài ', 'Doi-ngan-dung-ngu-dai.jpg'),
+(138, 98, 'Đời ngắn đừng ngủ dài ', 'doi-ngan-dung-ngu-dai-2_600x400.jpg'),
+(139, 99, 'Cây cam ngọt của tôi ', '2a6154ba08df6ce6161c13f4303fa19e.jpg'),
+(140, 99, 'Cây cam ngọt của tôi ', 'cay-cam-ngot-cua-toi-5181-1640-3314-9413-1691145076.jpg'),
+(141, 99, 'Cây cam ngọt của tôi ', '2020_12_17_16_50_30_12-390x510.jpg'),
+(142, 100, 'Thất tịch không mưa ', 'images1493344_bd.jpg'),
+(143, 100, 'Thất tịch không mưa ', 'a38f7fd6606a9b0d05c06f1a6ab371c9.jpg'),
+(144, 100, 'Thất tịch không mưa ', '4c5435f1164e5ab53418c1f6161f4d7e.jpg'),
+(145, 101, 'Black Clover ', 'MV5BN2FlYjYxMTMtZGQzYy00OWU2LTkyYWMtNWJhODhm.jpg'),
+(146, 101, 'Black Clover ', 'MV5BMjU0MWMzNTctMjMQXVyMTEzMTI1Mjk3._V1_.jpg'),
+(147, 101, 'Black Clover ', 'Black_Clover,_volume_1.jpg'),
+(148, 102, '999 Lá Thư Gửi Cho Chính Mình ', '0dcc6e04aca0a78cda09a2d8b156dccb.jpg'),
+(149, 102, '999 Lá Thư Gửi Cho Chính Mình ', 'dabf4f944c5da6f3ba4e581dc5799ccf.jpg'),
+(150, 102, '999 Lá Thư Gửi Cho Chính Mình ', '6a31e0a4e3fa4337ad789961f9bcf6dc.jpg');
 
 -- --------------------------------------------------------
 
@@ -115,14 +272,27 @@ CREATE TABLE `hoadonchitiet` (
 CREATE TABLE `nguoidung` (
   `Id` int(5) NOT NULL,
   `HoVaTen` varchar(100) NOT NULL,
-  `Avatar` varchar(255) NOT NULL,
+  `Avatar` varchar(255) DEFAULT 'avartauser.png',
   `DiaChi` varchar(255) NOT NULL,
-  `Gmail` varchar(255) NOT NULL,
+  `Email` varchar(255) NOT NULL,
   `SDT` varchar(10) NOT NULL,
   `TaiKhoan` varchar(255) NOT NULL,
-  `MatKhau` varchar(255) NOT NULL,
+  `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
   `NgayTao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `nguoidung`
+--
+
+INSERT INTO `nguoidung` (`Id`, `HoVaTen`, `Avatar`, `DiaChi`, `Email`, `SDT`, `TaiKhoan`, `MatKhau`, `NgayTao`) VALUES
+(1, 'Trương Huỳnh Can', 'avarta1.png', 'gò vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'truonghuynhcan', 'a5651a5166d58a6cf6638d3ed685c87e', '2023-11-10'),
+(2, 'Trần Quốc Đạt', 'avarta1.png', 'gò vấp, TP HCM', 'quocdat100322@gmail.com', '0706740677', 'tranquocdat', '12345678', '2023-11-13'),
+(3, 'Văng Chí An', 'avarta1.png', 'gò vấp, TP HCM', 'anvcps31716@fpt.edu.vn', '0832447737', 'vangchian', '12345678', '2023-11-13'),
+(4, 'Trần Duy Cường', 'avarta1.png', 'gò vấp, TP HCM', 'cuongtdps36495@fpt.edu.vn', '0902139281', 'tranduycuong', '12345678', '2023-11-13'),
+(5, 'can', '', 'Gò Vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'huynhcan', '25f9e794323b453885f5181f1b624d0b', '2023-11-13'),
+(6, 'canthps36499', '', 'Gò Vấp, TP HCM', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps36499', '71819ac185fda42b492e1c1a1fcef86b', '2023-11-13'),
+(7, 'canthps', '', 'Gò Vấp, TP HCM', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps', 'e91f806a4683b2e5cbea2b69c1de06ac', '2023-11-13');
 
 -- --------------------------------------------------------
 
@@ -152,7 +322,7 @@ CREATE TABLE `sach` (
 --
 
 INSERT INTO `sach` (`Id`, `TenSach`, `NguoiDich`, `NamXuatBan`, `NhaXuatBan`, `SoLuongConHang`, `DonGia`, `GiamGia`, `LuotXem`, `NgayNhap`, `LuotBinhLuan`, `LuotMua`, `DanhGia`, `TrangThai`) VALUES
-(53, 'Sách - Hướng Dẫn Ôn Thi Hiệu Quả Môn Triết Học Mác - Lênin (Dùng Cho Sinh Viên Đại Học Không Chuyên Lí Luận Chính Trị)', 'không', 2021, 'NXB Đại Học Sư Phạm', 20, 122400.00, 15, 951, '2023-11-06', 13, 18, 4.00, b'1'),
+(53, 'Sách - Hướng Dẫn Ôn Thi Hiệu Quả Môn Triết Học Mác - Lênin (Dùng Cho Sinh Viên Đại Học Không Chuyên Lí Luận Chính Trị)', 'không', 2021, 'NXB Đại Học Sư Phạm', 20, 122400.00, 15, 951, '2023-11-06', 13, 18, 4.55, b'1'),
 (54, 'Sách - Sách Trắng - Công Nghệ Thông Tin Và Truyền Thông Việt Nam 2021', 'không', 2021, 'NXB Thông tin và Truyền thông', 30, 97200.00, 17, 747, '2023-11-06', 20, 62, 5.00, b'1'),
 (55, 'Sách - Giáo Trình Ngôn Ngữ C++', 'không', 2017, 'NXB Khoa học và Kỹ Thuật', 50, 120000.00, 27, 388, '2023-11-06', 10, 40, 3.00, b'1'),
 (56, 'Sách Mật mã và An toàn thông tin - Lý thuyết và Ứng dụng', 'không', 2018, 'nxbthongtinvatruyenthong', 150, 100100.00, 11, 835, '2023-11-06', 50, 60, 1.00, b'1'),
@@ -552,7 +722,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
@@ -570,7 +740,7 @@ ALTER TABLE `hoadonchitiet`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `sach`
