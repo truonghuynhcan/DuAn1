@@ -5,4 +5,5 @@
         $sql = "SELECT * FROM theloai ORDER BY Id DESC";
         return pdo_query( $sql );
     }
+    
 ?>
