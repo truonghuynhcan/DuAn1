@@ -4,36 +4,17 @@
             <div class="banner-top">
 
                 <div class="col-sm-3">
-                    <h3 class="banner-title">DANH MỤC</h3>
+                    <h3 class="banner-title">Thể loại</h3>
                     <div class="shop-category">
                         <ul class="category-menu">
-                            <li class="menu-item menu-item-has-children">
-                                <a href="#">Cameras & Photography</a>
-                                <ul>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">SLR Camera</a>
-                                        
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">SLR Camera (Body Only)</a>
-                                       
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">Compact Camera</a>
-                                       
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">Video Camera</a>
-                                        
-                                    </li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">Webcam</a>
-                                        
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="menu-item menu-item-has-children">
+                            <?php
+                                $dstheloai = catelogry_get();
+                                foreach ($dstheloai as $theloai): ?>
+                                <li class="menu-item ">
+                                    <a href="#" style="text-transform:capitalize;"><?=$theloai['TenTheLoai']?></a>
+                                </li>
+                            <?php endforeach;?>
+                            <!-- <li class="menu-item menu-item-has-children">
                                 <a href="#">Computer & Accessories</a>
                                 <ul>
                                     <li class="menu-item menu-item-has-children">
@@ -416,7 +397,7 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                         </ul>
                     </div><!-- /.shop-category -->
@@ -639,14 +620,15 @@
         <div class="container">
             <div class="row">
                 <div class="section-top">
-                    <h2 class="section-title">Featured<span></span></h2>
+                    <h2 class="section-title">Sách Nổi Bật<span></span></h2>
                 </div><!-- /.section-top -->
 
                 <ul class="filter">
-                    <li><a class="active" href="#" data-filter="*">All</a></li>
-                    <li><a href="#" data-filter=".cat-1">Laptop</a></li>
-                    <li><a href="#" data-filter=".cat-2">SmartPhone</a></li>
-                    <li><a href="#" data-filter=".cat-3">Gadgets</a></li>
+                    <!-- đổ dữ liệu thể loại -->
+                    <li><a class="active" href="#" data-filter="*">Tất cả</a></li>
+                    <li><a href="#" data-filter=".cat-1">Công nghệ thông tin</a></li>
+                    <li><a href="#" data-filter=".cat-2">Trinh thám</a></li>
+                    <li><a href="#" data-filter=".cat-3">Kĩ năng</a></li>
                 </ul>
 
                 <div class="featured-sorting">
@@ -939,7 +921,7 @@
 <section class="trending-03">
     <div class="section-padding">
         <div class="container">
-            <h2 class="section-title">Trending <span></span></h2><!-- /.section-title -->
+            <h2 class="section-title">Sách bán chạy <span></span></h2><!-- /.section-title -->
 
             <div class="section-details">
                 <div class="row">
@@ -1116,72 +1098,6 @@
 
 
 
-<section class="other-banners other-banners-09">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="item">
-                    <a href="#">
-                        <img src="layout/images/home08/others/4.jpg" alt="Banner Image">
-                        <div class="item-details">
-                            <h3 class="item-title text-center">
-                                <span>Up to 45% off</span> on iphone 6
-                            </h3><!-- /.item-title -->
-                        </div><!-- /.item-details -->
-                    </a>
-                </div><!-- /.item -->
-            </div>
-
-            <div class="col-sm-8">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="item">
-                            <a href="#">
-                                <img src="layout/images/home08/others/1.jpg" alt="Banner Image">
-                                <div class="item-details">
-                                    <h3 class="item-title">
-                                        <span>Microsoft</span> surface pro 3
-                                    </h3><!-- /.item-title -->
-                                </div><!-- /.item-details -->
-                            </a>
-                        </div><!-- /.item -->
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="item">
-                            <a href="#">
-                                <img src="layout/images/home08/others/2.jpg" alt="Banner Image">
-                                <div class="item-details">
-                                    <h3 class="item-title text-center">
-                                        <span>Stereo</span> headphone <span>collect now</span>
-                                    </h3><!-- /.item-title -->
-                                </div><!-- /.item-details -->
-                            </a>
-                        </div><!-- /.item -->
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="item">
-                            <a href="#">
-                                <img src="layout/images/home08/others/3.jpg" alt="Banner Image">
-                                <div class="item-details">
-                                    <h3 class="item-title">
-                                        <span>-50% discounts</span> on video cams
-                                    </h3><!-- /.item-title -->
-                                </div><!-- /.item-details -->
-                            </a>
-                        </div><!-- /.item -->
-                    </div>
-
-                </div>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.section-padding -->
-</section><!-- /.other-banners -->
-
-
-
-
 <section class="top-rated bg-gray text-center">
     <div class="section-padding">
         <div class="container">
@@ -1339,53 +1255,3 @@
         </div><!-- /.container -->
     </div><!-- /.section-padding -->
 </section><!-- /.top-rated -->
-
-
-
-
-<section class="clients-logo clients-logo-11 text-center">
-    <div class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="item"><a href="#"><img src="layout/images/brand/1.png" alt="Brand Logo"></a></div>
-                    <!-- /.item -->
-                </div>
-                <div class="col-sm-3">
-                    <div class="item"><a href="#"><img src="layout/images/brand/2.png" alt="Brand Logo"></a></div>
-                    <!-- /.item -->
-                </div>
-                <div class="col-sm-3">
-                    <div class="item"><a href="#"><img src="layout/images/brand/3.png" alt="Brand Logo"></a></div>
-                    <!-- /.item -->
-                </div>
-                <div class="col-sm-3">
-                    <div class="item"><a href="#"><img src="layout/images/brand/4.png" alt="Brand Logo"></a></div>
-                    <!-- /.item -->
-                </div>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.section-padding -->
-</section>
-
-
-
-<section class="subscribe-03 background-bg" data-image-src="layout/images/home07/subscribe.jpg">
-    <div class="container">
-        <div class="subscribe-details">
-            <div class="row">
-                <div class="col-sm-5">
-                    <div class="section-top">
-                        <h3 class="section-title">Stay up to date <span></span></h3><!-- /.section-title -->
-                    </div>
-                </div>
-                <div class="col-sm-7">
-                    <form class="subscribe-form" action="#">
-                        <input class="form-control" type="email" placeholder="myemail@email.com">
-                        <input class="btn btn-subscribe" type="submit" value="Subscribe">
-                    </form>
-                </div>
-            </div><!-- /.row -->
-        </div><!-- /.subscribe-details -->
-    </div><!-- /.section-padding -->
-</section>

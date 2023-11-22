@@ -29,11 +29,13 @@
 	z-index: 1;
 }
 .banner-11 .category-menu {
-	height: initial;
+	height: auto;
+	max-height: 540px;
 	margin-bottom: 0;
 	padding: 0;
 	position: static;
 	width: 100%;
+	overflow-y: auto;
 }
 .banner-11 .category-menu> li:last-child {
 	border-bottom: none;

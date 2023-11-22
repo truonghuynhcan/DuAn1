@@ -2,10 +2,13 @@
 session_start();
 include("model/pdo.php");
 include("model/user.php");
-
+include("model/m_book.php");
 
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
+        case 'home':
+            $content = "home";
+            break;
         case 'login':
             if (isset($_POST['wp-submit'])) {
                 // xác định giá trị đầu vào
