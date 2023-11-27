@@ -6,6 +6,9 @@ include("model/m_book.php");
 
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
+        case 'about':
+            $content = "about";
+            break;
         case 'home':
             $content = "home";
             break;

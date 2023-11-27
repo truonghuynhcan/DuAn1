@@ -28,12 +28,17 @@
     <?php
         if (isset($_GET['pg'])) {
             switch ($_GET['pg']) {
+                case 'about':
+                    $css = "pages/about-01.css";
+                    break;
                 case 'login':
                 case 'forgotpassword':
                 case 'register':
                     $css = "pages/register.css";
                     break;
-                    
+                case 'detail':
+                    $css = "shop/shop-details.css";
+                    break;
                 default:
                     $css = "home/home-11.css";
             }
@@ -343,9 +348,9 @@
                             </ul>
                         </li>
 
-                        <!-- Portfolio -->
+                        <!-- Giới thiệu -->
                         <li class="menu-item menu-item-has-children">
-                            <a href="#">Portfolio</a>
+                            <a href="index.php?pg=about">Giới thiệu</a>
                             <ul class="sub-menu">
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#">Grid 2 Column</a>
