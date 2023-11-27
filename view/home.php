@@ -645,7 +645,7 @@
                                 <button class="wish-list"><i class="fa fa-heart"></i></button>
                             </div><!-- /.buttons -->
 
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
+                            <h3 class="item-title"><a href="index.php?pg=detail">Product name here</a></h3><!-- /.item-title -->
                             <div class="item-price">
                                 <span class="currency">$</span>
                                 <span class="price">49.00</span>

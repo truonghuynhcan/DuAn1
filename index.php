@@ -70,6 +70,9 @@ if (isset($_GET['pg'])) {
             }
             $content = "register";
             break;
+            case 'detail':
+                $content ='detail';
+                break;
         default:
             $content = "home";
     }
