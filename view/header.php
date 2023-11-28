@@ -28,6 +28,9 @@
     <?php
         if (isset($_GET['pg'])) {
             switch ($_GET['pg']) {
+                case 'my-profile':
+                    $css = "user/my-profile.css";
+                    break;
                 case 'about':
                     $css = "pages/about-01.css";
                     break;
@@ -98,7 +101,7 @@
                                     echo '
                                         <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
-                                            <li><a href="#">Cá Nhân</a></li>
+                                            <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
                                             <li><a href="#">Yêu Thích</a></li>
                                             <li><a href="cart.html">Giỏ Hàng</a></li>
                                             <li><a href="checkout.html">Thanh toán</a></li>

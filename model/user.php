@@ -117,10 +117,10 @@ function guimatkhaumoi($taikhoan ,$email, $matkhaumoi){
         echo 'Error: ', $mail->ErrorInfo;
     }
 }
-function get_user($id){
-    $sql="Select * from user where id=? ";
-    return pdo_query_one($sql, $id);
-}
+// function get_user($id){
+//     $sql="Select * from user where id=? ";
+//     return pdo_query_one($sql, $id);
+// }
 
 // function user_update($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro){
 //     $sql = "UPDATE user SET mat_khau=?,ho_ten=?,email=?,hinh=?,kich_hoat=?,vai_tro=? WHERE ma_kh=?";

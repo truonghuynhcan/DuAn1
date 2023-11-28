@@ -6,6 +6,9 @@ include("model/m_book.php");
 
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
+        case 'my-profile':
+            $content = "my-profile";       
+            break;
         case 'about':
             $content = "about";
             break;
@@ -22,7 +25,7 @@ if (isset($_GET['pg'])) {
                 $user_info = checkuser($username, $password);
                 if (is_array($user_info) && $user_info != " ") {
                     $_SESSION['user'] = $user_info;
-                    header('location: index.php');
+                    header('location: index.php?pg=home');
                     exit();
                 } else {
                     $tb = "Tài khoản không tồn tại";
