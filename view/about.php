@@ -2,20 +2,20 @@
 <section class="page-name-sec page-name-sec-01">
     <div class="section-padding">
       <div class="container">
-        <h3 class="page-title">About us</h3><!-- /.page-title -->
+        <h3 class="page-title">Giới Thiệu Về Cửa Hàng</h3><!-- /.page-title -->
 
         <div class="row">
           <div class="col-sm-7">
             <p class="description">
-              Duis sed odio sit amet nibh vulputate cursus a sit amet. 
+                THÔNG TIN GIỚI THIỆU VỀ CỬA HÀNG GALAXYBOOK. 
             </p><!-- /.description -->
           </div>
 
           <div class="col-sm-5">
             <ol class="breadcrumb text-right">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Pages</a></li>
-              <li class="active">About</li>
+              <li><a href="#">Trang Chủ</a></li>
+              <li><a href="#">Liên Hệ</a></li>
+              <li class="active">Về Chúng Tôi</li>
             </ol><!-- /.breadcrumb -->
           </div>
 
@@ -30,39 +30,40 @@
     <div class="section-padding">
       <div class="container">
         <div class="section-top">
-          <h3 class="section-title">Welcome to Shopaholic <span></span></h3><!-- /.section-title -->
+          <h3 class="section-title">Chào mừng đến với GalaxyBook <span></span></h3><!-- /.section-title -->
         </div><!-- /.section-top -->
         <p class="section-description">
-          There was a tray of drinks on a table beside him, from which he filled himself a stiff whisky and soda. He drank it off in three gulps, and cracked the glass as he set it down.
+        Để xây dựng Thương hiệu mạnh, một trong những định hướng quan trọng của GALAXYBOOK là chiến lược phát triển nguồn nhân lực - mấu chốt của mọi sự thành công.
         </p><!-- /.section-description -->
 
         <div class="section-details text-left">
           <div class="row">
             <div class="col-md-6">
-              <img src="images/about/1.jpg" alt="Image">
+              <img src="layout/images/logoGalaxyBook.png" alt="Image">
             </div>
 
             <div class="col-md-6">
               <h4 class="sub-title">
-                We give you the endless possibilities to express yourself to the world
+              Chúng tôi mang đến cho bạn khả năng vô tận để thể hiện bản thân
               </h4><!-- /.title -->
 
               <p class="description">
-                This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. 
+              Kết hợp tuyển dụng nguồn nhân lực đầu vào có chất lượng và kế hoạch GalaxyBook đặc biệt quan tâm và tạo điều kiện triển khai thực hiện. 
                 <br>
                 <br>
-                Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. 
+                Cửa hàng GalaxyBook chuyên kinh doanh: sách quốc văn, ngoại văn, văn hóa phẩm, văn phòng phẩm, dụng cụ học tập, quà lưu niệm… 
+                Nhà sách GalaxyBook còn kinh doanh các mặt hàng siêu thị như: hàng tiêu dùng, hàng tiêu dùng… 
               </p><!-- /.description -->
 
               <ul>
                 <li>
-                  Intrinsicly communicate error-free.
+                Khám phá tri thức, mở cánh cửa trí tuệ với sách.
                 </li>
                 <li>
-                  Energistically customize performance based architectures.
+                Chìa khóa sáng tạo, mở ra thế giới qua sách.
                 </li>
                 <li>
-                  Seamlessly actualize top-line e-commerce whereas.
+                Vươn tầm tri thức, cùng sách truyền cảm hứng.
                 </li>
               </ul>
             </div>
@@ -87,11 +88,11 @@
 
                 <div class="media-body">
                   <div class="count-inner">
-                    <span class="count-number counter">264</span>
+                    <span class="count-number counter">208</span>
                     <span class="count">K+</span>
                   </div><!-- /.count-inner -->
                   <span class="fact-title">
-                    Products available
+                        Sản phẩm
                   </span><!-- /.fact-title -->
                 </div>
               </div><!-- /.fact-item -->
@@ -109,7 +110,7 @@
                     <span class="count">+</span>
                   </div><!-- /.count-inner -->
                   <span class="fact-title">
-                    Happy customers
+                        Khách hàng
                   </span><!-- /.fact-title -->
                 </div>
               </div><!-- /.fact-item -->
@@ -127,7 +128,7 @@
                     <span class="count">K+</span>
                   </div><!-- /.count-inner -->
                   <span class="fact-title">
-                    Items delivered
+                    Hàng được giao
                   </span><!-- /.fact-title -->
                 </div>
               </div><!-- /.fact-item -->
@@ -141,10 +142,10 @@
 
                 <div class="media-body">
                   <div class="count-inner">
-                    <span class="count-number counter">102</span>
+                    <span class="count-number counter">100</span>
                   </div><!-- /.count-inner -->
                   <span class="fact-title">
-                    Awards achieved
+                    Giải thưởng đạt được
                   </span><!-- /.fact-title -->
                 </div><!-- /.fact-item -->
               </div>         
@@ -161,10 +162,10 @@
     <div class="section-padding">
       <div class="container">
         <div class="section-top">
-          <h3 class="section-title">Our excellent team <span></span></h3><!-- /.section-title -->
+          <h3 class="section-title">Những Thành Viên trong cửa hàng <span></span></h3><!-- /.section-title -->
         </div><!-- /.section-top -->
         <p class="section-description">
-          A smile flickered drawn over his face, 'I'm not mad yet and I've been watching you and you're a cool customer reckonthat too also you're an honest man and afraid not play to bold hand
+        Một nụ cười thoáng qua trên khuôn mặt ta, Tôi chưa nổi điên và tôi đã theo dõi bạn và bạn là một khách hàng tuyệt vời cho rằng bạn cũng là một người đàn ông trung thực và sợ không chơi liều lĩnh
         </p><!-- /.section-description -->
 
         <div class="section-details text-center">
@@ -342,7 +343,7 @@
           <div class="item active">
             <div class="client-avatar"><img class="img-circle" src="images/about/avatar.png" alt="Client-avatar"></div><!-- /.client-avatar -->
             <p class="description">
-              He seemed to brace himself for a great effort, and then started on the queerest rigmarole. I didn't get hold of it at first, and I had to stop and ask him questions
+            Anh ta dường như đã chuẩn bị tinh thần cho một nỗ lực lớn, và sau đó bắt đầu với sự cứng nhắc nhất. Lúc đầu tôi không nắm bắt được nó, và tôi phải dừng lại và đặt câu hỏi cho anh ấy
             </p><!-- /.description -->
             <div class="client-details">
               <span class="name">Randy Dixon</span><!-- /.name -->
@@ -353,7 +354,7 @@
           <div class="item">
             <div class="client-avatar"><img class="img-circle" src="images/about/avatar.png" alt="Client-avatar"></div><!-- /.client-avatar -->
             <p class="description">
-              He was an American and started to see the world. He wrote a bit, and acted as war correspondent for a Chicago paper, and spent a year or two in South-Eastern Europe.
+            Ông là một người Mỹ và bắt đầu nhìn thế giới. Ông viết một chút, và làm phóng viên chiến trường cho một tờ báo ở Chicago, và dành một hoặc hai năm ở Đông Nam Âu.
             </p><!-- /.description -->
             <div class="client-details">
               <span class="name">Charles Woods</span><!-- /.name -->
@@ -364,7 +365,7 @@
           <div class="item">
             <div class="client-avatar"><img class="img-circle" src="images/about/avatar.png" alt="Client-avatar"></div><!-- /.client-avatar -->
             <p class="description">
-              He had played about with politics, he told me, at first for the interest of them, and then because he couldn't help himself. I read him as a sharp, restless fellow
+            Anh ấy đã chơi đùa với chính trị, anh ấy nói với tôi, lúc đầu vì lợi ích của họ, và sau đó vì anh ấy không thể tự giúp mình. Tôi đọc anh ta như một người sắc sảo, bồn chồn
             </p><!-- /.description -->
             <div class="client-details">
               <span class="name">Brenda Rogers</span><!-- /.name -->
@@ -382,13 +383,11 @@
     <div class="section-padding">
       <div class="container">
         <div class="section-top">
-          <h2 class="section-title">More about us<span></span></h2><!-- /.section-title -->
+          <h2 class="section-title">Tìm hiểu thêm về chúng tôi<span></span></h2><!-- /.section-title -->
         </div><!-- /.section-top -->
 
         <p class="section-description">
-          I am giving you what he told me as well as I could make it out. Away behind all the Governments and the armies there was a big subterranean movement going on, engineered by very dangerous people. He had come on it by accident
-        </p><!-- /.description -->
-
+        SỨ MỆNH CỦA GalaxyBook: “MANG TRI THỨC, VĂN HÓA ĐỌC ĐẾN VỚI MỌI NHÀ”!
         <div class="section-details text-left">
           <div class="row">
             <div class="col-md-6">

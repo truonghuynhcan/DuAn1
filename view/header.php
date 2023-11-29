@@ -355,46 +355,12 @@
                         <li class="menu-item menu-item-has-children">
                             <a href="index.php?pg=about">Giới thiệu</a>
                             <ul class="sub-menu">
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Grid 2 Column</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="portfolio-grid-2column-01.html">2 Column 01</a></li>
-                                        <li><a href="portfolio-grid-2column-02.html">2 Column 02</a></li>
-                                    </ul>
+                                <li class="menu-item">
+                                    <a href="index.php?pg=about">Về chúng tôi</a>
                                 </li>
 
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Grid 3 Column</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="portfolio-grid-3column.html">3 Column 01</a></li>
-                                        <li><a href="portfolio-grid-3column-02.html">3 Column 02</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Grid 4 Column</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="portfolio-grid-4column.html">4 Column 01</a></li>
-                                        <li><a href="portfolio-grid-4column-02.html">4 Column 02</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Masonry 3 Column</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="portfolio-masonry-3column.html">3 Column 01</a></li>
-                                        <li><a href="portfolio-masonry-3column-02.html">3 Column 02</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="portfolio-list.html">List Style</a></li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Portfolio Detail</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="portfolio-details.html">Details 01</a></li>
-                                        <li><a href="portfolio-details-02.html">Details 02</a></li>
-                                    </ul>
+                                <li class="menu-item">
+                                    <a href="#">Liên hệ</a>
                                 </li>
                             </ul>
                         </li>

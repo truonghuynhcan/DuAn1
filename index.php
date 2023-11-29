@@ -7,7 +7,20 @@ include("model/m_book.php");
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
         case 'my-profile':
-            $content = "my-profile";       
+            if(isset($_FILES['avatar'])){
+                $newAvatar = $_FILES['avatar']['name'];
+                update_avatar($_SESSION['user']['Id'], $newAvatar);
+                $_SESSION['user']['Avatar'] = $newAvatar;
+            }
+            if(isset($_POST['update--info'])){
+                $newName = $_POST['name'];
+
+                update_user_name($_SESSION['user']['TaiKhoan'], $newName);
+
+                // Cập nhật thông tin trong SESSION
+                $_SESSION['user']['HoVaTen'] = $newName;
+            }
+            $content = "my-profile";    
             break;
         case 'about':
             $content = "about";

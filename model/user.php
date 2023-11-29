@@ -1,6 +1,19 @@
 <?php
 require_once 'pdo.php';
 
+function update_avatar($Id, $newAvatar){
+    $sql = "UPDATE nguoidung SET Avatar = ? WHERE Id = ?";
+    pdo_execute($sql, $newAvatar, $Id);
+    return true;
+}
+
+function update_user_name($taikhoan, $newName){
+    $sql = "UPDATE nguoidung SET HoVaTen = ? WHERE TaiKhoan = ?";
+    pdo_execute($sql, $newName, $taikhoan);
+    return true;
+}
+
+
 // function user_insert($username, $password, $email){
 //     $sql = "INSERT INTO user(username, password, email) VALUES (?, ?, ?)";
 //     return pdo_execute_returnid($sql, $username, $password, $email);
