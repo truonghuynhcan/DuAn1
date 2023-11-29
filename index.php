@@ -22,6 +22,9 @@ if (isset($_GET['pg'])) {
             }
             $content = "my-profile";    
             break;
+        case 'connect':
+            $content = "connect";
+            break;
         case 'about':
             $content = "about";
             break;

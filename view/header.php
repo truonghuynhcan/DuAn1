@@ -31,6 +31,9 @@
                 case 'my-profile':
                     $css = "user/my-profile.css";
                     break;
+                case 'connect':
+                    $css = "pages/service.css";
+                    break;
                 case 'about':
                     $css = "pages/about-01.css";
                     break;
@@ -360,7 +363,7 @@
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="#">Liên hệ</a>
+                                    <a href="index.php?pg=connect">Liên hệ</a>
                                 </li>
                             </ul>
                         </li>
