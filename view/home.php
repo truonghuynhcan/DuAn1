@@ -40,13 +40,13 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <img class="banner-image" src="layout/images/home11/slider/phones.png" alt="Slider Image">
+                                    <img class="banner-image" src="upload/web/banner/banner1.jpg" alt="Slider Image">
                                 </div>
                             </div><!-- /.item -->
 
                             <div class="item">
                                 <div class="col-sm-6">
-                                    <img class="banner-image" src="layout/images/home11/slider/phone2.png" alt="Slider Image">
+                                    <img class="banner-image" src="upload/web/banner/banner2.jpg" alt="Slider Image">
                                 </div>
 
                                 <div class="col-sm-6">
@@ -70,7 +70,7 @@
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <img class="banner-image" src="layout/images/home11/slider/phone3.png" alt="Slider Image">
+                                    <img class="banner-image" src="upload/web/banner/banner3.jpg" alt="Slider Image" height="100%">
                                 </div>
                             </div><!-- /.item -->
                         </div>
@@ -92,7 +92,7 @@
                                 <div class="product-item">
                                     <div class="item-thumbnail">
                                         <img src="layout/images/home11/slider/2.jpg" alt="Item Thumbnail">
-                                        <div class="add-cart"><a href="#" class="btn">Add to cart</a></div>
+                                        <div class="add-cart"><a href="#" class="btn">Thêm vào giỏ</a></div>
                                         <!-- /.add-cart -->
                                     </div><!-- /.item-thumbnail -->
 
@@ -238,218 +238,53 @@
                     <h2 class="section-title">Sách Nổi Bật<span></span></h2>
                 </div><!-- /.section-top -->
 
-                <ul class="filter">
-                    <!-- đổ dữ liệu thể loại -->
+                <!-- đổ dữ liệu thể loại -->
+                <!-- <ul class="filter">
                     <li><a class="active" href="#" data-filter="*">Tất cả</a></li>
                     <li><a href="#" data-filter=".cat-1">Công nghệ thông tin</a></li>
                     <li><a href="#" data-filter=".cat-2">Trinh thám</a></li>
                     <li><a href="#" data-filter=".cat-3">Kĩ năng</a></li>
-                </ul>
+                </ul> -->
 
                 <div class="featured-sorting">
+                <?php
+                    $dsnoibat = ds_getNew(8);
+                    foreach ($dsnoibat as $noibat): ?>
                     <div class="item col-md-3 col-sm-4 cat-1 cat-2">
-                        <div class="item-thumbnail">
+                        <?php 
+                        $anh = anh_getHot($noibat['Id']);
+                        $src = 'upload/sach/'.$anh['DuongDan'];
+                        $alt = $anh['TenAnh'];
+                        ?>
+                        <div class="item-thumbnail" style="width: 16.4rem; height:17.6rem; overflow: hidden;">
                             <a class="fancybox" href="images/home08/featured/1.jpg">
-                                <img src="layout/images/home08/featured/1.jpg" alt="Item Thumbnail">
+                                <img src="<?=$src?>" alt="<?=$alt?>" height="100%">
                             </a>
                         </div><!-- /.item-thumbnail -->
 
                         <div class="item-content">
+                        
                             <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
+                                <button class="add-to-cart">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
                                 <button class="wish-list"><i class="fa fa-heart"></i></button>
                             </div><!-- /.buttons -->
 
-                            <h3 class="item-title"><a href="index.php?pg=detail">Product name here</a></h3><!-- /.item-title -->
+                            <h3 class="item-title"><a href="index.php?pg=detail&id_sach=<?=$noibat['Id']?>"><?=$noibat['TenSach']?></a></h3><!-- /.item-title -->
                             <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
+                                <span class="currency"></span>
+                                <span class="price"><?=$noibat['DonGia']?></span>
                             </div><!-- /.item-price -->
 
                             <div class="rating"><input type="hidden" class="rating-tooltip-manual"
                                     data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
                             <!-- /.rating -->
+                            
                         </div><!-- /.item-content -->
+                      
                     </div><!-- /.item -->
+                    <?php endforeach;?>
 
-                    <div class="item col-md-3 col-sm-4 cat-3">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/2.jpg">
-                                <img src="layout/images/home08/featured/2.jpg" alt="Item Thumbnail">
-                            </a>
-                            <span class="ribbon sale">-35%</span>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
-
-                    <div class="item col-md-3 col-sm-4 cat-2">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/3.jpg">
-                                <img src="layout/images/home08/featured/3.jpg" alt="Item Thumbnail">
-                            </a>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
-
-                    <div class="item col-md-3 col-sm-4 cat-1 cat-3">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/4.jpg">
-                                <img src="layout/images/home08/featured/4.jpg" alt="Item Thumbnail">
-                            </a>
-                            <span class="ribbon sale">-35%</span>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
-
-                    <div class="item col-md-3 col-sm-4 cat-3">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/5.jpg">
-                                <img src="layout/images/home08/featured/5.jpg" alt="Item Thumbnail">
-                            </a>
-                            <span class="ribbon sale">-35%</span>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
-
-                    <div class="item col-md-3 col-sm-4 cat-1 cat-2">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/6.jpg">
-                                <img src="layout/images/home08/featured/6.jpg" alt="Item Thumbnail">
-                            </a>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
-
-                    <div class="item col-md-3 col-sm-4 cat-1 cat-3">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/7.jpg">
-                                <img src="layout/images/home08/featured/7.jpg" alt="Item Thumbnail">
-                            </a>
-                            <span class="ribbon sale">-35%</span>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
-
-                    <div class="item col-md-3 col-sm-4 cat-2">
-                        <div class="item-thumbnail">
-                            <a class="fancybox" href="images/home08/featured/8.jpg">
-                                <img src="layout/images/home08/featured/8.jpg" alt="Item Thumbnail">
-                            </a>
-                        </div><!-- /.item-thumbnail -->
-
-                        <div class="item-content">
-                            <div class="buttons">
-                                <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                <button class="wish-list"><i class="fa fa-heart"></i></button>
-                            </div><!-- /.buttons -->
-
-                            <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                            <div class="item-price">
-                                <span class="currency">$</span>
-                                <span class="price">49.00</span>
-                            </div><!-- /.item-price -->
-
-                            <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                    data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                            <!-- /.rating -->
-                        </div><!-- /.item-content -->
-                    </div><!-- /.item -->
+                
 
                 </div><!-- /.featured-sorting -->
             </div><!-- /.row -->
@@ -458,250 +293,41 @@
 </section><!-- /.featured -->
 
 
-
-
-<section class="deal background-bg text-center" data-image-src="layout/images/home11/deal.jpg">
-    <div class="section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-6">
-                    <div class="discount">
-                        <img src="layout/images/home11/tab.png" alt="Tab Image">
-                        <span>-70%</span>
-                    </div><!-- /.discount -->
-                </div>
-
-                <div class="col-md-5 col-sm-6">
-                    <h2 class="title">Awesome Deal</h2><!-- /.title -->
-                    <h3 class="sub-title">Buy Surface Pro 3! Hurry!</h3><!-- /.sub-title -->
-                    <div id="time_countdown1" class="time-count-container">
-
-                        <div class="time-box">
-                            <div class="time-box-inner dash days_dash">
-                                <span class="time-number">
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                </span><!-- /.time-number -->
-                                <span class="time-name">Days</span>
-                            </div><!-- /.time-box-inner -->
-                        </div><!-- /.time-box -->
-
-                        <div class="time-box">
-                            <div class="time-box-inner dash hours_dash">
-                                <span class="time-number">
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                </span><!-- /.time-number -->
-                                <span class="time-name">Hours</span>
-                            </div><!-- /.time-box-inner -->
-                        </div><!-- /.time-box -->
-
-                        <div class="time-box">
-                            <div class="time-box-inner dash minutes_dash">
-                                <span class="time-number">
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                </span><!-- /.time-number -->
-                                <span class="time-name">Mins</span>
-                            </div><!-- /.time-box-inner -->
-                        </div><!-- /.time-box -->
-
-                        <div class="time-box">
-                            <div class="time-box-inner dash seconds_dash">
-                                <span class="time-number">
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                    <span class="digit">0</span>
-                                </span><!-- /.time-number -->
-                                <span class="time-name">Sec</span>
-                            </div><!-- /.time-box-inner -->
-                        </div><!-- /.time-box -->
-
-                    </div><!-- /#time_countdown -->
-
-                    <a class="btn" href="#">Shop now</a>
-                </div>
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.section-padding -->
-</section><!-- /.deal -->
-
-
-
-
-
 <section class="trending-03">
     <div class="section-padding">
         <div class="container">
             <h2 class="section-title">Sách bán chạy <span></span></h2><!-- /.section-title -->
-
+            
             <div class="section-details">
                 <div class="row">
                     <div class="trending-slider-03 text-center">
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/2.jpg"><img
-                                        src="layout/images/home08/featured/2.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/3.jpg"><img
-                                        src="layout/images/home08/featured/3.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/4.jpg"><img
-                                        src="layout/images/home08/featured/4.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/5.jpg"><img
-                                        src="layout/images/home08/featured/5.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/6.jpg"><img
-                                        src="layout/images/home08/featured/6.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/7.jpg"><img
-                                        src="layout/images/home08/featured/7.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/8.jpg"><img
-                                        src="layout/images/home08/featured/8.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumbnail"><a class="fancybox" href="images/home08/featured/9.jpg"><img
-                                        src="layout/images/home08/featured/9.jpg" alt="Item Thumbnail"></a></div>
-                            <!-- /.item-thumbnail -->
-                            <div class="item-content">
-                                <div class="buttons">
-                                    <button class="add-to-cart">Add to cart<i class="fa fa-shopping-cart"></i></button>
-                                    <button class="wish-list"><i class="fa fa-heart"></i></button>
-                                </div><!-- /.buttons -->
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="item-price">
-                                    <span class="currency">$</span>
-                                    <span class="price">49.00</span>
-                                </div><!-- /.item-price -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                            </div><!-- /.item-content -->
-                        </div><!-- /.item -->
-
+                        <?php
+                            $dsbanchay = ds_getHots(6);
+                            foreach ($dsbanchay as $banchay): ?>
+                                <?php
+                                    $anh = anh_getHot($banchay['Id']);
+                                ?>
+                                <div class="item">
+                                    <div class="item-thumbnail"style="width: 16.4rem; height:17.6rem; overflow: hidden;">
+                                    <a class="fancybox" href="images/home08/featured/2.jpg">
+                                        <img src="upload/sach/<?=$anh['DuongDan']?>" alt="<?=$anh['TenAnh']?>" height:100%></a></div>
+                                    <!-- /.item-thumbnail -->
+                                    <div class="item-content">
+                                        <div class="buttons">
+                                            <button class="add-to-cart">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
+                                            <button class="wish-list"><i class="fa fa-heart"></i></button>
+                                        </div><!-- /.buttons -->
+                                        <h3 class="item-title"><a href="index.php?pg=detail&id_sach=<?=$banchay['Id']?>"><?=$banchay['TenSach']?></a></h3><!-- /.item-title -->
+                                        <div class="item-price">
+                                            <span class="currency">$</span>
+                                            <span class="price"><?=$banchay['DonGia']?></span>
+                                        </div><!-- /.item-price -->
+                                        <div class="rating"><input type="hidden" class="rating-tooltip-manual"
+                                                data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
+                                        <!-- /.rating -->
+                                    </div><!-- /.item-content -->
+                                </div><!-- /.item -->
+                            <?php endforeach;?>
 
                     </div><!-- /.trending-slider -->
                 </div><!-- /.row -->
@@ -709,164 +335,3 @@
         </div><!-- /.container -->
     </div><!-- /.section-padding -->
 </section><!-- /.trending -->
-
-
-
-
-<section class="top-rated bg-gray text-center">
-    <div class="section-padding">
-        <div class="container">
-            <div class="section-top">
-                <h2 class="section-title">Top rated<span></span></h2><!-- /.section-title -->
-            </div><!-- /.section-top -->
-
-            <div class="row">
-                <div class="top-rated-slider owl-carousel owl-theme">
-
-                    <div class="item">
-                        <div class="col-md-6">
-                            <div class="item-thumbnail">
-                                <img src="layout/images/home11/rated/1.jpg" alt="Item Thumbnail">
-                                <span class="ribbon sale">Sale</span><!-- /.ribbon -->
-
-                                <div class="item-inner">
-                                    <button class="wish-list"><i class="fa fa-heart"></i><span>Add to wishlist
-                                        </span></button>
-                                    <a class="fancybox" href="images/home11/rated/1.jpg"><i class="fa fa-search"></i>
-                                        <span> Quick View</span></a>
-                                </div><!-- /.item-inner -->
-                            </div><!-- /.item-thumbnail -->
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                                <div class="item-price">
-                                    <span class="currency">$</span><!-- /.currency -->
-                                    <span class="price">88.00</span><!-- /.price -->
-                                </div><!-- /.item-price -->
-
-                                <div class="previous-price"><span class="currency">$</span><span
-                                        class="price">99.00</span></div><!-- /.previous-price -->
-                                <p class="description">
-                                    I returned from the City about three o'clock on that May pretty well
-                                </p><!-- /.description -->
-                                <a href="#" class="btn">Add to cart</a><!-- /.btn -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="col-md-6">
-                            <div class="item-thumbnail">
-                                <img src="layout/images/home11/rated/2.jpg" alt="Item Thumbnail">
-                                <span class="ribbon sale">Sale</span><!-- /.ribbon -->
-                                <div class="item-inner">
-                                    <button class="wish-list"><i class="fa fa-heart"></i><span>Add to wishlist
-                                        </span></button>
-                                    <a class="fancybox" href="images/home11/rated/2.jpg"><i class="fa fa-search"></i>
-                                        <span> Quick View</span></a>
-                                </div><!-- /.item-inner -->
-                            </div><!-- /.item-thumbnail -->
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                                <div class="item-price">
-                                    <span class="currency">$</span><!-- /.currency -->
-                                    <span class="price">88.00</span><!-- /.price -->
-                                </div><!-- /.item-price -->
-
-                                <div class="previous-price"><span class="currency">$</span><span
-                                        class="price">99.00</span></div><!-- /.previous-price -->
-                                <p class="description">
-                                    had been three months in the Old Country, and was fed up with it
-                                </p><!-- /.description -->
-                                <a href="#" class="btn">Add to cart</a><!-- /.btn -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="col-md-6">
-                            <div class="item-thumbnail">
-                                <img src="layout/images/home11/rated/3.jpg" alt="Item Thumbnail">
-                                <span class="ribbon sale">Sale</span><!-- /.ribbon -->
-                                <div class="item-inner">
-                                    <button class="wish-list"><i class="fa fa-heart"></i><span>Add to wishlist
-                                        </span></button>
-                                    <a class="fancybox" href="images/home11/rated/3.jpg"><i class="fa fa-search"></i>
-                                        <span> Quick View</span></a>
-                                </div><!-- /.item-inner -->
-                            </div><!-- /.item-thumbnail -->
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                                <div class="item-price">
-                                    <span class="currency">$</span><!-- /.currency -->
-                                    <span class="price">88.00</span><!-- /.price -->
-                                </div><!-- /.item-price -->
-
-                                <div class="previous-price"><span class="currency">$</span><span
-                                        class="price">99.00</span></div><!-- /.previous-price -->
-                                <p class="description">
-                                    The weather made me liverish, the talk of the ordinary Englishman made sick
-                                </p><!-- /.description -->
-                                <a href="#" class="btn">Add to cart</a><!-- /.btn -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="col-md-6">
-                            <div class="item-thumbnail">
-                                <img src="layout/images/home11/rated/4.jpg" alt="Item Thumbnail">
-                                <span class="ribbon sale">Sale</span><!-- /.ribbon -->
-
-                                <div class="item-inner">
-                                    <button class="wish-list"><i class="fa fa-heart"></i><span>Add to wishlist
-                                        </span></button>
-                                    <a class="fancybox" href="images/home11/rated/4.jpg"><i class="fa fa-search"></i>
-                                        <span> Quick View</span></a>
-                                </div><!-- /.item-inner -->
-                            </div><!-- /.item-thumbnail -->
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="#">Product name here</a></h3><!-- /.item-title -->
-                                <div class="rating"><input type="hidden" class="rating-tooltip-manual"
-                                        data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5" /></div>
-                                <!-- /.rating -->
-                                <div class="item-price">
-                                    <span class="currency">$</span><!-- /.currency -->
-                                    <span class="price">88.00</span><!-- /.price -->
-                                </div><!-- /.item-price -->
-
-                                <div class="previous-price"><span class="currency">$</span><span
-                                        class="price">99.00</span></div><!-- /.previous-price -->
-                                <p class="description">
-                                    It made me bite my lips to think of the plans I had been building up those
-                                </p><!-- /.description -->
-                                <a href="#" class="btn">Add to cart</a><!-- /.btn -->
-                            </div>
-                        </div>
-                    </div>
-
-                </div><!-- /.top-rated-slider -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.section-padding -->
-</section><!-- /.top-rated -->

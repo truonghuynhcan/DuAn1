@@ -6,6 +6,9 @@ include("model/m_book.php");
 
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
+        case 'detail':
+            $content = "detail";
+            break;
         case 'my-profile':
             if(isset($_FILES['avatar'])){
                 $newAvatar = $_FILES['avatar']['name'];

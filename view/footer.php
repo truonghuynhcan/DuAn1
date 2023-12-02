@@ -3,58 +3,56 @@
         <div class="section-padding">
             <div class="container">
                 <div class="row">
-
                     <div class="col-md-4 col-sm-6">
                         <div class="widget widget_about_us">
                             <a class="footer-logo" href="#"><img src="layout/images/logoGalaxyBook.png" alt="Logo"
                                     style="filter: grayscale(100%);"></a>
                             <div class="widget-details">
                                 <p class="description">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                Đừng tức giận với nỗi đau trong sự khiển trách trong niềm vui mà anh ấy muốn được thoát khỏi nỗi đau với hy vọng rằng không có sự sinh sản. Ngoại trừ việc họ không bị dục vọng làm mờ mắt
                                 </p><!-- /.description -->
                                 <address>
-                                    121 King Street, Melbourne VIC 3000, Australia
+                                121 Phố King, Melbourne VIC 3000, Úc
                                 </address>
                                 <span>+61 3 8376 6284</span>
-                                <span><a href="#">support@shopaholic.com</a></span>
+                                <span><a href="#">galaxybook@gmail.com</a></span>
                             </div><!-- /.widget-details -->
                         </div><!-- /.widget -->
                     </div>
 
                     <div class="col-md-2 col-sm-6">
                         <div class="widget widget_useful_links">
-                            <h4 class="widget-title">Useful links</h4>
+                            <h4 class="widget-title">LIÊN KẾT HỮU ÍCH</h4>
                             <div class="widget-details">
-                                <span><i class="ti-control-record"></i><a href="#">About us</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Customer service</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">New Collection</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Best Sellers</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Manufacturers</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Privacy policy</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Terms & condition</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Về chúng tôi</a></span>                  
+                                <span><i class="ti-control-record"></i><a href="#">Dịch vụ khách hàng</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Bộ sưu tập mới</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Bán chạy nhất</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Nhà sản xuất của</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Chính sách bảo mật</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Điều khoản & điều kiện</a></span>
                             </div><!-- /.widget-details -->
                         </div><!-- /.widget -->
                     </div>
 
                     <div class="col-md-2 col-sm-6">
                         <div class="widget widget_shop_links">
-                            <h4 class="widget-title">Shops</h4>
+                            <h4 class="widget-title">CỬA HÀNG</h4>
                             <div class="widget-details">
-                                <span><i class="ti-control-record"></i><a href="#">Trending Now</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Women</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Men</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Kids</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Accessories</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Top brands</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Shoes</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Đang là xu hướng</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Phụ nữ</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Đàn ông</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Trẻ em</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Phụ kiện</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Những nhãn hiệu hàng đầu</a></span>
+                                <span><i class="ti-control-record"></i><a href="#">Đôi giày</a></span>
                             </div><!-- /.widget-details -->
                         </div><!-- /.widget -->
                     </div>
 
                     <div class="col-md-4 col-sm-6">
                         <div class="widget widget_instagram_feed">
-                            <h4 class="widget-title">Instagram Photos</h4>
+                            <h4 class="widget-title">CÁC ẢNH INSTAGRAM</h4>
                             <div class="widget-details">
                                 <a href="#"><img src="layout/images/instagram/1.png" alt="Instagram Image"></a>
                                 <a href="#"><img src="layout/images/instagram/2.png" alt="Instagram Image"></a>
@@ -78,8 +76,8 @@
             <div class="row">
                 <div class="col-sm-7 text-left">
                     <div class="copyright">
-                        © <a href="https://demos.jeweltheme.com/shopaholic">Shopaholic</a> 2016 | Develpoed With Love by
-                        <a href="https://jeweltheme.com">Jewel Theme</a>
+                        © <a href="https://demos.jeweltheme.com/shopaholic">© Người nghiện mua sắm</a> 2016 | Được phát triển với chủ đề Love by 
+                        <a href="https://jeweltheme.com">Jewel</a>
                     </div><!-- /.copyright -->
                 </div>
 

@@ -28,6 +28,9 @@
     <?php
         if (isset($_GET['pg'])) {
             switch ($_GET['pg']) {
+                case 'detail':
+                    $css = "shop/shop-details.css";
+                    break;
                 case 'my-profile':
                     $css = "user/my-profile.css";
                     break;

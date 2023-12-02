@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2023 lúc 04:22 PM
+-- Thời gian đã tạo: Th12 01, 2023 lúc 07:35 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -20,33 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `galaxybook`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin`
---
-
-CREATE TABLE `admin` (
-  `Id` int(5) NOT NULL,
-  `HoVaTen` varchar(100) NOT NULL,
-  `Avatar` varchar(255) NOT NULL,
-  `DiaChi` varchar(255) NOT NULL,
-  `Gmail` varchar(255) NOT NULL,
-  `SDT` varchar(10) NOT NULL,
-  `TaiKhoan` varchar(255) NOT NULL,
-  `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
-  `PhanQuyen` varchar(100) NOT NULL,
-  `NgayTao` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `admin`
---
-
-INSERT INTO `admin` (`Id`, `HoVaTen`, `Avatar`, `DiaChi`, `Gmail`, `SDT`, `TaiKhoan`, `MatKhau`, `PhanQuyen`, `NgayTao`) VALUES
-(1, 'Trương Huỳnh Can', 'truonghuynhcan.png', 'Phường 13, Gò Vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'truonghuynhcan', '12345678', 'Quản trị viên', '2023-11-10'),
-(2, 'Trần Quốc Đạt ', 'tranquocdat.png', 'Cầu sài gòn, TP HCM', 'tranquocdat@gmail.com', '0837583951', 'tranquocdat', '87654321', 'Lập Trình Viên', '2023-11-09');
 
 -- --------------------------------------------------------
 
@@ -272,28 +245,25 @@ CREATE TABLE `hoadonchitiet` (
 CREATE TABLE `nguoidung` (
   `Id` int(5) NOT NULL,
   `HoVaTen` varchar(100) NOT NULL,
-  `Avatar` varchar(255) DEFAULT 'avartauser.png',
+  `Avatar` varchar(255) DEFAULT 'avatar1.jpg',
   `DiaChi` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `SDT` varchar(10) NOT NULL,
   `TaiKhoan` varchar(255) NOT NULL,
   `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
-  `NgayTao` date NOT NULL
+  `NgayTao` date NOT NULL,
+  `VaiTro` bit(1) DEFAULT b'0' COMMENT '0 site, 1 admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`Id`, `HoVaTen`, `Avatar`, `DiaChi`, `Email`, `SDT`, `TaiKhoan`, `MatKhau`, `NgayTao`) VALUES
-(1, 'Trương Huỳnh Can', 'avarta1.png', 'gò vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'truonghuynhcan', 'a5651a5166d58a6cf6638d3ed685c87e', '2023-11-10'),
-(2, 'Trần Quốc Đạt', 'avarta1.png', 'gò vấp, TP HCM', 'quocdat100322@gmail.com', '0706740677', 'tranquocdat', '12345678', '2023-11-13'),
-(3, 'Văng Chí An', 'avarta1.png', 'gò vấp, TP HCM', 'anvcps31716@fpt.edu.vn', '0832447737', 'vangchian', '12345678', '2023-11-13'),
-(4, 'Trần Duy Cường', 'avarta1.png', 'gò vấp, TP HCM', 'cuongtdps36495@fpt.edu.vn', '0902139281', 'tranduycuong', '12345678', '2023-11-13'),
-(5, 'can', '', 'Gò Vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'huynhcan', '25f9e794323b453885f5181f1b624d0b', '2023-11-13'),
-(6, 'canthps36499', '', 'Gò Vấp, TP HCM', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps36499', '71819ac185fda42b492e1c1a1fcef86b', '2023-11-13'),
-(7, 'canthps', '', 'Gò Vấp, TP HCM', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps', 'e91f806a4683b2e5cbea2b69c1de06ac', '2023-11-13'),
-(8, 'chi an', 'avartauser.png', '600/5 quang trung gò vấp', 'vangchian1010@gmail.com', '0832447737', 'chian', '60208451b29da10a0294f0ddbdb91511', '2023-11-15');
+INSERT INTO `nguoidung` (`Id`, `HoVaTen`, `Avatar`, `DiaChi`, `Email`, `SDT`, `TaiKhoan`, `MatKhau`, `NgayTao`, `VaiTro`) VALUES
+(5, 'can', 'avatar1.jpg', 'Gò Vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'huynhcan', '25f9e794323b453885f5181f1b624d0b', '2023-11-13', b'1'),
+(8, 'chi an', 'avatar1.jpg', '600/5 quang trung gò vấp', 'vangchian1010@gmail.com', '0832447737', 'chian', '60208451b29da10a0294f0ddbdb91511', '2023-11-15', b'0'),
+(9, 'Trương Huỳnh', 'avatar1.jpg', 'gò vấp', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps36499', '25f9e794323b453885f5181f1b624d0b', '2023-11-28', b'0'),
+(10, 'nhóm 5', 'avatar1.jpg', 'quận 12', 'galaxybook@gmail.com', '0971735117', 'galaxybook', '25f9e794323b453885f5181f1b624d0b', '2023-12-01', b'0');
 
 -- --------------------------------------------------------
 
@@ -614,26 +584,20 @@ CREATE TABLE `theloai` (
 --
 
 INSERT INTO `theloai` (`Id`, `TenTheLoai`) VALUES
-(1, 'lịch sử tư tưởng'),
-(2, 'công nghệ thông tin'),
-(3, 'trinh thám'),
-(4, 'kinh dị'),
-(5, 'ngôn tình'),
-(6, 'manga'),
-(7, 'truyện ngắn'),
-(8, 'tâm lý'),
-(9, 'tiểu thuyết'),
-(10, 'kỹ năng sống');
+(1, 'Lịch sử tư tưởng'),
+(2, 'Công nghệ thông tin'),
+(3, 'Trinh thám'),
+(4, 'Kinh dị'),
+(5, 'Ngôn tình'),
+(6, 'Manga'),
+(7, 'Truyện ngắn'),
+(8, 'Tâm lý'),
+(9, 'Tiểu thuyết'),
+(10, 'Kỹ năng sống');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
-
---
--- Chỉ mục cho bảng `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`Id`);
 
 --
 -- Chỉ mục cho bảng `binhluan`
@@ -710,12 +674,6 @@ ALTER TABLE `theloai`
 --
 
 --
--- AUTO_INCREMENT cho bảng `admin`
---
-ALTER TABLE `admin`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
@@ -743,7 +701,7 @@ ALTER TABLE `hoadonchitiet`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `sach`

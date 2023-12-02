@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2023 lúc 03:49 PM
+-- Thời gian đã tạo: Th12 02, 2023 lúc 07:09 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -20,25 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `galaxybook`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin`
---
-
-CREATE TABLE `admin` (
-  `Id` int(5) NOT NULL,
-  `HoVaTen` varchar(100) NOT NULL,
-  `Avatar` varchar(255) NOT NULL,
-  `DiaChi` varchar(255) NOT NULL,
-  `Gmail` varchar(255) NOT NULL,
-  `SDT` varchar(10) NOT NULL,
-  `TaiKhoan` varchar(255) NOT NULL,
-  `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
-  `PhanQuyen` varchar(100) NOT NULL,
-  `NgayTao` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -108,13 +89,14 @@ CREATE TABLE `hoadonchitiet` (
 CREATE TABLE `nguoidung` (
   `Id` int(5) NOT NULL,
   `HoVaTen` varchar(100) NOT NULL,
-  `Avatar` varchar(255) DEFAULT 'avartauser.png',
+  `Avatar` varchar(255) DEFAULT 'avatar1.jpg',
   `DiaChi` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `SDT` varchar(10) NOT NULL,
   `TaiKhoan` varchar(255) NOT NULL,
   `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
-  `NgayTao` date NOT NULL
+  `NgayTao` date NOT NULL,
+  `VaiTro` bit(1) DEFAULT b'0' COMMENT '0 site, 1 admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -193,12 +175,6 @@ CREATE TABLE `theloai` (
 --
 
 --
--- Chỉ mục cho bảng `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`Id`);
-
---
 -- Chỉ mục cho bảng `binhluan`
 --
 ALTER TABLE `binhluan`
@@ -271,12 +247,6 @@ ALTER TABLE `theloai`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
-
---
--- AUTO_INCREMENT cho bảng `admin`
---
-ALTER TABLE `admin`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `binhluan`

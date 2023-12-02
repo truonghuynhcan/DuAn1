@@ -1,31 +1,3 @@
-<section class="page-name-sec page-name-sec-01">
-    <div class="section-padding">
-        <div class="container">
-            <h3 class="page-title">Our services</h3><!-- /.page-title -->
-
-            <div class="row">
-                <div class="col-sm-7">
-                    <p class="description">
-                        Duis sed odio sit amet nibh vulputate cursus a sit amet.
-                    </p><!-- /.description -->
-                </div>
-
-                <div class="col-sm-5">
-                    <ol class="breadcrumb text-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li class="active">Service</li>
-                    </ol><!-- /.breadcrumb -->
-                </div>
-
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.section-padding -->
-</section><!-- /.page-name-sec -->
-
-
-
-
 <section class="core-services text-center">
     <div class="section-padding">
         <div class="container">
