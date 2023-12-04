@@ -74,6 +74,7 @@
   </section><!-- /.intro -->
 
 
+
   <section class="our-team text-center">
     <div class="section-padding">
       <div class="container">
@@ -89,13 +90,13 @@
           <div class="team-slider">
             <div class="member">
               <div class="member-avatar">
-                <img src="upload/avatar/can.jpg" alt="Member Avatar" height="300px">
+                <img src="images/about/member/1.png" alt="Member Avatar">
               </div><!-- /.member-avatar -->
 
               <div class="member-details">
                 <div class="bio">
-                  <span class="name">trương huỳnh can</span>
-                  <span class="designation">PS36499</span>
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
                 </div><!-- /.bio -->
 
                 <div class="member-social">
@@ -108,13 +109,13 @@
 
             <div class="member">
               <div class="member-avatar">
-                <img src="upload/avatar/an.jpg" alt="Member Avatar" height="300px">
+                <img src="images/about/member/2.png" alt="Member Avatar">
               </div><!-- /.member-avatar -->
 
               <div class="member-details">
                 <div class="bio">
-                  <span class="name">văng chí an</span>
-                  <span class="designation">ps31716</span>
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
                 </div><!-- /.bio -->
 
                 <div class="member-social">
@@ -127,13 +128,13 @@
 
             <div class="member">
               <div class="member-avatar">
-                <img src="upload/avatar/cuong.jpg" alt="Member Avatar" height="300px">
+                <img src="images/about/member/3.png" alt="Member Avatar">
               </div><!-- /.member-avatar -->
 
               <div class="member-details">
                 <div class="bio">
-                  <span class="name">Trần Duy Cường</span>
-                  <span class="designation">PS36495</span>
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
                 </div><!-- /.bio -->
 
                 <div class="member-social">
@@ -146,13 +147,13 @@
 
             <div class="member">
               <div class="member-avatar">
-                <img src="upload/avatar/nhi.jpg" alt="Member Avatar" height="300px">
+                <img src="images/about/member/4.png" alt="Member Avatar">
               </div><!-- /.member-avatar -->
 
               <div class="member-details">
                 <div class="bio">
-                  <span class="name">Trần Thị Yến Nhi</span>
-                  <span class="designation">PS32142</span>
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
                 </div><!-- /.bio -->
 
                 <div class="member-social">
@@ -165,13 +166,70 @@
 
             <div class="member">
               <div class="member-avatar">
-                <img src="upload/avatar/dat.jpg" alt="Member Avatar" height="300px">
+                <img src="images/about/member/5.png" alt="Member Avatar">
               </div><!-- /.member-avatar -->
 
               <div class="member-details">
                 <div class="bio">
-                  <span class="name">trần quốc đạt</span>
-                  <span class="designation">PS36507</span>
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
+                </div><!-- /.bio -->
+
+                <div class="member-social">
+                  <a href="#"><i class="ti-twitter-alt"></i></a>
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-pinterest-alt"></i></a>
+                </div><!-- /.member-social -->
+              </div><!-- /.member-hover -->
+            </div><!-- /.member -->
+
+            <div class="member">
+              <div class="member-avatar">
+                <img src="images/about/member/6.png" alt="Member Avatar">
+              </div><!-- /.member-avatar -->
+
+              <div class="member-details">
+                <div class="bio">
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
+                </div><!-- /.bio -->
+
+                <div class="member-social">
+                  <a href="#"><i class="ti-twitter-alt"></i></a>
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-pinterest-alt"></i></a>
+                </div><!-- /.member-social -->
+              </div><!-- /.member-hover -->
+            </div><!-- /.member -->
+
+            <div class="member">
+              <div class="member-avatar">
+                <img src="images/about/member/7.png" alt="Member Avatar">
+              </div><!-- /.member-avatar -->
+
+              <div class="member-details">
+                <div class="bio">
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
+                </div><!-- /.bio -->
+
+                <div class="member-social">
+                  <a href="#"><i class="ti-twitter-alt"></i></a>
+                  <a href="#"><i class="ti-facebook"></i></a>
+                  <a href="#"><i class="ti-pinterest-alt"></i></a>
+                </div><!-- /.member-social -->
+              </div><!-- /.member-hover -->
+            </div><!-- /.member -->
+
+            <div class="member">
+              <div class="member-avatar">
+                <img src="images/about/member/8.png" alt="Member Avatar">
+              </div><!-- /.member-avatar -->
+
+              <div class="member-details">
+                <div class="bio">
+                  <span class="name">Danielle Rose</span>
+                  <span class="designation">Designer</span>
                 </div><!-- /.bio -->
 
                 <div class="member-social">
@@ -187,6 +245,57 @@
     </div><!-- /.section-padding -->
   </section><!-- /.our-team -->
 
+
+
+  <section class="testimonial background-bg" data-image-src="images/testimonial.png">
+    <div class="col-md-offset-6">
+      <div id="testimonial-slider" class="testimonial-slider bg-gray carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#testimonial-slider" data-slide-to="0" class=""></li>
+          <li data-target="#testimonial-slider" data-slide-to="1" class=""></li>
+          <li data-target="#testimonial-slider" data-slide-to="2" class="active"></li>
+        </ol>
+
+        <div class="carousel-inner text-center">
+          <div class="item active">
+            <div class="client-avatar"><img class="img-circle" src="images/about/avatar.png" alt="Client-avatar"></div><!-- /.client-avatar -->
+            <p class="description">
+            Anh ta dường như đã chuẩn bị tinh thần cho một nỗ lực lớn, và sau đó bắt đầu với sự cứng nhắc nhất. Lúc đầu tôi không nắm bắt được nó, và tôi phải dừng lại và đặt câu hỏi cho anh ấy
+            </p><!-- /.description -->
+            <div class="client-details">
+              <span class="name">Randy Dixon</span><!-- /.name -->
+              <span class="designation"><a href="#">www.google.com</a></span><!-- /.designation -->
+            </div><!-- /.client-details -->
+          </div><!-- /.item -->
+
+          <div class="item">
+            <div class="client-avatar"><img class="img-circle" src="images/about/avatar.png" alt="Client-avatar"></div><!-- /.client-avatar -->
+            <p class="description">
+            Ông là một người Mỹ và bắt đầu nhìn thế giới. Ông viết một chút, và làm phóng viên chiến trường cho một tờ báo ở Chicago, và dành một hoặc hai năm ở Đông Nam Âu.
+            </p><!-- /.description -->
+            <div class="client-details">
+              <span class="name">Charles Woods</span><!-- /.name -->
+              <span class="designation"><a href="#">www.google.com</a></span><!-- /.designation -->
+            </div><!-- /.client-details -->
+          </div><!-- /.item -->
+
+          <div class="item">
+            <div class="client-avatar"><img class="img-circle" src="images/about/avatar.png" alt="Client-avatar"></div><!-- /.client-avatar -->
+            <p class="description">
+            Anh ấy đã chơi đùa với chính trị, anh ấy nói với tôi, lúc đầu vì lợi ích của họ, và sau đó vì anh ấy không thể tự giúp mình. Tôi đọc anh ta như một người sắc sảo, bồn chồn
+            </p><!-- /.description -->
+            <div class="client-details">
+              <span class="name">Brenda Rogers</span><!-- /.name -->
+              <span class="designation"><a href="#">www.google.com</a></span><!-- /.designation -->
+            </div><!-- /.client-details -->
+          </div><!-- /.item -->
+        </div><!-- /.carousel-inner -->
+      </div><!-- /.testimonial-slider -->
+    </div>
+  </section><!-- /.testimonial -->
+
+
+
   <section class="extra-features text-center">
     <div class="section-padding">
       <div class="container">
@@ -199,18 +308,18 @@
         <div class="section-details text-left">
           <div class="row">
             <div class="col-md-6">
-              <h3 class="sub-title">kĩ năng </h3><!-- /.sub-title -->
+              <h3 class="sub-title">We are skillful</h3><!-- /.sub-title -->
               <div class="progress-bar-item">
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="83" aria-valuemin="0" data-progress-value="83%" aria-valuemax="100">
-                    <span class="progress-text">Thiết Kế</span> 
+                    <span class="progress-text">Design</span> 
                     <span class="progress-percent"> 83% </span>
                   </div>
                 </div><!-- /.progress --> 
 
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="76" aria-valuemin="0" data-progress-value="76%" aria-valuemax="100">
-                    <span class="progress-text">Phát triển</span> 
+                    <span class="progress-text">Development</span> 
                     <span class="progress-percent"> 76% </span>
                   </div>
                 </div><!-- /.progress -->
@@ -224,10 +333,17 @@
 
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="95" aria-valuemin="0" data-progress-value="95%" aria-valuemax="100">
-                    <span class="progress-text">PHP</span> 
+                    <span class="progress-text">WordPress</span> 
                     <span class="progress-percent"> 95% </span>
                   </div>
                 </div><!-- /.progress -->
+
+                <div class="progress thin">
+                  <div class="progress-bar default" role="progressbar" aria-valuenow="90" aria-valuemin="0" data-progress-value="90%" aria-valuemax="100">
+                    <span class="progress-text">Branding</span> 
+                    <span class="progress-percent"> 90% </span>
+                  </div>
+                </div><!-- /.progress -->                
               </div>
 
             </div>
@@ -237,13 +353,13 @@
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Chúng tôi đam mê những gì chúng tôi làm
+                        We are Passionate about what we do
                       </a>
                     </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                    Nếu bạn có khả năng sáng tạo và muốn chia sẻ câu chuyện của mình hoặc kiến thức chuyên môn, viết sách có thể là một con đường thú vị. Bạn có thể tạo ra các tác phẩm văn học, sách về cuộc sống, sách giáo trình hoặc các thể loại khác.
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                     </div>
                   </div>
                 </div>
@@ -251,14 +367,13 @@
                   <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Chúng tôi là những người có thể phục vụ cho dịch vụ của bạn
+                        We are efficient working People for your service
                       </a>
                     </h4>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                      Nếu bạn đã lựa chọn dịch vụ của cửa hàng của chúng tôi. 
-                      Chúng tôi sẽ sẵn sàng phục vụ cho bạn những phương pháp tốt nhất!!
+                      Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                     </div>
                   </div>
                 </div>
@@ -266,13 +381,13 @@
                   <div class="panel-heading" role="tab" id="headingThree">
                     <h4 class="panel-title">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Dịch vụ khách hàng của chúng tôi cực kỳ chuyên nghiệp
+                        Our Customer service is extremely Professional
                       </a>
                     </h4>
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                      Cửa hàng GalaxyBook có thể đáp ứng được đầy đủ nhu cầu của bạn  
+                      Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
                   </div>
                 </div>
@@ -284,6 +399,31 @@
       </div><!-- /.container -->
     </div><!-- /.section-padding -->
   </section><!-- /.extra-features -->
+
+
+
+
+  <section class="clients-logo clients-logo-03 text-center">
+    <div class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="item bg-gray"><a href="#"><img src="images/brand/1.png" alt="Brand Logo"></a></div><!-- /.item -->
+          </div>
+          <div class="col-sm-3">
+            <div class="item bg-gray"><a href="#"><img src="images/brand/2.png" alt="Brand Logo"></a></div><!-- /.item -->
+          </div>
+          <div class="col-sm-3">
+            <div class="item bg-gray"><a href="#"><img src="images/brand/3.png" alt="Brand Logo"></a></div><!-- /.item -->
+          </div>
+          <div class="col-sm-3">
+            <div class="item bg-gray"><a href="#"><img src="images/brand/4.png" alt="Brand Logo"></a></div><!-- /.item -->
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /.section-padding -->
+  </section>
+
 
 
 
