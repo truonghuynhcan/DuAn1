@@ -11,7 +11,7 @@
                                 $dstheloai = catelogry_get();
                                 foreach ($dstheloai as $theloai): ?>
                                 <li class="menu-item ">
-                                    <a href="#" style="text-transform:capitalize;"><?=$theloai['TenTheLoai']?></a>
+                                    <a href="index.php?pg=product&Id_TheLoai=<?=$theloai['Id']?>" style="text-transform:capitalize;"><?=$theloai['TenTheLoai']?></a>
                                 </li>
                             <?php endforeach;?>
                         </ul>
@@ -257,7 +257,7 @@
                         $alt = $anh['TenAnh'];
                         ?>
                         <div class="item-thumbnail" style="width: 16.4rem; height:17.6rem; overflow: hidden;">
-                            <a class="fancybox" href="images/home08/featured/1.jpg">
+                            <a class="fancybox" href="<?=$src?>">
                                 <img src="<?=$src?>" alt="<?=$alt?>" height="100%">
                             </a>
                         </div><!-- /.item-thumbnail -->
@@ -306,11 +306,13 @@
                             foreach ($dsbanchay as $banchay): ?>
                                 <?php
                                     $anh = anh_getHot($banchay['Id']);
+                                    $src = 'upload/sach/'.$anh['DuongDan'];
+                                    $alt = $anh['TenAnh'];
                                 ?>
                                 <div class="item">
                                     <div class="item-thumbnail"style="width: 16.4rem; height:17.6rem; overflow: hidden;">
-                                    <a class="fancybox" href="images/home08/featured/2.jpg">
-                                        <img src="upload/sach/<?=$anh['DuongDan']?>" alt="<?=$anh['TenAnh']?>" height:100%></a></div>
+                                    <a class="fancybox" href="<?=$src?>">
+                                        <img src="<?=$src?>" alt="<?=$alt?>" height:100%></a></div>
                                     <!-- /.item-thumbnail -->
                                     <div class="item-content">
                                         <div class="buttons">

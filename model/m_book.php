@@ -1,26 +1,11 @@
 <?php
 include_once("pdo.php");
-// thao tác gửi nhận dữ liệu trong csdl
-function getBooksInSameCategory($id_sach)
+
+// ẢNH --------------------------------------------------------------------
+function anh_getAll($id_sach)
 {
-    $sql = "SELECT s.* FROM sach s
-            JOIN sach_theloai st ON s.Id = st.Id_Sach
-            WHERE st.Id_TheLoai IN (
-                SELECT Id_TheLoai FROM sach_theloai WHERE Id_Sach = :id_sach
-            )
-            AND s.Id <> :id_sach
-            LIMIT 8"; // Giới hạn số lượng sách trả về, bạn có thể điều chỉnh nếu cần
-
-    $params = array(':id_sach' => $id_sach);
-
-    try {
-        $result = pdo_query($sql, $params);
-        return $result;
-    } catch (PDOException $e) {
-        // Xử lý lỗi
-        echo "Lỗi truy vấn: " . $e->getMessage();
-        return null;
-    }
+    $sql = "SELECT * FROM hinhanh WHERE Id_Sach = $id_sach";
+    return pdo_query($sql);
 }
 function anh_getOne($id_sach)
 {
@@ -36,16 +21,24 @@ function anh_getOne($id_sach)
         return null;
     }
 }
-// function anh_getOne($id_sach)
-// {
-//     $sql= "SELECT * FROM hinhanh WHERE Id_Sach = $id_sach limit 1";
-//     return pdo_query($sql);
-// }
-function anh_getAll($id_sach)
+function layhinhsach($id)
 {
-    $sql = "SELECT * FROM hinhanh WHERE Id_Sach = $id_sach";
-    return pdo_query($sql);
+   $sql = "SELECT DuongDan FROM hinhanh  WHERE  Id_Sach =$id LIMIT 0,1";
+   $row = pdo_query_one($sql);
+   if ($row != null)
+      $kq = $row['DuongDan'];
+   else
+      $kq = "";
+   return $kq;
 }
+function anh_getHot($Id_Sach)
+{
+   return pdo_query("SELECT * FROM hinhanh WHERE Id_Sach = $Id_Sach limit 1")[0];
+}
+
+
+// SÁCH --------------------------------------------------------------------
+
 function sach_detail($id_sach)
 {
     $sql = "SELECT
@@ -93,29 +86,54 @@ function timSachCungLoai($tentheloai)
         return null;
     }
 }
+function getBooksInSameCategory($id_sach)
+{
+    $sql = "SELECT s.* FROM sach s
+            JOIN sach_theloai st ON s.Id = st.Id_Sach
+            WHERE st.Id_TheLoai IN (
+                SELECT Id_TheLoai FROM sach_theloai WHERE Id_Sach = :id_sach
+            )
+            AND s.Id <> :id_sach
+            LIMIT 8"; // Giới hạn số lượng sách trả về, bạn có thể điều chỉnh nếu cần
 
-function catelogry_get()
-{
-    $sql = "SELECT * FROM theloai ORDER BY Id DESC";
-    return pdo_query($sql);
-}
-function ds_getNew($limit)
-{
-    $sql = "SELECT * FROM sach ORDER BY Id DESC LIMIT $limit";
-    return pdo_query($sql);
-}
-function anh_getHot($Id_Sach)
-{
-    return pdo_query("SELECT * FROM hinhanh WHERE Id_Sach = $Id_Sach limit 1")[0];
-}
-function ds_getHots($limit)
-{
-    $sql = "SELECT * FROM sach ORDER BY DanhGia DESC LIMIT $limit";
-    return pdo_query($sql);
+    $params = array(':id_sach' => $id_sach);
+
+    try {
+        $result = pdo_query($sql, $params);
+        return $result;
+    } catch (PDOException $e) {
+        // Xử lý lỗi
+        echo "Lỗi truy vấn: " . $e->getMessage();
+        return null;
+    }
 }
 function sach_getRandomByCategory($id)
 {
-    return pdo_query("SELECT * FROM sach WHERE Id = $id ORDER BY rand() LIMIT 8");
+   return pdo_query("SELECT * FROM sach WHERE Id = $id ORDER BY rand() LIMIT 8");
 }
+function ds_getHots($limit)
+{
+   $sql = "SELECT * FROM sach ORDER BY DanhGia DESC LIMIT $limit";
+   return pdo_query($sql);
+}
+function ds_getNew($limit)
+{
+   $sql = "SELECT * FROM sach ORDER BY Id DESC LIMIT $limit";
+   return pdo_query($sql);
+}
+function product_cat($Id_TheLoai)
+{
+   $sql = "SELECT sach.* FROM sach, sach_theloai WHERE  sach.Id =  sach_theloai.Id_Sach AND  Id_TheLoai = $Id_TheLoai";
+   return pdo_query($sql);
+}
+
+
+// THỂ LOẠI --------------------------------------------------------------------
+function catelogry_get()
+{
+   $sql = "SELECT * FROM theloai ORDER BY Id DESC";
+   return pdo_query($sql);
+}
+;
 
 ?>

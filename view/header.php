@@ -26,36 +26,43 @@
     <link rel="stylesheet" href="layout/assets/css/themes.css">
 
     <?php
-        if (isset($_GET['pg'])) {
-            switch ($_GET['pg']) {
-                case 'detail':
-                    $css = "shop/shop-details.css";
-                    break;
-                case 'my-profile':
-                    $css = "user/my-profile.css";
-                    break;
-                case 'connect':
-                    $css = "pages/service.css";
-                    break;
-                case 'about':
-                    $css = "pages/about-01.css";
-                    break;
-                case 'login':
-                case 'forgotpassword':
-                case 'register':
-                    $css = "pages/register.css";
-                    break;
-                case 'detail':
-                    $css = "shop/shop-details.css";
-                    break;
-                default:
-                    $css = "home/home-11.css";
-            }
-            
-        } else {
-            $css = 'home/home-11.css';
+    if (isset($_GET['pg'])) {
+        switch ($_GET['pg']) {
+            // book ----------------------------------
+            case 'product':
+                $css = "shop/shop.css";
+                break;
+            case 'detail':
+                $css = "shop/shop-details.css";
+                break;
+            // web ----------------------------------
+            case 'cart':
+                $css = "shop/cart.css";
+                break;
+            case 'connect':
+                $css = "pages/service.css";
+                break;
+            case 'about':
+                $css = "pages/about-01.css";
+                break;
+            // user ----------------------------------
+            case 'my-profile':
+                $css = "user/my-profile.css";
+                break;
+            case 'login':
+            case 'forgotpassword':
+            case 'register':
+                $css = "pages/register.css";
+                break;
+
+            default:
+                $css = "home/home-11.css";
         }
-        echo '<link rel="stylesheet" href="layout/assets/css/'.$css .'">';
+
+    } else {
+        $css = 'home/home-11.css';
+    }
+    echo '<link rel="stylesheet" href="layout/assets/css/' . $css . '">';
     ?>
     <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="layout/assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script><![endif]-->
@@ -103,9 +110,9 @@
 
                         <div class="my-account dropdown">
                             <?php
-                                if (isset($_SESSION['user'])){
-                                    echo '
-                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
+                            if (isset($_SESSION['user'])) {
+                                echo '
+                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
                                             <li><a href="#">Yêu Thích</a></li>
@@ -114,16 +121,16 @@
                                             <li><a href="index.php?pg=logout">Đăng xuất</a></li>
                                         </ul>
                                     ';
-                                }else {
-                                    echo '
+                            } else {
+                                echo '
                                         <a href="#">Tài khoản<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=login">Đăng Nhập</a></li>
                                             <li><a href="index.php?pg=register">Đăng Ký</a></li>
                                         </ul>
                                     ';
-                                    
-                                }
+
+                            }
                             ?>
                             <!-- <a href="#">Tài Khoản<i class="ti-user"></i></a>
                             <ul class="unsorted-list">
@@ -145,8 +152,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <h1><a class="navbar-brand hidden-xs" href="index.php"><img src="layout/images/logoGalaxyBook.png"
-                                    alt="Site Logo"></a></h1>
+                        <h1><a class="navbar-brand hidden-xs" href="index.php"><img
+                                    src="layout/images/logoGalaxyBook.png" alt="Site Logo"></a></h1>
                     </div>
                     <div class="col-sm-7">
                         <div class="top-search-form">

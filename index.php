@@ -6,25 +6,30 @@ include("model/m_book.php");
 
 if (isset($_GET['pg'])) {
     switch ($_GET['pg']) {
+        // book ----------------------------------
+        case 'product':
+            $content = "product";
+            break;
         case 'detail':
             $content = "detail";
             break;
-        case 'my-profile':
-            if(isset($_FILES['avatar'])){
-                $newAvatar = $_FILES['avatar']['name'];
-                update_avatar($_SESSION['user']['Id'], $newAvatar);
-                $_SESSION['user']['Avatar'] = $newAvatar;
-            }
-            if(isset($_POST['update--info'])){
-                $newName = $_POST['name'];
 
-                update_user_name($_SESSION['user']['TaiKhoan'], $newName);
-
-                // Cập nhật thông tin trong SESSION
-                $_SESSION['user']['HoVaTen'] = $newName;
-            }
-            $content = "my-profile";    
-            break;
+        // web ----------------------------------
+        case 'addcart':
+            if(isset($_POST['submit'])&&($_POST['submit'])){
+                $hinhanh =$_POST['hinhanh'];
+                $ten = $_POST['TenSach'];
+                $gia = $_POST['Gia'];
+                $id = $_POST['Id'];
+                $sl =1;
+                $sp = [$id,$hinhanh,$ten,$gia,$sl];
+                //thêm sp vào mảng cart
+                //$_SESSION['cart'][]=$sp;
+                array_push($_SESSION['cart'],$sp);
+                //chuyển trang
+                header('location: cart.php');
+                }
+        break;
         case 'connect':
             $content = "connect";
             break;
@@ -34,6 +39,28 @@ if (isset($_GET['pg'])) {
         case 'home':
             $content = "home";
             break;
+        case 'detail':
+            $content = 'detail';
+            break;
+
+        // user ----------------------------------
+        case 'my-profile':
+            if (isset($_FILES['avatar'])) {
+                $newAvatar = $_FILES['avatar']['name'];
+                update_avatar($_SESSION['user']['Id'], $newAvatar);
+                $_SESSION['user']['Avatar'] = $newAvatar;
+            }
+            if (isset($_POST['update--info'])) {
+                $newName = $_POST['name'];
+
+                update_user_name($_SESSION['user']['TaiKhoan'], $newName);
+
+                // Cập nhật thông tin trong SESSION
+                $_SESSION['user']['HoVaTen'] = $newName;
+            }
+            $content = "my-profile";
+            break;
+
         case 'login':
             if (isset($_POST['wp-submit'])) {
                 // xác định giá trị đầu vào
@@ -95,9 +122,7 @@ if (isset($_GET['pg'])) {
             }
             $content = "register";
             break;
-            case 'detail':
-                $content ='detail';
-                break;
+        
         default:
             $content = "home";
     }
