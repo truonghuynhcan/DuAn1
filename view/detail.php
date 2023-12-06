@@ -99,7 +99,7 @@ if (isset($_GET['id_sach'])) {
               </p><!-- /.short-description -->
 
               <div class="buttons">
-                <button class="add-to-cart">Thêm vào giỏ hàng<i class="fa fa-shopping-cart"></i></button>
+                <button class="add-to-cart" onclick="addToCart(<?=$sach['Id']?> ,' <?=$sach['TenSach']?>' , <?=$sach['DonGia']?>, 1)">Thêm vào giỏ hàng<i class="fa fa-shopping-cart"></i></button>
                 <button class="wish-list"><i class="fa fa-heart"></i></button>
               </div>
             </div><!-- /.about-product -->
@@ -277,7 +277,9 @@ if (isset($_GET['id_sach'])) {
                 <span class="currency">VND</span><!-- /.currency -->
                 <span class="price"><?= $sach['DonGia'] ?></span><!-- /.price -->
               </div><!-- /.previous-price -->                  
-              <a href="#" class="btn">Thêm vào giỏ</a><!-- /.btn -->
+              <!-- <a href="#" class="btn" onclick="addToCart(<?=$sp['Id']?> ,' <?=$sp['TenSach']?>' , <?=$sp['DonGia']?>, 1)">Thêm vào giỏ</a>/.btn -->
+              <button class="add-to-cart btn" onclick="addToCart(<?=$sach['Id']?> ,' <?=$sach['TenSach']?>' , <?=$sach['DonGia']?>, 1)">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
+
             </div>
           </div>
         <?php endforeach; ?>

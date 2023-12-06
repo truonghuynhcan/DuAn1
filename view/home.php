@@ -362,7 +362,7 @@
                             <div class="item-content">
 
                                 <div class="buttons">
-                                    <button class="add-to-cart">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
+                                    <button class="add-to-cart" onclick="addToCart(<?=$noibat['Id']?> ,' <?=$noibat['TenSach']?>' , <?=$noibat['DonGia']?>, 1)">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
                                     <button class="wish-list"><i class="fa fa-heart"></i></button>
                                 </div><!-- /.buttons -->
 
@@ -410,7 +410,7 @@
 <section class="trending-03">
     <div class="section-padding">
         <div class="container">
-            <h2 class="section-title">Sách bán chạy <span></span></h2><!-- /.section-title -->
+            <h2 class="section-title" style="text-align:center">Sách bán chạy <span></span></h2><!-- /.section-title -->
 
             <div class="section-details">
                 <div class="row">

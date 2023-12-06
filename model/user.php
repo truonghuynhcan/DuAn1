@@ -20,6 +20,7 @@ function update_user_name($taikhoan, $newName){
 // }
 function registerUser($hovaten, $diachi, $email, $sdt, $taikhoan, $matkhau) {
     global $global_conn;
+    
 
     // chuyển sang dạng md5
     $hashedPassword = md5($matkhau);
@@ -79,15 +80,14 @@ function checkforgotpassword($taikhoan, $email){
         //gửi mail, mật khẩu mới
         guimatkhaumoi($taikhoan, $email, $matkhaumoi);
 
-        // Chuyển hướng người dùng về trang login
-        header("Location: index.php?pg=login");
+        echo "<script>alert('Mật khẩu mới của bạn là: $matkhaumoi'); window.location.href = 'index.php?pg=login';</script>";
         exit();
     } else {
         // Lưu thông báo lỗi vào session
         $_SESSION['forgotpassword_error'] = "Lỗi: Tài khoản hoặc email không hợp lệ";
 
         // Chuyển hướng người dùng về trang forgotpassword
-        header("Location: index.php?pg=forgotpassword");
+        header("Location: index.php?pg=home");
         exit();
     }
 }

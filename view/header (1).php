@@ -25,45 +25,31 @@
     <link rel="stylesheet" href="layout/assets/css/style.css">
     <link rel="stylesheet" href="layout/assets/css/themes.css">
     <script src="layout/assets/js/cart.js"></script>
-
     <?php
-    if (isset($_GET['pg'])) {
-        switch ($_GET['pg']) {
-            // book ----------------------------------
-            case 'product':
-                $css = "shop/shop.css";
-                break;
-            case 'detail':
-                $css = "shop/shop-details.css";
-                break;
-            // web ----------------------------------
-            case 'cart':
-                $css = "shop/cart.css";
-                break;
-            case 'connect':
-                $css = "pages/service.css";
-                break;
-            case 'about':
-                $css = "pages/about-01.css";
-                break;
-            // user ----------------------------------
-            case 'my-profile':
-                $css = "user/my-profile.css";
-                break;
-            case 'login':
-            case 'forgotpassword':
-            case 'register':
-                $css = "pages/register.css";
-                break;
-
-            default:
-                $css = "home/home-11.css";
+        if (isset($_GET['pg'])) {
+            switch ($_GET['pg']) {
+                case 'detail':
+                    break;
+                case 'product':
+                    $css = "shop/shop.css";
+                    break;
+                case 'cart':
+                    $css = "shop/cart.css";
+                    break;
+                case 'login':
+                case 'forgotpassword':
+                case 'register':
+                    $css = "pages/register.css";
+                    break;
+                    
+                default:
+                    $css = "home/home-11.css";
+            }
+            
+        } else {
+            $css = 'home/home-11.css';
         }
-
-    } else {
-        $css = 'home/home-11.css';
-    }
-    echo '<link rel="stylesheet" href="layout/assets/css/' . $css . '">';
+        echo '<link rel="stylesheet" href="layout/assets/css/'.$css .'">';
     ?>
     <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="layout/assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script><![endif]-->
@@ -81,7 +67,8 @@
                 <div class="row">
                     <div class="col-sm-5 top-left text-left">
                         <p class="top-contact">
-                            <i class="ti-email"></i><span><a href="#">galaxybook@gmail.com</a></span>
+                            <i class="ti-email"></i><span><a href="#">truonghuynhcan@gmail.com</a></span>
+                            <i class="ti-mobile"></i><span>+84 971735xxx</span>
                         </p><!-- /.top-contact -->
 
                     </div><!-- /.top-left -->
@@ -110,41 +97,27 @@
 
                         <div class="my-account dropdown">
                             <?php
-                            if (isset($_SESSION['user'])) {
-                                if ($_SESSION['user']['VaiTro']==1) {
+                                if (isset($_SESSION['user'])){
                                     echo '
-                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
-                                            <li><a href="index.php?pg=ad&active=home">Admin</a></li>
-                                            <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
+                                            <li><a href="#">Cá Nhân</a></li>
                                             <li><a href="#">Yêu Thích</a></li>
                                             <li><a href="cart.html">Giỏ Hàng</a></li>
                                             <li><a href="checkout.html">Thanh toán</a></li>
                                             <li><a href="index.php?pg=logout">Đăng xuất</a></li>
                                         </ul>
                                     ';
-                                }else{
-                                echo '
-                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
-                                        <ul class="unsorted-list">
-                                            <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
-                                            <li><a href="#">Yêu Thích</a></li>
-                                            <li><a href="cart.html">Giỏ Hàng</a></li>
-                                            <li><a href="checkout.html">Thanh toán</a></li>
-                                            <li><a href="index.php?pg=logout">Đăng xuất</a></li>
-                                        </ul>
-                                    ';
-                                }
-                            } else {
-                                echo '
+                                }else {
+                                    echo '
                                         <a href="#">Tài khoản<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=login">Đăng Nhập</a></li>
                                             <li><a href="index.php?pg=register">Đăng Ký</a></li>
                                         </ul>
                                     ';
-
-                            }
+                                    
+                                }
                             ?>
                             <!-- <a href="#">Tài Khoản<i class="ti-user"></i></a>
                             <ul class="unsorted-list">
@@ -166,8 +139,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <h1><a class="navbar-brand hidden-xs" href="index.php"><img
-                                    src="layout/images/logoGalaxyBook.png" alt="Site Logo"></a></h1>
+                        <h1><a class="navbar-brand hidden-xs" href="index.php"><img src="layout/images/logoGalaxyBook.png"
+                                    alt="Site Logo"></a></h1>
                     </div>
                     <div class="col-sm-7">
                         <div class="top-search-form">
@@ -196,13 +169,14 @@
                         </div><!-- /.top-search-form -->
                     </div>
                     <div class="col-sm-2">
-                    <div class="shop-cart">
+                        <div class="shop-cart">
                             <a class="cart-control" href="index.php?pg=cart" title="View your shopping cart">
                                 <i class="ti-bag"></i>
-                                <span class="count" id="totalQuantity"><?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?></span>
-                                <!-- <span class="count" id="totalQuantity"><?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?></span> -->
+                                <span class="count">3</span>
                                 <span>Giỏ hàng</span>
                             </a><!-- /.cart-control -->
+
+                        
                         </div>
                     </div>
                 </div><!-- /.row -->
@@ -316,16 +290,50 @@
                             </ul>
                         </li>
 
-                        <!-- Giới thiệu -->
+                        <!-- Portfolio -->
                         <li class="menu-item menu-item-has-children">
-                            <a href="index.php?pg=about">Giới thiệu</a>
+                            <a href="#">Portfolio</a>
                             <ul class="sub-menu">
-                                <li class="menu-item">
-                                    <a href="index.php?pg=about">Về chúng tôi</a>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Grid 2 Column</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio-grid-2column-01.html">2 Column 01</a></li>
+                                        <li><a href="portfolio-grid-2column-02.html">2 Column 02</a></li>
+                                    </ul>
                                 </li>
 
-                                <li class="menu-item">
-                                    <a href="index.php?pg=connect">Liên hệ</a>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Grid 3 Column</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio-grid-3column.html">3 Column 01</a></li>
+                                        <li><a href="portfolio-grid-3column-02.html">3 Column 02</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Grid 4 Column</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio-grid-4column.html">4 Column 01</a></li>
+                                        <li><a href="portfolio-grid-4column-02.html">4 Column 02</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Masonry 3 Column</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio-masonry-3column.html">3 Column 01</a></li>
+                                        <li><a href="portfolio-masonry-3column-02.html">3 Column 02</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="portfolio-list.html">List Style</a></li>
+
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">Portfolio Detail</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="portfolio-details.html">Details 01</a></li>
+                                        <li><a href="portfolio-details-02.html">Details 02</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
