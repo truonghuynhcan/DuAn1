@@ -12,9 +12,9 @@
 
                 <div class="col-sm-5">
                     <ol class="breadcrumb text-right">
-                        <li><a href="#">trang chủ</a></li>
+                        <li><a href="index.php?pg=home">trang chủ</a></li>
                         <li class="active">liên hệ</li>
-                        <li><a href="#">về chúng tôi </a></li>
+                        <li><a href="index.php?pg=about">về chúng tôi </a></li>
                     </ol><!-- /.breadcrumb -->
                 </div>
 
@@ -56,34 +56,33 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label for="fname">Họ</label>
-											<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+											<input type="text" id="fname" class="form-control" placeholder="Họ người dùng">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label for="lname">Tên</label>
-											<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+							 				<input type="text" id="lname" class="form-control" placeholder="Tên người dùng">
 										</div>
 									</div>
 									<div class="w-100"></div>
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label for="email">Email</label>
-											<input type="text" id="email" class="form-control" placeholder="Your email address">
+											<input type="text" id="email" class="form-control" placeholder="Email người dùng">
 										</div>
 									</div>
 									<div class="w-100"></div>
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label for="subject">Tiêu đề</label>
-											<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+											<input type="text" id="subject" class="form-control" placeholder="...">
 										</div>
 									</div>
 									<div class="w-100"></div>
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label for="message">Nội dung</label>
-											<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+											<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="..."></textarea>
 										</div>
 									</div>
 									<div class="w-100"></div>

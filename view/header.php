@@ -80,8 +80,7 @@
                 <div class="row">
                     <div class="col-sm-5 top-left text-left">
                         <p class="top-contact">
-                            <i class="ti-email"></i><span><a href="#">truonghuynhcan@gmail.com</a></span>
-                            <i class="ti-mobile"></i><span>+84 971735xxx</span>
+                            <i class="ti-email"></i><span><a href="#">galaxybook@gmail.com</a></span>
                         </p><!-- /.top-contact -->
 
                     </div><!-- /.top-left -->
@@ -111,6 +110,19 @@
                         <div class="my-account dropdown">
                             <?php
                             if (isset($_SESSION['user'])) {
+                                if ($_SESSION['user']['VaiTro']==1) {
+                                    echo '
+                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <ul class="unsorted-list">
+                                            <li><a href="index.php?pg=ad&active=home">Admin</a></li>
+                                            <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
+                                            <li><a href="#">Yêu Thích</a></li>
+                                            <li><a href="cart.html">Giỏ Hàng</a></li>
+                                            <li><a href="checkout.html">Thanh toán</a></li>
+                                            <li><a href="index.php?pg=logout">Đăng xuất</a></li>
+                                        </ul>
+                                    ';
+                                }else{
                                 echo '
                                         <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
@@ -121,6 +133,7 @@
                                             <li><a href="index.php?pg=logout">Đăng xuất</a></li>
                                         </ul>
                                     ';
+                                }
                             } else {
                                 echo '
                                         <a href="#">Tài khoản<i class="ti-user"></i></a>

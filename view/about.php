@@ -13,8 +13,8 @@
 
           <div class="col-sm-5">
             <ol class="breadcrumb text-right">
-              <li><a href="#">Trang Chủ</a></li>
-              <li><a href="#">Liên Hệ</a></li>
+              <li><a href="index.php?pg=home">Trang Chủ</a></li>
+              <li><a href="index.php?pg=connect">Liên Hệ</a></li>
               <li class="active">Về Chúng Tôi</li>
             </ol><!-- /.breadcrumb -->
           </div>
@@ -297,10 +297,7 @@
             </div>
           </div>
           <div class="col-sm-7">
-            <form class="subscribe-form" action="#">
-              <input class="form-control" type="email" placeholder="myemail@email.com">
-              <input class="btn btn-subscribe" type="submit" value="Subscribe">
-            </form>
+            <a href="index.php?pg=connect" class="btn bg-gold btn-radius btn-sm">Liên hệ với chúng tôi</a>
           </div>
         </div><!-- /.row -->
       </div><!-- /.subscribe-details -->

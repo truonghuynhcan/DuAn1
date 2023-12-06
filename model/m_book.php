@@ -111,6 +111,11 @@ function sach_getRandomByCategory($id)
 {
    return pdo_query("SELECT * FROM sach WHERE Id = $id ORDER BY rand() LIMIT 8");
 }
+function ds_getBestSell($limit)
+{
+   $sql = "SELECT * FROM sach ORDER BY LuotMua DESC LIMIT $limit";
+   return pdo_query($sql);
+}
 function ds_getHots($limit)
 {
    $sql = "SELECT * FROM sach ORDER BY DanhGia DESC LIMIT $limit";
