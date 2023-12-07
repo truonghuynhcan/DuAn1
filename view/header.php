@@ -27,8 +27,8 @@
     <script src="layout/assets/js/cart.js"></script>
 
     <?php
-    if (isset($_GET['pg'])) {
-        switch ($_GET['pg']) {
+    if(isset($_GET['pg'])) {
+        switch($_GET['pg']) {
             // book ----------------------------------
             case 'product':
                 $css = "shop/shop.css";
@@ -63,7 +63,7 @@
     } else {
         $css = 'home/home-11.css';
     }
-    echo '<link rel="stylesheet" href="layout/assets/css/' . $css . '">';
+    echo '<link rel="stylesheet" href="layout/assets/css/'.$css.'">';
     ?>
     <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="layout/assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script><![endif]-->
@@ -87,33 +87,19 @@
                     </div><!-- /.top-left -->
 
                     <div class="col-sm-7 top-right text-right">
-                        <div id="currency" class="currency dropdown">
-                            <a href="#" class="current-title">VND</a>
-                            <ul class="unsorted-list">
-                                <li>USD $</li>
-                            </ul>
-                        </div>
-
-                        <div id="language" class="language dropdown">
-                            <a href="#" class="current-title">Việt Nam</a>
-                            <ul class="unsorted-list">
-                                <li>English</li>
-                            </ul>
-                        </div>
-
-                        <div class="wish-list">
+                        <!-- <div class="wish-list">
                             <a href="#" class="current-title">Yêu thích</a>
                             <span class="count">0</span>
                             <span><i class="ti-heart"></i></span>
-                        </div>
+                        </div> -->
 
 
                         <div class="my-account dropdown">
                             <?php
-                            if (isset($_SESSION['user'])) {
-                                if ($_SESSION['user']['VaiTro']==1) {
+                            if(isset($_SESSION['user'])) {
+                                if($_SESSION['user']['VaiTro'] == 1) {
                                     echo '
-                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=ad&active=home">Admin</a></li>
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
@@ -123,9 +109,9 @@
                                             <li><a href="index.php?pg=logout">Đăng xuất</a></li>
                                         </ul>
                                     ';
-                                }else{
-                                echo '
-                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                } else {
+                                    echo '
+                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
                                             <li><a href="#">Yêu Thích</a></li>
@@ -146,15 +132,6 @@
 
                             }
                             ?>
-                            <!-- <a href="#">Tài Khoản<i class="ti-user"></i></a>
-                            <ul class="unsorted-list">
-                                <li><a href="index.php?pg=login">Đăng Nhập</a></li>
-                                <li><a href="register.html">Đăng Ký</a></li>
-                                <li><a href="#">Cá Nhân</a></li>
-                                <li><a href="#">Yêu Thích</a></li>
-                                <li><a href="cart.html">Giỏ Hàng</a></li>
-                                <li><a href="checkout.html">Thanh toán</a></li>
-                            </ul> -->
                         </div><!-- /.my-account -->
 
                     </div><!-- /.top-right -->
@@ -175,18 +152,13 @@
                                 <fieldset>
                                     <select name="category" id="category">
                                         <option selected="selected">Tất cả</option>
-                                        <option>Công nghệ thông tin</option>
-                                        <option>Women's Wear</option>
-                                        <option>Kid's Wear</option>
-                                        <option>Men's Fashion</option>
-                                        <option>Women's Fashion</option>
-                                        <option>Kid's Fashion</option>
-                                        <option>Home Applience</option>
-                                        <option>Electronics</option>
-                                        <option>Gadgets</option>
-                                        <option>Mobile</option>
-                                        <option>Laptop</option>
-                                        <option>Others</option>
+                                        <?php
+                                        $dstheloai = catelogry_get();
+                                        foreach($dstheloai as $theloai): ?>
+                                            <option>
+                                                <?= $theloai['TenTheLoai'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </fieldset>
 
@@ -196,10 +168,12 @@
                         </div><!-- /.top-search-form -->
                     </div>
                     <div class="col-sm-2">
-                    <div class="shop-cart">
+                        <div class="shop-cart">
                             <a class="cart-control" href="index.php?pg=cart" title="View your shopping cart">
                                 <i class="ti-bag"></i>
-                                <span class="count" id="totalQuantity"><?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?></span>
+                                <span class="count" id="totalQuantity">
+                                    <?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?>
+                                </span>
                                 <!-- <span class="count" id="totalQuantity"><?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?></span> -->
                                 <span>Giỏ hàng</span>
                             </a><!-- /.cart-control -->

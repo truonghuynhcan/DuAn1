@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg
+  bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">HCMC Lid</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Chủ đề
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Tiểu thuyết</a></li>
+              <li><a class="dropdown-item" href="#">Trinh thám</a></li>
+              <li><a class="dropdown-item" href="#">Truyện tranh</a></li>
+              <li><a class="dropdown-item" href="#">SGK</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Giỏ Sách</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="# " role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Xin chào, Đạt
+            </a>
+            <ul class="dropdown-menu end-0" style="left:auto">
+              <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+              <li><a class="dropdown-item" href="#">Lịch sữ mượn sách</a></li>
+              <li><a class="dropdown-item" href="#"></a></li>
+              <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div id="carouselExample" class="carousel slide my-3">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../template/bootstrap-5.3.2-dist/img/slides1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../template/bootstrap-5.3.2-dist/img/slides2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../template/bootstrap-5.3.2-dist/img/slides3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+     
+    <div class="row">
+      <div class="col-md-3">
+        <form action="" method="get" class="mb-3">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Nhập tựa sách cần tìm">
+            <button class="btn btn-primary" type="submit" id="search">Tìm Kiếm</button>
+          </div>
+        </form>
+        <ul class="list-group mb-3">
+          <li class="list-group-item active" aria-current="true">Sách đọc nhiều</li>
+          <li class="list-group-item">1.Dark nhân tâm</li>
+          <li class="list-group-item">2.tuổi trể đáng giá bao nhiêu</li>
+          <li class="list-group-item">3.Bí qyết không ăn mà sống</li>
+          <li class="list-group-item">4.Sắc đẹp ngàn cân</li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <h2>Đăng Nhập</h2>
+        <form method="post">
+          <div class="mb-3">
+            <label for="phone" class="form-label">Số Điện Thoại
+            </label>
+            <input type="text" class="form-control" id="phone">
+          </div>
+          <div class="mb-3">
+            <label for="pass" class="form-label">Mật Khẩu</label>
+            <input type="password" class="form-control" id="pass">
+          </div>
+          <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+        </form>
+      </div>
+    </div>
+  <footer class="text-center text-bg-primary p-3 rounded-3">
+    Bản quyền &copy; 2023, thuộc về thư viện thành phố (HCMC Lid)
+  </footer>
+</div>
+
+<script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

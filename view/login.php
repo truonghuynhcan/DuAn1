@@ -15,7 +15,9 @@
     <div class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
                     <div class="sign-in bg-gray">
                         <h2 class="title">Đăng nhập</h2>
                         <p style="color: red;">
@@ -44,18 +46,13 @@
                             </p>
                         </form>
 
-                        <div class="login-social">
-                            <button class="btn facebook">Đăng nhập với Facebook</button>
-                            <button class="btn twitter">Đăng nhập với Twitter</button>
+                        <div class="login-social" style="display:none;">
+                            <button class="btn google">Đăng nhập với Google</button>
                         </div><!-- /.login-social -->
                     </div><!-- /.sign-in -->
                 </div>
 
-                <div class="col-md-7">
-                    <div class="sign-up">
-
-                    </div><!-- /.sign-up -->
-
+                <div class="col-md-3">
                 </div>
             </div><!-- /.row -->
         </div><!--/.container-->

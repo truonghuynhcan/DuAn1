@@ -8,13 +8,7 @@ if(isset($_GET['pg'])) {
     switch($_GET['pg']) {
         // admin ----------------------------------
         case 'ad':
-            switch($_GET['active']) {
-                case 'home':
-                    $content = "ad-home";
-                    break;
-                default:
-                    $content = "ad-home";
-            }
+            $content = "index";
             break;
         // book ----------------------------------
         case 'product':
@@ -152,9 +146,7 @@ if(isset($_GET['pg'])) {
     $content = "home";
 }
 if(isset($_GET['pg']) && $_GET['pg'] == 'ad') {
-    include("view/ad-header.php");
-    include("view/".$content.".php");
-    include("view/ad-footer.php");
+    include("admin/ad-".$content.".php");
 } else {
     include("view/header.php");
     include("view/".$content.".php");
