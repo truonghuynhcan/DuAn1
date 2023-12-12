@@ -1,19 +1,18 @@
 
-<body style="font-family:Arial, Helvetica, sans-serif;">
-
-    
+<body>
+   
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Giỏ hàng của bạn</h2>
+            <h2>Giỏ hàng cua ban</h2>
         </div>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Tên </th>
-                    <th scope="col">Giá</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Tiền</th>
+                    <th scope="col">Ten </th>
+                    <th scope="col">Gia</th>
+                    <th scope="col">So luong</th>
+                    <th scope="col">Tien</th>
                     <th scope="col">Xóa</th>
                 </tr>
             </thead>

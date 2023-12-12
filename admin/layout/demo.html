@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Select with Tag Suggestions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tag-selector-container {
+            position: relative;
+            width: 300px;
+        }
+
+        #tagInput {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tag-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            max-height: 100px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .tag-suggestion {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .tag-suggestion:hover {
+            background-color: #ddd;
+        }
+
+        #tagSelect {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+    </style>
+    <div class="tag-selector-container">
+        <input type="text" id="tagInput" placeholder="Enter tags...">
+        <div class="tag-suggestions" id="tagSuggestions"></div>
+        <select multiple id="tagSelect">
+            <option value="1">bay</option>
+            <option value="2">nhảy</option>
+            <option value="3">hát</option>
+        </select>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            var tagSelect = $('#tagSelect');
+            var tagInput = $('#tagInput');
+
+            // Bắt sự kiện mousedown thay vì click
+            tagSelect.on('mousedown', 'option', function (event) {
+                event.preventDefault();  // Ngăn chặn sự kiện mặc định (ví dụ: reload trang)
+
+                var selectedOption = $(this);
+
+                // Đảo ngược trạng thái đã chọn của phần tử
+                selectedOption.prop('selected', !selectedOption.prop('selected'));
+
+                // Cập nhật giá trị đầu vào
+                updateTagInput();
+            });
+
+            // Bắt sự kiện input trên ô đầu vào
+            tagInput.on('input', function () {
+                var inputText = tagInput.val();
+                var tagsArray = inputText.split(',').map(tag => tag.trim());
+
+                // Lặp qua tất cả các tùy chọn và cập nhật trạng thái chọn
+                tagSelect.find('option').each(function () {
+                    var optionValue = $(this).val();
+                    var isSelected = tagsArray.includes(optionValue);
+                    $(this).prop('selected', isSelected);
+                });
+            });
+
+            // Hàm cập nhật giá trị đầu vào từ các tùy chọn đã chọn
+            function updateTagInput() {
+                var selectedTags = tagSelect.val() || [];
+                var selectedNames = tagSelect.find('option:selected').map(function () {
+                    return $(this).text();
+                }).get();
+                tagInput.val(selectedNames.join(', '));
+            }
+
+        });
+
+
+    </script>
+    <hr>
+    <br><br>
+   
+</body>
+
+</html>

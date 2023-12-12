@@ -1,230 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>thư viện thành phố (HCMC Lid)</title>
-  <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<title>AdminHub</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg
-  bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">HCMC Lid</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Chủ đề
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Tiểu thuyết</a></li>
-              <li><a class="dropdown-item" href="#">Trinh thám</a></li>
-              <li><a class="dropdown-item" href="#">Truyện tranh</a></li>
-              <li><a class="dropdown-item" href="#">SGK</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Giỏ Sách</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="# " role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Xin chào, Đạt
-            </a>
-            <ul class="dropdown-menu end-0" style="left:auto">
-              <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
-              <li><a class="dropdown-item" href="#">Lịch sữ mượn sách</a></li>
-              <li><a class="dropdown-item" href="#"></a></li>
-              <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div id="carouselExample" class="carousel slide my-3">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="../template/bootstrap-5.3.2-dist/img/slides1.jpg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../template/bootstrap-5.3.2-dist/img/slides2.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="../template/bootstrap-5.3.2-dist/img/slides3.jpg" class="d-block w-100" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-     
-    <div class="row">
-      <div class="col-md-3">
-        <form action="" method="get" class="mb-3">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Nhập tựa sách cần tìm">
-            <button class="btn btn-primary" type="submit" id="search">Tìm Kiếm</button>
-          </div>
-        </form>
-        <ul class="list-group mb-3">
-          <li class="list-group-item active" aria-current="true">Sách đọc nhiều</li>
-          <li class="list-group-item">1.Dark nhân tâm</li>
-          <li class="list-group-item">2.tuổi trể đáng giá bao nhiêu</li>
-          <li class="list-group-item">3.Bí qyết không ăn mà sống</li>
-          <li class="list-group-item">4.Sắc đẹp ngàn cân</li>
-        </ul>
-      </div>
-      <div class="col-md-9">
-        <!-- ruột của website -->
-        <h2>Sách nổi bật</h2>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="card mb-3">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <h2>Sách mới</h2>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="card mb-3">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <img src="./bootstrap-5.3.2-dist/img/sp1.jfif" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">truyện đọc cho bé trước giờ ngủ</h5>
-                <p class="card-text">68.500đ</p>
-                <a href="#" class="btn btn-primary">Mượn</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <footer class="text-center text-bg-primary p-3 rounded-3">
-    Bản quyền &copy; 2023, thuộc về thư viện thành phố (HCMC Lid)
-  </footer>
-</div>
 
-<script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">My Store</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Team</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<h3>1020</h3>
+						<p>New Order</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+						<h3>2834</h3>
+						<p>Visitors</p>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-dollar-circle' ></i>
+					<span class="text">
+						<h3>$2543</h3>
+						<p>Total Sales</p>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Recent Orders</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Date Order</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status process">Process</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>John Doe</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="todo">
+					<div class="head">
+						<h3>Todos</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<ul class="todo-list">
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+						<li class="not-completed">
+							<p>Todo List</p>
+							<i class='bx bx-dots-vertical-rounded' ></i>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="assets/js/script.js"></script>
 </body>
 </html>

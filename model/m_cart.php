@@ -45,41 +45,4 @@ function chenHoaDon($Id_NguoiDung, $TongDon, $TrangThai, $TenNguoiNhan, $SDTNguo
         unset($pdo);
     }
 }
-
- function chenHoaDon3($Id_NguoiDung, $TongDon, $TrangThai, $TenNguoiNhan, $SDTNguoiNhan, $DiaChiNguoiNhan) {
-    try {
-        $pdo = pdo_get_connection();
-        $pdo->beginTransaction();
-
-        // Chèn dữ liệu vào bảng 'hoadon'
-        $sqlHoaDon = "INSERT INTO hoadon (Id_NguoiDung, TongDon, TrangThai, TenNguoiNhan, SDTNguoiNhan, DiaChiNguoiNhan) 
-                      VALUES (:Id_NguoiDung, :TongDon, :TrangThai, :TenNguoiNhan, :SDTNguoiNhan, :DiaChiNguoiNhan)";
-        $stmtHoaDon = $pdo->prepare($sqlHoaDon);
-
-        $stmtHoaDon->bindParam(':Id_NguoiDung', $Id_NguoiDung);
-        $stmtHoaDon->bindParam(':TongDon', $TongDon);
-        $stmtHoaDon->bindParam(':TrangThai', $TrangThai);
-        $stmtHoaDon->bindParam(':TenNguoiNhan', $TenNguoiNhan);
-        $stmtHoaDon->bindParam(':SDTNguoiNhan', $SDTNguoiNhan);
-        $stmtHoaDon->bindParam(':DiaChiNguoiNhan', $DiaChiNguoiNhan);
-
-        $stmtHoaDon->execute();
-
-        // Lấy ID của hóa đơn vừa chèn
-        $idHoaDon = $pdo->lastInsertId();
-
-        // Commit giao dịch
-        $pdo->commit();
-
-        return $idHoaDon;
-    } catch (PDOException $e) {
-        // Rollback nếu có lỗi
-        $pdo->rollBack();
-        echo "Error: " . $e->getMessage();
-        return false;
-    } finally {
-        unset($pdo);
-    }
-}
-
 ?>

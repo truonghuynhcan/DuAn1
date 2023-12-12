@@ -161,9 +161,9 @@
                                                         <h3 class="item-title">
                                                             <?= $bestSell['TenSach'] ?>
                                                         </h3><!-- /.item-title -->
-                                                        <div class="item-price"><span class="currency">$</span><span
+                                                        <div class="item-price"><span class="currency"></span><span
                                                                 class="price">
-                                                                <?= $bestSell['DonGia'] ?>
+                                                                <?= number_format($bestSell['DonGia'],0,',','.') ?> VND
                                                             </span></div><!-- /.item-price -->
                                                     </div><!-- /.item-details -->
                                                 </div><!-- /.product-item -->
@@ -294,9 +294,9 @@
                         <div class="item megento-blue">
                             <div class="item-details">
                                 <span class="icon icon-hotairballoon"></span><!-- /.icon -->
-                                <h3 class="item-title">Free Shipping</h3><!-- /.item-title -->
+                                <h3 class="item-title">Miễn phí vận chuyển</h3><!-- /.item-title -->
                                 <p class="description">
-                                    Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec
+                                    <!-- Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec -->
                                 </p><!-- /.description -->
                             </div><!-- /.item-details -->
                         </div><!-- /.item -->
@@ -306,9 +306,9 @@
                         <div class="item megento-light-blue">
                             <div class="item-details">
                                 <span class="icon icon-recycle"></span><!-- /.icon -->
-                                <h3 class="item-title">Refund Option</h3><!-- /.item-title -->
+                                <h3 class="item-title">An Toàn</h3><!-- /.item-title -->
                                 <p class="description">
-                                    Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec
+                                    <!-- Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec -->
                                 </p><!-- /.description -->
                             </div><!-- /.item-details -->
                         </div><!-- /.item -->
@@ -318,9 +318,9 @@
                         <div class="item megento-ash">
                             <div class="item-details">
                                 <span class="icon icon-lifesaver"></span><!-- /.icon -->
-                                <h3 class="item-title">Excellent Support</h3><!-- /.item-title -->
+                                <h3 class="item-title">Nội dung độc đáo</h3><!-- /.item-title -->
                                 <p class="description">
-                                    Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec
+                                    <!-- Aenean sollicitudin lorem quis bibendum auctor nisi elit consequat ipsum nec -->
                                 </p><!-- /.description -->
                             </div><!-- /.item-details -->
                         </div><!-- /.item -->
@@ -372,7 +372,7 @@
                                 <div class="item-price">
                                     <span class="currency"></span>
                                     <span class="price">
-                                        <?= $noibat['DonGia'] ?>
+                                        <?= number_format($noibat['DonGia'],0,',','.') ?> VND
                                     </span>
                                 </div><!-- /.item-price -->
 
@@ -438,9 +438,9 @@
                                             <?= $banchay['TenSach'] ?>
                                         </a></h3><!-- /.item-title -->
                                     <div class="item-price">
-                                        <span class="currency">$</span>
+                                        <span class="currency"></span>
                                         <span class="price">
-                                            <?= $banchay['DonGia'] ?>
+                                            <?= number_format($banchay['DonGia'],0,',','.') ?> VND
                                         </span>
                                     </div><!-- /.item-price -->
 

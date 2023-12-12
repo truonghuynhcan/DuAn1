@@ -40,7 +40,7 @@ $listsp = product_cat($Id_TheLoai);
             <div class="product-filter">
               <div class="row">
                 <div class="col-md-4">
-                  <span class="filter-text">Hien thị sản phẩm </span>
+                  <span class="filter-text">Hiển thị sản phẩm </span>
                 </div>
 
                 <div class="col-md-8 text-right">

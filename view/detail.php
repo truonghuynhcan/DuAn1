@@ -70,26 +70,26 @@ if (isset($_GET['id_sach'])) {
                   data-fractions="5" />
               </div><!-- /.rating -->
               <br>
-              <div class="col-md-6">
-                Nhà xuất bản : <strong>
+              <div class="col-md-6" style="font-family:Arial">
+                Nhà xuất bản : <strong style="font-family:Helvetica">
                   <?= $sach['NhaXuatBan'] ?>
                 </strong>
               </div>
-              <div class="col-md-6">
-                Tác giả:<strong></strong>
+              <div class="col-md-6" style="font-family:Arial">
+                Tác giả:<strong style="font-family:Helvetica">
                 <?= $sach['TacGia'] ?></strong> <br>
-                Thể loại:<strong>
+                Thể loại:<strong style="font-family:Helvetica">
                   <?= $sach['TheLoai'] ?>
                 </strong>
               </div>
 
               <div class="item-price">
-                <div class="current-price"><span class="currency">VND</span><span class="price">
-                    <?= number_format($sach['DonGia'] * (1 - $sach['GiamGia'] / 100), 0, ",", ".") ?>
+                <div class="current-price"><span class="currency"></span><span class="price">
+                    <?= number_format($sach['DonGia'] * (1 - $sach['GiamGia'] / 100), 0, ",", ".") ?> VND
                   </span></div>
                 <!-- /.current-price -->
-                <div class="previous-price"><span class="currency">VND</span><span class="price">
-                    <?= number_format($sach['DonGia'], 0, ",", ".") ?>
+                <div class="previous-price"><span class="currency"></span><span class="price">
+                    <?= number_format($sach['DonGia'], 0, ",", ".") ?> VND
                   </span></div>
                 <!-- /.previous-price -->
               </div><!-- /.item-price -->
@@ -99,7 +99,9 @@ if (isset($_GET['id_sach'])) {
               </p><!-- /.short-description -->
 
               <div class="buttons">
-                <button class="add-to-cart" onclick="addToCart(<?=$sach['Id']?> ,' <?=$sach['TenSach']?>' , <?=$sach['DonGia']?>, 1)">Thêm vào giỏ hàng<i class="fa fa-shopping-cart"></i></button>
+                <button class="add-to-cart"
+                  onclick="addToCart(<?= $sach['Id'] ?> ,' <?= $sach['TenSach'] ?>' , <?= $sach['DonGia'] ?>, 1)">Thêm vào giỏ
+                  hàng<i class="fa fa-shopping-cart"></i></button>
                 <button class="wish-list"><i class="fa fa-heart"></i></button>
               </div>
             </div><!-- /.about-product -->
@@ -256,7 +258,7 @@ if (isset($_GET['id_sach'])) {
           $anh = anh_getAll($sach['Id'])[0];
           $src = 'upload/sach/' . $anh['DuongDan'];
           $alt = $anh['TenAnh']
-          ?>
+            ?>
 
           <div class="item">
             <a class="fancybox" href="<?= $src ?>">
@@ -267,18 +269,26 @@ if (isset($_GET['id_sach'])) {
             </a>
 
             <div class="item-details">
-              <h3 class="item-title"><a href="index.php?pg=detail&id_sach=<?= $sach['Id'] ?>"><?= $sach['TenSach'] ?></a></h3><!-- /.item-title -->
+              <h3 class="item-title"><a href="index.php?pg=detail&id_sach=<?= $sach['Id'] ?>">
+                  <?= $sach['TenSach'] ?>
+                </a></h3><!-- /.item-title -->
               <div class="item-price">
                 <span class="currency">VND</span><!-- /.currency -->
-                <span class="price"><?= $sach['DonGia'] ?></span><!-- /.price -->
+                <span class="price">
+                  <?= $sach['DonGia'] ?>
+                </span><!-- /.price -->
               </div><!-- /.item-price -->
 
               <div class="previous-price">
                 <span class="currency">VND</span><!-- /.currency -->
-                <span class="price"><?= $sach['DonGia'] ?></span><!-- /.price -->
-              </div><!-- /.previous-price -->                  
-              <!-- <a href="#" class="btn" onclick="addToCart(<?=$sp['Id']?> ,' <?=$sp['TenSach']?>' , <?=$sp['DonGia']?>, 1)">Thêm vào giỏ</a>/.btn -->
-              <button class="add-to-cart btn" onclick="addToCart(<?=$sach['Id']?> ,' <?=$sach['TenSach']?>' , <?=$sach['DonGia']?>, 1)">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
+                <span class="price">
+                  <?= $sach['DonGia'] ?>
+                </span><!-- /.price -->
+              </div><!-- /.previous-price -->
+              <!-- <a href="#" class="btn" onclick="addToCart(<?= $sp['Id'] ?> ,' <?= $sp['TenSach'] ?>' , <?= $sp['DonGia'] ?>, 1)">Thêm vào giỏ</a>/.btn -->
+              <button class="add-to-cart btn"
+                onclick="addToCart(<?= $sach['Id'] ?> ,' <?= $sach['TenSach'] ?>' , <?= $sach['DonGia'] ?>, 1)">Thêm vào giỏ<i
+                  class="fa fa-shopping-cart"></i></button>
 
             </div>
           </div>

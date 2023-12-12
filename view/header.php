@@ -27,8 +27,8 @@
     <script src="layout/assets/js/cart.js"></script>
 
     <?php
-    if(isset($_GET['pg'])) {
-        switch($_GET['pg']) {
+    if (isset($_GET['pg'])) {
+        switch ($_GET['pg']) {
             // book ----------------------------------
             case 'product':
                 $css = "shop/shop.css";
@@ -63,7 +63,7 @@
     } else {
         $css = 'home/home-11.css';
     }
-    echo '<link rel="stylesheet" href="layout/assets/css/'.$css.'">';
+    echo '<link rel="stylesheet" href="layout/assets/css/' . $css . '">';
     ?>
     <!--[if lte IE 7]><script src="lte-ie7.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="layout/assets/js/vendor/html5-3.6-respond-1.4.2.min.js"></script><![endif]-->
@@ -74,7 +74,7 @@
 <body>
 
 
-    <header id="masthead" class="masthead">
+    <header id="masthead" class="masthead" >
 
         <div class="header-top">
             <div class="container">
@@ -96,10 +96,10 @@
 
                         <div class="my-account dropdown">
                             <?php
-                            if(isset($_SESSION['user'])) {
-                                if($_SESSION['user']['VaiTro'] == 1) {
+                            if (isset($_SESSION['user'])) {
+                                if ($_SESSION['user']['VaiTro'] == 1) {
                                     echo '
-                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
+                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=ad&active=home">Admin</a></li>
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
@@ -111,7 +111,7 @@
                                     ';
                                 } else {
                                     echo '
-                                        <a href="#">'.$_SESSION['user']['HoVaTen'].'<i class="ti-user"></i></a>
+                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
                                             <li><a href="#">Yêu Thích</a></li>
@@ -154,7 +154,7 @@
                                         <option selected="selected">Tất cả</option>
                                         <?php
                                         $dstheloai = catelogry_get();
-                                        foreach($dstheloai as $theloai): ?>
+                                        foreach ($dstheloai as $theloai): ?>
                                             <option>
                                                 <?= $theloai['TenTheLoai'] ?>
                                             </option>
@@ -202,54 +202,21 @@
                         </li>
 
                         <!-- Pages -->
-                        <li class="menu-item menu-item-has-children menu-item-has-mega-menu">
-                            <a href="#">Sách</a>
-                            <!-- show các thể loại -->
-                            <ul class="mega-menu sub-menu">
-                                <li>
-                                    <div class="container">
-                                        <div class="menu-item col-sm-3">
-                                            <ul class="menu-list">
-                                                <li><a href="404.html">404</a></li>
-                                                <li><a href="about-01.html">About</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="menu-item col-sm-3">
-                                            <ul class="menu-list">
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                <li><a href="faq.html">Faq</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="register.html">Register / Login</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="menu-item col-sm-3">
-                                            <ul class="menu-list">
-                                                <li><a href="service-01.html">Service</a></li>
-                                                <li><a href="cart.html">Shopping Cart</a></li>
-                                                <li><a href="shop-3column.html">Shop 3 Column</a></li>
-                                                <li><a href="shop-4column.html">Shop 4 Column</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="menu-item col-sm-3">
-                                            <ul class="menu-list">
-                                                <li><a href="shop-list.html">Shop List 01</a></li>
-                                                <li><a href="shop-list-no-sidebar.html">Shop List 02</a></li>
-                                                <li><a href="shop-details-01.html">Shop Details 01</a></li>
-                                                <li><a href="shop-details-02.html">Shop Details 02</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php
+                        $dstheloai = catelogry_get();
+                        foreach ($dstheloai as $theloai): ?>
+                            <li class="menu-item menu-item-has-children menu-item-has-mega-menu">
+                                <a href="index.php?pg=product&Id_TheLoai=<?= $theloai['Id'] ?>"
+                                    style="text-transform:capitalize;">
+                                    <?= $theloai['TenTheLoai'] ?>
+                                </a>
+                                <!-- show các thể loại -->
+                            </li>
+                            
+                        <?php endforeach; ?>
 
                         <!-- Blog -->
-                        <li class="menu-item menu-item-has-children">
+                        <li class="menu-item menu-item-has-children" style="display:none;">
                             <a href="#">Blog</a>
                             <ul class="sub-menu">
                                 <li class="menu-item menu-item-has-children">

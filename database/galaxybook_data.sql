@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 10, 2023 lúc 12:36 PM
+-- Thời gian đã tạo: Th12 10, 2023 lúc 12:37 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -20,34 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `galaxybook`
 --
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `binhluan`
---
-
-CREATE TABLE `binhluan` (
-  `Id` int(5) NOT NULL,
-  `Id_NguoiDung` int(5) NOT NULL,
-  `Id_Sach` int(5) NOT NULL,
-  `NoiDung` text NOT NULL,
-  `NgayBinhLuan` date NOT NULL,
-  `TrangThai` bit(1) DEFAULT b'1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `hinhanh`
---
-
-CREATE TABLE `hinhanh` (
-  `Id` int(5) NOT NULL,
-  `Id_Sach` int(5) NOT NULL,
-  `TenAnh` varchar(255) NOT NULL,
-  `DuongDan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `hinhanh`
@@ -193,23 +165,6 @@ INSERT INTO `hinhanh` (`Id`, `Id_Sach`, `TenAnh`, `DuongDan`) VALUES
 (149, 102, '999 Lá Thư Gửi Cho Chính Mình ', 'dabf4f944c5da6f3ba4e581dc5799ccf.jpg'),
 (150, 102, '999 Lá Thư Gửi Cho Chính Mình ', '6a31e0a4e3fa4337ad789961f9bcf6dc.jpg');
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `hoadon`
---
-
-CREATE TABLE `hoadon` (
-  `Id` int(5) NOT NULL,
-  `Id_NguoiDung` int(5) NOT NULL,
-  `TongDon` double(9,2) DEFAULT NULL,
-  `TrangThai` varchar(50) DEFAULT NULL,
-  `NgayMua` date DEFAULT NULL,
-  `TenNguoiNhan` varchar(100) NOT NULL,
-  `SDTNguoiNhan` varchar(10) NOT NULL,
-  `DiaChiNguoiNhan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Đang đổ dữ liệu cho bảng `hoadon`
 --
@@ -218,45 +173,12 @@ INSERT INTO `hoadon` (`Id`, `Id_NguoiDung`, `TongDon`, `TrangThai`, `NgayMua`, `
 (3, 10, 0.00, 'Chờ xác nhận', NULL, 'can', '0129', 'hcm'),
 (4, 10, 0.00, 'Chờ xác nhận', '2023-12-06', 'can', '0129', 'hcm');
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `hoadonchitiet`
---
-
-CREATE TABLE `hoadonchitiet` (
-  `Id` int(5) NOT NULL,
-  `Id_HoaDon` int(5) NOT NULL,
-  `Id_Sach` int(5) NOT NULL,
-  `SoLuong` int(5) NOT NULL,
-  `Gia` double(9,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Đang đổ dữ liệu cho bảng `hoadonchitiet`
 --
 
 INSERT INTO `hoadonchitiet` (`Id`, `Id_HoaDon`, `Id_Sach`, `SoLuong`, `Gia`) VALUES
 (1, 3, 96, 1, 4324.00);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `nguoidung`
---
-
-CREATE TABLE `nguoidung` (
-  `Id` int(5) NOT NULL,
-  `HoVaTen` varchar(100) NOT NULL,
-  `Avatar` varchar(255) DEFAULT 'avatar1.jpg',
-  `DiaChi` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `SDT` varchar(10) NOT NULL,
-  `TaiKhoan` varchar(255) NOT NULL,
-  `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
-  `NgayTao` date NOT NULL,
-  `VaiTro` bit(1) DEFAULT b'0' COMMENT '0 site, 1 admin'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoidung`
@@ -267,31 +189,6 @@ INSERT INTO `nguoidung` (`Id`, `HoVaTen`, `Avatar`, `DiaChi`, `Email`, `SDT`, `T
 (8, 'chi an', 'avatar1.jpg', '600/5 quang trung gò vấp', 'vangchian1010@gmail.com', '0832447737', 'chian', '60208451b29da10a0294f0ddbdb91511', '2023-11-15', b'0'),
 (9, 'Trương Huỳnh', 'avatar1.jpg', 'gò vấp', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps36499', '25f9e794323b453885f5181f1b624d0b', '2023-11-28', b'0'),
 (10, 'nhóm 5', 'avatar1.jpg', 'quận 12', 'galaxybook@gmail.com', '0971735117', 'galaxybook', 'f9bf0052a297facb36e7eb4a7c453a0f', '2023-12-01', b'0');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sach`
---
-
-CREATE TABLE `sach` (
-  `Id` int(5) NOT NULL,
-  `TenSach` varchar(255) NOT NULL,
-  `NguoiDich` varchar(100) NOT NULL,
-  `NamXuatBan` int(4) NOT NULL,
-  `NhaXuatBan` varchar(100) NOT NULL,
-  `SoLuongConHang` int(5) NOT NULL,
-  `DonGia` double(9,2) NOT NULL,
-  `GiamGia` int(2) DEFAULT 0,
-  `LuotXem` int(5) DEFAULT 0,
-  `NgayNhap` date DEFAULT NULL,
-  `LuotBinhLuan` int(5) DEFAULT 0,
-  `LuotMua` int(5) DEFAULT 0,
-  `DanhGia` double(3,2) DEFAULT 0.00,
-  `TrangThai` bit(1) DEFAULT b'1',
-  `MoTa` varchar(225) NOT NULL,
-  `MoTaChiTiet` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `sach`
@@ -344,18 +241,6 @@ INSERT INTO `sach` (`Id`, `TenSach`, `NguoiDich`, `NamXuatBan`, `NhaXuatBan`, `S
 (97, 'Mặc kệ thiên hạ, sống như người Nhật ', 'không', 2018, 'NXB Hà Nội', 6431, 10000.00, 15, 1159, '2023-11-08', 876, 10000, 5.00, b'1', 'Cuốn sách gối đầu giường cho những người hay lo lắng, sợ hãi và luôn thấy mình kém may mắn Dành cho những ai muốn được sống là chính mình, cuộc đời của mình, tuổi trẻ của mình.', 'Đã đến lúc bạn nên dừng tìm kiếm sự an ủi ở người khác, hoặc chờ đợi sự giúp đỡ từ một ai đó. Bởi an ủi hay giúp đỡ về mặt cảm xúc đôi khi giống như con dao hai lưỡi. Nó có thể giúp bạn chống đỡ lo âu hay muộn phiền nhất thời, nhưng lại đẩy bạn chìm sâu hơn vào những cảm xúc tiêu cực đó. Giống như một đứa trẻ khi vấp ngã, bạn mong đợi một sự xoa dịu từ người lớn, mà quên mất rằng sự “hỗ trợ” ấy chỉ càng khiến bạn mãi chẳng thể nào “biết đi”.'),
 (98, 'Đời ngắn đừng ngủ dài ', 'không', 2019, 'NXB Trẻ', 44654, 2312.00, 12, 901, '2023-11-08', 554, 600, 4.00, b'1', 'nếu bạn vẫn còn “ngủ dài” và lười biếng, không suy nghĩ, bận tâm đến cuộc đời mình, “Đời Ngắn Ngủi Đừng Ngủ Dài” sẽ giúp bạn thức tỉnh.', 'Thời gian là vô giá nhưng những điều chúng ta làm được trong một khoảng thời gian sẽ có giá trị nhất định của nó. Nếu bạn dành nhiều thời gian cho những việc có ích và phát triển bản thân từng ngày thì bạn sẽ trở thành một con người khác biệ'),
 (102, '999 Lá Thư Gửi Cho Chính Mình ', 'không', 2019, 'NXB Thanh Niên', 1000, 99000.00, 20, 911, '2023-11-08', 500, 600, 3.00, b'1', 'Cầm trên tay cuốn sách “999 lá thư gửi cho chính mình” – bạn sẽ hiểu rằng: tuổi trẻ của chúng ta dù có mong manh đến đâu thì cũng sẽ thành công vượt qua mọi khó khăn một cách mạnh mẽ ngoài sức tưởng tượng.', '“999 lá thư gửi cho chính mình” – Mong bạn trở thành phiên bản hoàn hảo nhất. Cái gọi là vẻ đẹp nội tâm luôn luôn tốt hơn vẻ bề ngoài hào nhoáng, hy vọng bạn sẽ mãi luôn kiên cường, dũng cảm đứng ở nơi ánh sáng chiếu rọi, sống tốt một cuộc sống mà mình hằng mong ước.');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sach_tacgia`
---
-
-CREATE TABLE `sach_tacgia` (
-  `Id` int(5) NOT NULL,
-  `Id_Sach` int(5) NOT NULL,
-  `Id_TacGia` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `sach_tacgia`
@@ -416,18 +301,6 @@ INSERT INTO `sach_tacgia` (`Id`, `Id_Sach`, `Id_TacGia`) VALUES
 (57, 76, 51),
 (59, 58, 53);
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sach_theloai`
---
-
-CREATE TABLE `sach_theloai` (
-  `Id` int(5) NOT NULL,
-  `Id_Sach` int(5) NOT NULL,
-  `Id_TheLoai` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Đang đổ dữ liệu cho bảng `sach_theloai`
 --
@@ -486,17 +359,6 @@ INSERT INTO `sach_theloai` (`Id`, `Id_Sach`, `Id_TheLoai`) VALUES
 (255, 88, 4),
 (256, 96, 7),
 (257, 98, 7);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `tacgia`
---
-
-CREATE TABLE `tacgia` (
-  `Id` int(5) NOT NULL,
-  `HoVaTen` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tacgia`
@@ -557,17 +419,6 @@ INSERT INTO `tacgia` (`Id`, `HoVaTen`) VALUES
 (52, 'nguyễn anh tuấn'),
 (53, 'ts. trương minh nhật quang');
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `theloai`
---
-
-CREATE TABLE `theloai` (
-  `Id` int(5) NOT NULL,
-  `TenTheLoai` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Đang đổ dữ liệu cho bảng `theloai`
 --
@@ -578,188 +429,6 @@ INSERT INTO `theloai` (`Id`, `TenTheLoai`) VALUES
 (4, 'Kinh dị'),
 (7, 'Truyện ngắn'),
 (8, 'Tâm lý');
-
---
--- Chỉ mục cho các bảng đã đổ
---
-
---
--- Chỉ mục cho bảng `binhluan`
---
-ALTER TABLE `binhluan`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `FK_binhluan(Id_Sach)_sach` (`Id_Sach`),
-  ADD KEY `FK_binhluan(Id_NguoiDung)_NguoiDung` (`Id_NguoiDung`);
-
---
--- Chỉ mục cho bảng `hinhanh`
---
-ALTER TABLE `hinhanh`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `FK_HinhAnh(Id_Sach)_Sach` (`Id_Sach`);
-
---
--- Chỉ mục cho bảng `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `FK_hoadon(Id_NguoiDung)_nguoidung` (`Id_NguoiDung`);
-
---
--- Chỉ mục cho bảng `hoadonchitiet`
---
-ALTER TABLE `hoadonchitiet`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `FK_hoadonchitiet(Id_HoaDon)_nguoidung` (`Id_HoaDon`),
-  ADD KEY `FK_hoadonchitiet(Id_Sach)_sach` (`Id_Sach`);
-
---
--- Chỉ mục cho bảng `nguoidung`
---
-ALTER TABLE `nguoidung`
-  ADD PRIMARY KEY (`Id`);
-
---
--- Chỉ mục cho bảng `sach`
---
-ALTER TABLE `sach`
-  ADD PRIMARY KEY (`Id`);
-
---
--- Chỉ mục cho bảng `sach_tacgia`
---
-ALTER TABLE `sach_tacgia`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `FK_S&TL(Id_Sach)_Sach` (`Id_Sach`),
-  ADD KEY `FK_S&TL(Id_TheLoai)_TheLoai` (`Id_TacGia`);
-
---
--- Chỉ mục cho bảng `sach_theloai`
---
-ALTER TABLE `sach_theloai`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `FK_S&TL(Id_Sach)_Sach` (`Id_Sach`),
-  ADD KEY `FK_S&TL(Id_TheLoai)_TheLoai` (`Id_TheLoai`);
-
---
--- Chỉ mục cho bảng `tacgia`
---
-ALTER TABLE `tacgia`
-  ADD PRIMARY KEY (`Id`);
-
---
--- Chỉ mục cho bảng `theloai`
---
-ALTER TABLE `theloai`
-  ADD PRIMARY KEY (`Id`);
-
---
--- AUTO_INCREMENT cho các bảng đã đổ
---
-
---
--- AUTO_INCREMENT cho bảng `binhluan`
---
-ALTER TABLE `binhluan`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `hinhanh`
---
-ALTER TABLE `hinhanh`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
-
---
--- AUTO_INCREMENT cho bảng `hoadon`
---
-ALTER TABLE `hoadon`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT cho bảng `hoadonchitiet`
---
-ALTER TABLE `hoadonchitiet`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT cho bảng `nguoidung`
---
-ALTER TABLE `nguoidung`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT cho bảng `sach`
---
-ALTER TABLE `sach`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
-
---
--- AUTO_INCREMENT cho bảng `sach_tacgia`
---
-ALTER TABLE `sach_tacgia`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
-
---
--- AUTO_INCREMENT cho bảng `sach_theloai`
---
-ALTER TABLE `sach_theloai`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
-
---
--- AUTO_INCREMENT cho bảng `tacgia`
---
-ALTER TABLE `tacgia`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
-
---
--- AUTO_INCREMENT cho bảng `theloai`
---
-ALTER TABLE `theloai`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- Các ràng buộc cho các bảng đã đổ
---
-
---
--- Các ràng buộc cho bảng `binhluan`
---
-ALTER TABLE `binhluan`
-  ADD CONSTRAINT `FK_binhluan(Id_NguoiDung)_NguoiDung` FOREIGN KEY (`Id_NguoiDung`) REFERENCES `nguoidung` (`Id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_binhluan(Id_Sach)_sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `hinhanh`
---
-ALTER TABLE `hinhanh`
-  ADD CONSTRAINT `FK_HinhAnh(Id_Sach)_Sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `hoadon`
---
-ALTER TABLE `hoadon`
-  ADD CONSTRAINT `FK_hoadon(Id_NguoiDung)_nguoidung` FOREIGN KEY (`Id_NguoiDung`) REFERENCES `nguoidung` (`Id`) ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `hoadonchitiet`
---
-ALTER TABLE `hoadonchitiet`
-  ADD CONSTRAINT `FK_hoadonchitiet(Id_HoaDon)_nguoidung` FOREIGN KEY (`Id_HoaDon`) REFERENCES `hoadon` (`Id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_hoadonchitiet(Id_Sach)_sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `sach_tacgia`
---
-ALTER TABLE `sach_tacgia`
-  ADD CONSTRAINT `FK_sach_tacgia(Id_Sach)_Sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_sach_tacgia(Id_TacGia)_TacGia` FOREIGN KEY (`Id_TacGia`) REFERENCES `tacgia` (`Id`) ON UPDATE CASCADE;
-
---
--- Các ràng buộc cho bảng `sach_theloai`
---
-ALTER TABLE `sach_theloai`
-  ADD CONSTRAINT `FK_S&TL(Id_Sach)_Sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_S&TL(Id_TheLoai)_TheLoai` FOREIGN KEY (`Id_TheLoai`) REFERENCES `theloai` (`Id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

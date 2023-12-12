@@ -57,6 +57,24 @@ function pdo_execute($sql){
         unset($conn);
     }
 }
+function pdo_executeHaveArray($sql, $params = array()) {
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);
+
+        // Bind parameters
+        foreach ($params as $key => $value) {
+            $stmt->bindValue($key, $value);
+        }
+
+        $stmt->execute();
+    } catch (PDOException $e) {
+        throw $e;
+    } finally {
+        unset($conn);
+    }
+}
+
 function pdo_execute_returnid($sql){
     try{
         $conn = pdo_get_connection();

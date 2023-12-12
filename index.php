@@ -107,7 +107,7 @@ if(isset($_GET['pg'])) {
             break;
         case 'logout':
             unset($_SESSION['user']);
-            header('location: index.php');
+            header('location: index.php?pg=login');
             break;
         case 'register':
             if(isset($_POST['signup-form-submit'])) {
@@ -146,12 +146,11 @@ if(isset($_GET['pg'])) {
     $content = "home";
 }
 if(isset($_GET['pg']) && $_GET['pg'] == 'ad') {
-    include("admin/ad-".$content.".php");
+    include_once("admin/view/".$content.".php");
 } else {
     include("view/header.php");
     include("view/".$content.".php");
     include("view/footer.php");
-
 }
 
 ?>
