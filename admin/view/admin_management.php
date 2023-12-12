@@ -29,7 +29,7 @@ $userCount = getAdminCount();
     <div class="table-data">
         <div class="order">
             <div class="head">
-                <h3>Người dùng (<?=$userCount?>)</h3>
+                <h3>Admin (<?=$userCount?>)</h3>
                 <!-- <i class='bx bx-search'></i> -->
                 <!-- <i class='bx bx-filter'></i> -->
             </div>

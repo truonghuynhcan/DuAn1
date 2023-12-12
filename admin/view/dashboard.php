@@ -28,11 +28,11 @@ $listUser = getNewlyRegisteredUsers();
             <h1>Bảng điều kiển</h1>
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.php?pg=ad&active=home">Bảng điều kiển</a>
+                    <a href="index.php?pg=ad&active=home" class="active">Bảng điều kiển</a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="active" href="index.php?pg=ad&active=home">Trang chủ</a>
+                    <a class="" href="index.php?pg=ad&active=home">Trang chủ</a>
                 </li>
             </ul>
         </div>

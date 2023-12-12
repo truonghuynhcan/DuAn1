@@ -18,11 +18,11 @@ $listCatelogry = catelogry_get();
             <h1>Quản lý sách</h1>
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.php?pg=ad&active=book_management" class="">Quản lý sách</a>
+                    <a href="index.php?pg=ad&active=book_management" class="active">Quản lý sách</a>
                 </li>
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>
-                    <a class="active" href="#">Cập nhật sách</a>
+                    <a class="" href="#">Cập nhật sách</a>
                 </li>
             </ul>
         </div>

@@ -293,7 +293,7 @@ if (isset($_GET['active'])) {
             $active = 'book_management';
             break;
         // user ------------------------------------------------------------------------------------
-        case 'admin_update':
+        case 'user_update':
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
                 // Lấy dữ liệu từ form
                 $userId = $_GET['userId'];
