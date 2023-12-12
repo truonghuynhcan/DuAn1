@@ -19,10 +19,6 @@ if ($totalRevenue == null) {
 }
 
 $listUser = getNewlyRegisteredUsers();
-if ($listUser) {
-} else {
-    echo "Không thể lấy danh sách người dùng mới.";
-}
 ?>
 
 <!-- MAIN -->

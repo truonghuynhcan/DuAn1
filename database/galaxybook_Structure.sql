@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 10, 2023 lúc 12:36 PM
+-- Thời gian đã tạo: Th12 12, 2023 lúc 08:29 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -96,7 +96,7 @@ CREATE TABLE `nguoidung` (
   `TaiKhoan` varchar(255) NOT NULL,
   `MatKhau` varchar(32) NOT NULL COMMENT 'dùng hàm md5 mã hóa',
   `NgayTao` date NOT NULL,
-  `VaiTro` bit(1) DEFAULT b'0' COMMENT '0 site, 1 admin'
+  `VaiTro` int(1) DEFAULT 0 COMMENT '0 site, 1 admin'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -119,7 +119,7 @@ CREATE TABLE `sach` (
   `LuotBinhLuan` int(5) DEFAULT 0,
   `LuotMua` int(5) DEFAULT 0,
   `DanhGia` double(3,2) DEFAULT 0.00,
-  `TrangThai` bit(1) DEFAULT b'1',
+  `TrangThai` int(1) DEFAULT 1,
   `MoTa` varchar(225) NOT NULL,
   `MoTaChiTiet` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

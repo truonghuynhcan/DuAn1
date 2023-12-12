@@ -17,6 +17,12 @@
 	<?php
 	switch ($_GET['active']) {
 		// admin
+		case 'admin_update':
+			$active = 'admin_update';
+			break;
+		case 'admin_management':
+			$active = 'admin_management';
+			break;
 		// book
 		case 'book_authorUpdate':
 			$active = 'book_authorUpdate';
@@ -31,6 +37,12 @@
 			$active = 'book_management';
 			break;
 		// user
+		case 'user_update':
+			$active = 'user_update';
+			break;
+		case 'user_management':
+			$active = 'user_management';
+			break;
 		// web
 		case 'home':
 			$active = 'dashboard';
@@ -72,7 +84,7 @@
 			</a>
 			</li>
 			<?php
-			if ($_GET['active'] === 'book_management'|| $_GET['active'] ==='book_update' || $_GET['active'] ==='book_genreUpdate' || $_GET['active'] ==='book_authorUpdate') {
+			if ($_GET['active'] === 'book_management' || $_GET['active'] === 'book_update' || $_GET['active'] === 'book_genreUpdate' || $_GET['active'] === 'book_authorUpdate') {
 				echo '<li class="active">';
 			} else {
 				echo '<li class="">';
@@ -84,7 +96,7 @@
 			</a>
 			</li>
 			<?php
-			if ($_GET['active'] === 'user_management') {
+			if ($_GET['active'] === 'user_management' || $_GET['active'] === 'user_update') {
 				echo '<li class="active">';
 			} else {
 				echo '<li class="">';
@@ -108,7 +120,7 @@
 			</a>
 			</li>
 			<?php
-			if ($_GET['active'] === 'admin_management') {
+			if ($_GET['active'] === 'admin_management' || $_GET['active'] === 'admin_update') {
 				echo '<li class="active">';
 			} else {
 				echo '<li class="">';

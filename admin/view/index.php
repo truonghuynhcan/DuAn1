@@ -5,8 +5,85 @@ include('admin/model/m_bill.php');
 
 if (isset($_GET['active'])) {
     switch ($_GET['active']) {
-        // admin
-        // book
+        // admin ------------------------------------------------------------------------------------
+        case 'admin_update':
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
+                // Lấy dữ liệu từ form
+                $userId = $_GET['userId'];
+                $tennguoidung = $_POST['tennguoidung'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $taikhoan = $_POST['taikhoan'];
+                $diachi = $_POST['diachi'];
+                $vaitro = $_POST['vaitro'];
+
+                // Lấy dữ liệu người dùng từ cơ sở dữ liệu
+                $user = getUserById($userId);
+
+                // Kiểm tra xem dữ liệu từ form có khác với dữ liệu ban đầu từ cơ sở dữ liệu hay không
+                if ($user['HoVaTen'] !== $tennguoidung || $user['Email'] !== $email || $user['SDT'] !== $sdt || $user['TaiKhoan'] !== $taikhoan || $user['DiaChi'] !== $diachi || $user['VaiTro'] !== $vaitro) {
+                    if ($vaitro != $_SESSION['user']['VaiTro'] && $user['Id'] == $_SESSION['user']['Id']) {
+                        unset($_POST);
+
+                        echo '<script>';
+                        echo 'alert("Bạn không thể thay đổi vai trò của bản thân!");';
+                        echo 'window.location.href ="index.php?pg=ad&active=admin_update&userId=' . $userId . '";'; // Chuyển hướng sau khi xóa
+                        echo '</script>';
+                        exit();
+                    } else {
+                        // Nếu có thay đổi, thực hiện cập nhật
+                        $updateSuccess = updateUser($userId, $tennguoidung, $email, $sdt, $taikhoan, $diachi, $vaitro);
+                        if ($updateSuccess) {
+                            unset($_POST);
+                            // Cập nhật thành công, thực hiện hành động cần thiết
+                            echo '<script>';
+                            echo 'alert("Cập nhật người dùng id=' . $userId . ' thành công!");';
+                            echo 'window.location.href ="index.php?pg=ad&active=admin_update&userId=' . $userId . '";'; // Chuyển hướng sau khi xóa
+                            echo '</script>';
+                            exit();
+                        } else {
+                            unset($_POST);
+                            // Xử lý khi cập nhật thất bại
+                            echo '<script>';
+                            echo 'alert("Cập nhật không thành công!");';
+                            echo 'window.location.href ="index.php?pg=ad&active=admin_update&userId=' . $userId . '";'; // Chuyển hướng sau khi xóa
+                            echo '</script>';
+                        }
+                    }
+                } else {
+                    unset($_POST);
+                    // Không có sự thay đổi, không cần thực hiện cập nhật
+
+                    echo '<script>';
+                    echo 'alert("Bạn chưa thay đổi dữ liệu gì!");';
+                    echo 'window.location.href ="index.php?pg=ad&active=admin_update&userId=' . $userId . '";';
+                    echo '</script>';
+                }
+            }
+            $active = 'admin_update';
+            break;
+        case 'admin_management':
+            //xóa người dùng 
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['deleteUserId'])) {
+                $userId = $_GET['deleteUserId'];
+                if (!checkUserInHoaDon($userId) && $_SESSION['user']['Id'] != $userId) {
+                    deleteUser($userId);
+                    echo '<script>';
+                    echo 'alert("Đã xóa Admin id=' . $userId . ' thành công!");';
+                    echo 'window.location.href ="index.php?pg=ad&active=admin_management";'; // Chuyển hướng sau khi xóa
+                    echo '</script>';
+                    break;
+                } else {
+                    echo '<script>';
+                    echo 'alert("Admin không thể xóa chính mình!");';
+                    echo 'window.location.href ="index.php?pg=ad&active=admin_management";'; // Chuyển hướng sau khi xóa
+                    echo '</script>';
+                }
+            }
+
+            $active = 'admin_management';
+            break;
+        // book ------------------------------------------------------------------------------------
         case 'book_authorUpdate':
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
                 // Lấy giá trị từ form
@@ -46,7 +123,7 @@ if (isset($_GET['active'])) {
                 deleteBookById($bookDeleteId);
                 echo '<script>';
                 echo 'alert("Xóa sách id=' . $bookDeleteId . ' thành công!");';
-                echo 'window.location.href = "index.php?pg=ad&active=book_authorUpdate&gauthorId=' . $_GET['authorId'] . '";'; // Chuyển hướng sau khi xóa
+                echo 'window.location.href = "index.php?pg=ad&active=book_authorUpdate&authorId=' . $_GET['authorId'] . '";'; // Chuyển hướng sau khi xóa
                 echo '</script>';
                 break;
             }
@@ -215,10 +292,75 @@ if (isset($_GET['active'])) {
             }
             $active = 'book_management';
             break;
+        // user ------------------------------------------------------------------------------------
+        case 'admin_update':
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save'])) {
+                // Lấy dữ liệu từ form
+                $userId = $_GET['userId'];
+                $tennguoidung = $_POST['tennguoidung'];
+                $email = $_POST['email'];
+                $sdt = $_POST['sdt'];
+                $taikhoan = $_POST['taikhoan'];
+                $diachi = $_POST['diachi'];
+                $vaitro = $_POST['vaitro'];
 
-        // user
+                // Lấy dữ liệu người dùng từ cơ sở dữ liệu
+                $user = getUserById($userId);
 
-        // web
+                // Kiểm tra xem dữ liệu từ form có khác với dữ liệu ban đầu từ cơ sở dữ liệu hay không
+                if ($user['HoVaTen'] !== $tennguoidung || $user['Email'] !== $email || $user['SDT'] !== $sdt || $user['TaiKhoan'] !== $taikhoan || $user['DiaChi'] !== $diachi || $user['VaiTro'] !== $vaitro) {
+                    // Nếu có thay đổi, thực hiện cập nhật
+                    $updateSuccess = updateUser($userId, $tennguoidung, $email, $sdt, $taikhoan, $diachi, $vaitro);
+                    if ($updateSuccess) {
+                        unset($_POST);
+                        // Cập nhật thành công, thực hiện hành động cần thiết
+                        echo '<script>';
+                        echo 'alert("Cập nhật người dùng id=' . $userId . ' thành công!");';
+                        echo 'window.location.href ="index.php?pg=ad&active=user_update&userId=' . $userId . '";'; // Chuyển hướng sau khi xóa
+                        echo '</script>';
+                        exit();
+                    } else {
+                        unset($_POST);
+                        // Xử lý khi cập nhật thất bại
+                        echo '<script>';
+                        echo 'alert("Cập nhật không thành công!");';
+                        echo 'window.location.href ="index.php?pg=ad&active=user_update&userId=' . $userId . '";'; // Chuyển hướng sau khi xóa
+                        echo '</script>';
+                    }
+                } else {
+                    unset($_POST);
+                    // Không có sự thay đổi, không cần thực hiện cập nhật
+
+                    echo '<script>';
+                    echo 'alert("Bạn chưa thay đổi dữ liệu gì!");';
+                    echo 'window.location.href ="index.php?pg=ad&active=user_update&userId=' . $userId . '";';
+                    echo '</script>';
+                }
+            }
+            $active = 'admin_update';
+            break;
+        case 'user_management':
+            //xóa người dùng 
+            if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['deleteUserId'])) {
+                $userId = $_GET['deleteUserId'];
+                if (!checkUserInHoaDon($userId)) {
+                    deleteUser($userId);
+                    echo '<script>';
+                    echo 'alert("Đã xóa người dùng id=' . $userId . ' thành công!");';
+                    echo 'window.location.href ="index.php?pg=ad&active=user_management";'; // Chuyển hướng sau khi xóa
+                    echo '</script>';
+                    break;
+                } else {
+                    echo '<script>';
+                    echo 'alert("Người dùng có hóa đơn, không thể xóa!");';
+                    echo 'window.location.href ="index.php?pg=ad&active=user_management";'; // Chuyển hướng sau khi xóa
+                    echo '</script>';
+                }
+            }
+
+            $active = 'user_management';
+            break;
+        // web ------------------------------------------------------------------------------------
         case 'home':
             $active = 'dashboard';
             break;
