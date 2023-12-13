@@ -6,10 +6,13 @@ include("model/m_book.php");
 
 if(isset($_GET['pg'])) {
     switch($_GET['pg']) {
+        
         // admin ----------------------------------
         case 'ad':
             $content = "index";
             break;
+
+
         // book ----------------------------------
         case 'product':
             $content = "product";
@@ -18,7 +21,14 @@ if(isset($_GET['pg'])) {
             $content = "detail";
             break;
 
+            
         // web ----------------------------------
+        case 'gop-y':
+            $content = "gop-y";
+            break;
+        case 'timkiem':
+            $content = 'timkiem';
+            break;
         case 'checkout':
             $content = "checkout";
 
@@ -56,6 +66,7 @@ if(isset($_GET['pg'])) {
         case 'detail':
             $content = 'detail';
             break;
+
 
         // user ----------------------------------
         case 'my-profile':

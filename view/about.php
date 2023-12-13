@@ -16,6 +16,7 @@
               <li><a href="index.php?pg=home">Trang Chủ</a></li>
               <li><a href="index.php?pg=connect">Liên Hệ</a></li>
               <li class="active">Về Chúng Tôi</li>
+              <li><a href="index.php?pg=gop-y">Góp Ý</li>
             </ol><!-- /.breadcrumb -->
           </div>
 
@@ -203,28 +204,28 @@
               <div class="progress-bar-item">
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="83" aria-valuemin="0" data-progress-value="83%" aria-valuemax="100">
-                    <span class="progress-text">Thiết Kế</span> 
+                    <span class="progress-text" style="width:6rem;">Thiết Kế</span> 
                     <span class="progress-percent"> 83% </span>
                   </div>
                 </div><!-- /.progress --> 
 
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="76" aria-valuemin="0" data-progress-value="76%" aria-valuemax="100">
-                    <span class="progress-text">Phát triển</span> 
+                    <span class="progress-text" style="width:6rem;">Phát triển</span> 
                     <span class="progress-percent"> 76% </span>
                   </div>
                 </div><!-- /.progress -->
 
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="90" aria-valuemin="0" data-progress-value="90%" aria-valuemax="100">
-                    <span class="progress-text">Marketing</span> 
+                    <span class="progress-text" style="width:6rem;">Marketing</span> 
                     <span class="progress-percent"> 90% </span>
                   </div>
                 </div><!-- /.progress -->
 
                 <div class="progress thin">
                   <div class="progress-bar default" role="progressbar" aria-valuenow="95" aria-valuemin="0" data-progress-value="95%" aria-valuemax="100">
-                    <span class="progress-text">PHP</span> 
+                    <span class="progress-text" style="width:6rem;">PHP</span> 
                     <span class="progress-percent"> 95% </span>
                   </div>
                 </div><!-- /.progress -->
@@ -284,8 +285,6 @@
       </div><!-- /.container -->
     </div><!-- /.section-padding -->
   </section><!-- /.extra-features -->
-
-
 
   <section class="subscribe-03 background-bg" data-image-src="images/home07/subscribe.jpg">
     <div class="container">

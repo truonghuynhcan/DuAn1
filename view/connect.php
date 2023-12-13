@@ -15,6 +15,7 @@
                         <li><a href="index.php?pg=home">trang chủ</a></li>
                         <li class="active">liên hệ</li>
                         <li><a href="index.php?pg=about">về chúng tôi </a></li>
+						<li><a href="index.php?pg=gop-y">Góp Ý</li>
                     </ol><!-- /.breadcrumb -->
                 </div>
 
@@ -23,9 +24,6 @@
     </div><!-- /.section-padding -->
 </section><!-- /.page-name-sec -->
 
-
-
-
 <div id="colorlib-contact">
 			<div class="container">
 				<div class="row">
@@ -33,71 +31,22 @@
 						<h3>Thông tin</h3>
 						<div class="row contact-info-wrap">
 							<div class="col-md-3">
-								<p><span><i class="fas fa-location-dot"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
+								<p><span></span><b>ĐỊA CHỈ:</b><a href="mailto:Công viên phần mềm quang trung, Q 12, Hồ Chí Minh">Công viên phần mềm quang trung, Q 12, Hồ Chí Minh</a></p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="fas fa-phone"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+								<p><span></i></span><b>Email:</b><a href="mailto:galaxybook@gmail.com">galaxybook@gmail.com</a></p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="fas fa-mail"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-							</div>
-							<div class="col-md-3">
-								<p><span><i class="fas fa-globe"></i></span> <a href="#">yoursite.com</a></p>
+								<p><span></i></span><b>SDT:</b><a href="tel://0123456789">0123456789</a></p>
 							</div>
 						</div>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2074.5264150291405!2d106.62556392048381!3d10.853553495899112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752a20e094e47f%3A0xa51b9c64f82f49b6!2zMjMyIFTDtCBLw70sIFTDom4gSMawbmcgVGh14bqtbiwgUXXhuq1uIDEyLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1701863321667!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="contact-wrap">
-							<h3>Liên lạc</h3>
-							<form action="#" class="contact-form">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group">
-											<label for="fname">Họ</label>
-											<input type="text" id="fname" class="form-control" placeholder="Họ người dùng">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">
-							 				<input type="text" id="lname" class="form-control" placeholder="Tên người dùng">
-										</div>
-									</div>
-									<div class="w-100"></div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<label for="email">Email</label>
-											<input type="text" id="email" class="form-control" placeholder="Email người dùng">
-										</div>
-									</div>
-									<div class="w-100"></div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<label for="subject">Tiêu đề</label>
-											<input type="text" id="subject" class="form-control" placeholder="...">
-										</div>
-									</div>
-									<div class="w-100"></div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<label for="message">Nội dung</label>
-											<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="..."></textarea>
-										</div>
-									</div>
-									<div class="w-100"></div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<input type="submit" value="Gửi" class="btn btn-primary">
-										</div>
-									</div>
-								</div>
-							</form>		
-						</div>
+			</div>
+		</div>
 					</div>
 					<div class="col-md-6">
 						<div id="map" class="colorlib-map"></div>		
 					</div>
 				</div>
-			</div>
-		</div>

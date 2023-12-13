@@ -74,7 +74,7 @@
 <body>
 
 
-    <header id="masthead" class="masthead" >
+    <header id="masthead" class="masthead">
 
         <div class="header-top">
             <div class="container">
@@ -148,21 +148,16 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="top-search-form">
-                            <form action="#" method="post" class="menu-form">
+                            <form action="index.php" method="get" class="menu-form">
                                 <fieldset>
                                     <select name="category" id="category">
-                                        <option selected="selected">Tất cả</option>
-                                        <?php
-                                        $dstheloai = catelogry_get();
-                                        foreach ($dstheloai as $theloai): ?>
-                                            <option>
-                                                <?= $theloai['TenTheLoai'] ?>
-                                            </option>
-                                        <?php endforeach; ?>
+                                        <option value="sach" selected="selected">Sách</option>
+                                        <option value="tacgia">Tác giả</option>
+                                        <option value="theloai">Thể loại</option>
                                     </select>
                                 </fieldset>
-
-                                <input type="text" placeholder="tìm kiếm ..." class="form-control">
+                                <input type="text" name="tukhoa" placeholder="Tìm kiếm" class="form-control">
+                                <input type="hidden" name="pg" value="timkiem">
                                 <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                             </form>
                         </div><!-- /.top-search-form -->
@@ -212,7 +207,7 @@
                                 </a>
                                 <!-- show các thể loại -->
                             </li>
-                            
+
                         <?php endforeach; ?>
 
                         <!-- Blog -->
@@ -267,6 +262,10 @@
 
                                 <li class="menu-item">
                                     <a href="index.php?pg=connect">Liên hệ</a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="index.php?pg=gop-y">Góp ý</a>
                                 </li>
                             </ul>
                         </li>
