@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -71,7 +74,7 @@
 </head>
 
 
-<body>
+<body style="font-family:Arial, Helvetica, sans-serif;">
 
 
     <header id="masthead" class="masthead">
@@ -99,24 +102,20 @@
                             if (isset($_SESSION['user'])) {
                                 if ($_SESSION['user']['VaiTro'] == 1) {
                                     echo '
-                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <a href="index.php?pg=my-profile" style="">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=ad&active=home">Admin</a></li>
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
-                                            <li><a href="#">Yêu Thích</a></li>
-                                            <li><a href="cart.html">Giỏ Hàng</a></li>
-                                            <li><a href="checkout.html">Thanh toán</a></li>
+                                            <li><a href="index.php?pg=cart">Giỏ Hàng</a></li>
                                             <li><a href="index.php?pg=logout">Đăng xuất</a></li>
                                         </ul>
                                     ';
                                 } else {
                                     echo '
-                                        <a href="#">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <a href="index.php?pg=my-profile">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
-                                            <li><a href="#">Yêu Thích</a></li>
-                                            <li><a href="cart.html">Giỏ Hàng</a></li>
-                                            <li><a href="checkout.html">Thanh toán</a></li>
+                                            <li><a href="index.php?pg=cart">Giỏ Hàng</a></li>
                                             <li><a href="index.php?pg=logout">Đăng xuất</a></li>
                                         </ul>
                                     ';
@@ -164,12 +163,11 @@
                     </div>
                     <div class="col-sm-2">
                         <div class="shop-cart">
-                            <a class="cart-control" href="index.php?pg=cart" title="View your shopping cart">
+                            <a class="cart-control" href="index.php?pg=cart" title="View your shopping cart" id='cartIcon'>
                                 <i class="ti-bag"></i>
-                                <span class="count" id="totalQuantity">
-                                    <?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?>
+                                <span class="count">
+                                    <?php echo $_SESSION['totalQuantity'] ?? '0'; ?>
                                 </span>
-                                <!-- <span class="count" id="totalQuantity"><?php echo isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : ''; ?></span> -->
                                 <span>Giỏ hàng</span>
                             </a><!-- /.cart-control -->
                         </div>

@@ -1,3 +1,5 @@
+<?php
+?>
 <section class="banner banner-11 text-left background-bg" data-image-src="layout/images/home11/banner.jpg">
     <div class="container">
         <div class="row">
@@ -163,7 +165,7 @@
                                                         </h3><!-- /.item-title -->
                                                         <div class="item-price"><span class="currency"></span><span
                                                                 class="price">
-                                                                <?= number_format($bestSell['DonGia'],0,',','.') ?> VND
+                                                                <?= number_format($bestSell['DonGia'], 0, ',', '.') ?> VND
                                                             </span></div><!-- /.item-price -->
                                                     </div><!-- /.item-details -->
                                                 </div><!-- /.product-item -->
@@ -362,7 +364,12 @@
                             <div class="item-content">
 
                                 <div class="buttons">
-                                    <button class="add-to-cart" onclick="addToCart(<?=$noibat['Id']?> ,' <?=$noibat['TenSach']?>' , <?=$noibat['DonGia']?>, 1)">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
+                                    <button class="add-to-cart">
+                                        <a href="index.php?pg=cart&addItemId=<?= $noibat['Id'] ?>" style="color:inherit">
+                                            Thêm vào giỏ
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </button>
                                     <button class="wish-list"><i class="fa fa-heart"></i></button>
                                 </div><!-- /.buttons -->
 
@@ -372,7 +379,7 @@
                                 <div class="item-price">
                                     <span class="currency"></span>
                                     <span class="price">
-                                        <?= number_format($noibat['DonGia'],0,',','.') ?> VND
+                                        <?= number_format($noibat['DonGia'], 0, ',', '.') ?> VND
                                     </span>
                                 </div><!-- /.item-price -->
 
@@ -385,8 +392,8 @@
                                 <script src="link_den_bootstrap_rating"></script>
                                 <script>
                                     $(document).ready(function () {
-                                        // var danhgia = <?= number_format($noibat['DanhGia'],2,'.',',') ?>;
-                                        var danhgia = <?=$noibat['DanhGia']?>;
+                                        // var danhgia = <?= number_format($noibat['DanhGia'], 2, '.', ',') ?>;
+                                        var danhgia = <?= $noibat['DanhGia'] ?>;
                                         $('#danhgia_<?= $noibat['Id'] ?>').rating('rate', danhgia);
                                     });
                                 </script>
@@ -431,7 +438,12 @@
                                 <!-- /.item-thumbnail -->
                                 <div class="item-content">
                                     <div class="buttons">
-                                        <button class="add-to-cart">Thêm vào giỏ<i class="fa fa-shopping-cart"></i></button>
+                                    <button class="add-to-cart">
+                                        <a href="index.php?pg=cart&addItemId=<?= $banchay['Id'] ?>" style="color:inherit">
+                                            Thêm vào giỏ
+                                            <i class="fa fa-shopping-cart"></i>
+                                        </a>
+                                    </button>
                                         <button class="wish-list"><i class="fa fa-heart"></i></button>
                                     </div><!-- /.buttons -->
                                     <h3 class="item-title"><a href="index.php?pg=detail&id_sach=<?= $banchay['Id'] ?>">
@@ -440,7 +452,7 @@
                                     <div class="item-price">
                                         <span class="currency"></span>
                                         <span class="price">
-                                            <?= number_format($banchay['DonGia'],0,',','.') ?> VND
+                                            <?= number_format($banchay['DonGia'], 0, ',', '.') ?> VND
                                         </span>
                                     </div><!-- /.item-price -->
 

@@ -4,7 +4,7 @@
 /* 1 -------- Header --------- */
 
 header {
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	vertical-align: middle;
 	z-index: 999;
 }
@@ -31,7 +31,7 @@ header select:active {
 .header-top {
 	border-bottom: 1px solid #e7e7e7;
 	color: #808080;
-	font-family: 'Yantramanav';
+	/* font-family: 'Yantramanav'; */
 	font-size: 13px;
 	font-weight: 400;
 	letter-spacing: 0.25px;
@@ -207,7 +207,7 @@ header select:active {
 	font-size: 13px;
 	font-weight: 600;
 	padding: 5px 15px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	width: 175px;
 
 	-webkit-border: none;
@@ -226,7 +226,7 @@ header select:active {
 	height: 24px;
 	max-width: 70%;
 	padding: 0 55px 0 15px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 .menu-form button {
 	background: #e0d2a2;
@@ -370,7 +370,7 @@ header select:active {
 	font-weight: 600;
 	letter-spacing: 0.25px;
 	padding: 7px 0 12px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 .cart-items .item-title a {
 	color: #545454;
@@ -419,7 +419,7 @@ header select:active {
 	line-height: 1;
 	padding: 0;
 	text-align: left;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 .cart-middle .btn:hover {
 	background: #fff;
@@ -470,7 +470,7 @@ header select:active {
 	line-height: 65px;
 	padding: 4px 0 0;
 	position: relative;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 
 	-webkit-transition: all .25s ease;
 	-moz-transition: all .25s ease;
@@ -574,7 +574,7 @@ header .container {
 	letter-spacing: 0.5px;
 	line-height: 45px;
 	padding: 4px 15px 0 39px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 
 	-webkit-transition: all .4s ease;
 	-moz-transition: all .4s ease;
@@ -660,7 +660,7 @@ header .container {
 	font-weight: 700;
 	letter-spacing: 0.5px;
 	padding: 45px 0 13px 40px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 .menu-content {
 	position: absolute;
@@ -680,7 +680,7 @@ header .container {
 	font-family: 'Poppins';
 	font-size: 18px;
 	font-weight: 700;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	position: absolute;
 	text-align: center;
 	left: 50%;

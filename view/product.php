@@ -1,10 +1,13 @@
-<?php 
-if (isset( $_GET['Id_TheLoai'])) {
+<?php
+if (isset($_GET['Id_TheLoai'])) {
   $Id_TheLoai = $_GET['Id_TheLoai'];
-} 
-else{$Id_TheLoai=1;};
+} else {
+  $Id_TheLoai = 1;
+}
+;
 $listsp = product_cat($Id_TheLoai);
 ?>
+
 <body>
   <section class="page-name-sec page-name-sec-01">
     <div class="section-padding">
@@ -14,7 +17,7 @@ $listsp = product_cat($Id_TheLoai);
         <div class="row">
           <div class="col-sm-7">
             <p class="description">
-             
+
             </p><!-- /.description -->
           </div>
 
@@ -78,51 +81,70 @@ $listsp = product_cat($Id_TheLoai);
               <div class="row">
                 <div class="tab-content">
                   <div role="tabpanel" class="tab-pane fade active in text-center" id="grid">
-                  <?php foreach ($listsp as $sp) {  ?>  
-                  <div class="col-sm-4">
-                      <div class="item">
-                        <div class="item-thumbnail" style="width: 16.4rem; height:17.6rem; overflow: hidden;">
-                          <a class="fancybox" href="images/home08/featured/1.jpg">
-                            <img src="upload/sach/<?php echo layhinhSach($sp['Id']);?>" alt="" height="100%" >
-                          </a>
-                        </div><!-- /.item-thumbnail -->
-                        
-                        <div class="item-content">
-                          <div class="buttons">
-                            <button class="add-to-cart">Thêm vào giỏ <i class="fa fa-shopping-cart"></i></button>
-                            <button class="wish-list"><i class="fa fa-heart"></i></button>
-                          </div><!-- /.buttons -->
-                          <h3 class="item-title">
-                            <a href="index.php?pg=detail&id_sach=<?php echo $sp['Id'];?>"><?php echo $sp['TenSach'];?></a>
-                          </h3><!-- /.item-title -->
-                          <div class="item-price">
-                            <span class="price"><?php echo number_format($sp['DonGia'],0,",",".");?> VND</span> 
-                          </div><!-- /.item-price -->
-                          <div class="rating">
-                            <input type="hidden" class="rating-tooltip-manual" data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5"/>
-                          </div><!-- /.rating -->
+                    <?php foreach ($listsp as $sp) { ?>
+                      <div class="col-sm-4">
+                        <div class="item">
+                          <div class="item-thumbnail" style="height:17.6rem; overflow: hidden;">
+                            <a class="fancybox" href="images/home08/featured/1.jpg">
+                              <img src="upload/sach/<?php echo layhinhSach($sp['Id']); ?>" alt="" height="100%">
+                            </a>
+                          </div><!-- /.item-thumbnail -->
 
-                        </div><!-- /.item-content -->
-                      </div><!-- /.item -->
-                    </div>
+                          <div class="item-content">
+                            <div class="buttons">
+                              <button class="add-to-cart">
+                                <a href="index.php?pg=cart&addItemId=<?= $sp['Id'] ?>" style="color:inherit">
+                                  Thêm vào giỏ
+                                  <i class="fa fa-shopping-cart"></i>
+                                </a>
+                              </button>
+                              <button class="wish-list"><i class="fa fa-heart"></i></button>
+                            </div><!-- /.buttons -->
+                            <h3 class="item-title">
+                              <a href="index.php?pg=detail&id_sach=<?php echo $sp['Id']; ?>">
+                                <?php echo $sp['TenSach']; ?>
+                              </a>
+                            </h3><!-- /.item-title -->
+                            <div class="item-price">
+                              <span class="price">
+                                <?php echo number_format($sp['DonGia'], 0, ",", "."); ?> VND
+                              </span>
+                            </div><!-- /.item-price -->
+                            <div class="rating">
+                              <input type="hidden" class="rating-tooltip-manual" id="danhgia_<?= $sp['Id'] ?>"
+                                data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5"
+                                value="<?= number_format($sp['DanhGia'], 2) ?>" />
+                            </div>
+                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                            <script src="link_den_bootstrap_rating"></script>
+                            <script>
+                              $(document).ready(function () {
+                                var danhgia = <?= number_format($sp['DanhGia'], 2) ?>;
+                                $('#danhgia_<?= $sp['Id'] ?>').rating('rate', danhgia);
+                              });
+                            </script><!-- /.rating -->
+
+                          </div><!-- /.item-content -->
+                        </div><!-- /.item -->
+                      </div>
                     <?php } ?>
 
-               
+
 
                   </div><!-- /.tab-pane -->
 
-              
+
                 </div><!-- /.tab-content -->
               </div><!-- /.row -->
             </div><!-- /.shop-products -->
 
-            <div class="pagination pagination-02 text-center">
+            <!-- <div class="pagination pagination-02 text-center">
               <a href="#" class="prev"><i class="ti-angle-double-left"></i></a>
               <a href="#" class="active">1</a>
               <a href="#">2</a>
-             
+
               <a href="#" class="next"><i class="ti-angle-double-right"></i></a>
-            </div><!-- /.pagination -->
+            </div>/.pagination -->
           </div>
 
           <div class="col-md-4">
@@ -133,13 +155,16 @@ $listsp = product_cat($Id_TheLoai);
                   <h3 class="heading-title">Thể loại</h3><!-- /.heading-title -->
                   <div class="widget-details">
                     <ul class="category-menu">
-                    <?php
-                        $dstheloai = catelogry_get();
-                        foreach ($dstheloai as $theloai): ?>
-                      <li class="menu-item">
-                        <a href="index.php?pg=product&Id_TheLoai=<?=$theloai['Id']?>" style="text-transform:capitalize;"><?=$theloai['TenTheLoai']?></a>
-                      </li>
-                      <?php endforeach;?>
+                      <?php
+                      $dstheloai = catelogry_get();
+                      foreach ($dstheloai as $theloai): ?>
+                        <li class="menu-item">
+                          <a href="index.php?pg=product&Id_TheLoai=<?= $theloai['Id'] ?>"
+                            style="text-transform:capitalize;">
+                            <?= $theloai['TenTheLoai'] ?>
+                          </a>
+                        </li>
+                      <?php endforeach; ?>
 
                     </ul>
                   </div><!-- /.widget-details -->
@@ -153,5 +178,3 @@ $listsp = product_cat($Id_TheLoai);
       </div><!-- /.container -->
     </div><!-- /.section-padding -->
   </section><!-- /.shop-contents -->
-
- 

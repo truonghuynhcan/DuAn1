@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 12, 2023 lúc 08:29 AM
+-- Thời gian đã tạo: Th12 13, 2023 lúc 04:14 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -35,6 +35,19 @@ CREATE TABLE `binhluan` (
   `NgayBinhLuan` date NOT NULL,
   `TrangThai` bit(1) DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `giohang`
+--
+
+CREATE TABLE `giohang` (
+  `Id` int(5) NOT NULL,
+  `Id_Sach` int(5) NOT NULL,
+  `SoLuong` int(5) NOT NULL,
+  `Id_NguoiDung` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -183,6 +196,14 @@ ALTER TABLE `binhluan`
   ADD KEY `FK_binhluan(Id_NguoiDung)_NguoiDung` (`Id_NguoiDung`);
 
 --
+-- Chỉ mục cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `FK_GioHang_NguoiDung` (`Id_NguoiDung`),
+  ADD KEY `FK_GioHang_Sach` (`Id_Sach`);
+
+--
 -- Chỉ mục cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
@@ -255,6 +276,12 @@ ALTER TABLE `binhluan`
   MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
@@ -318,6 +345,13 @@ ALTER TABLE `theloai`
 ALTER TABLE `binhluan`
   ADD CONSTRAINT `FK_binhluan(Id_NguoiDung)_NguoiDung` FOREIGN KEY (`Id_NguoiDung`) REFERENCES `nguoidung` (`Id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_binhluan(Id_Sach)_sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  ADD CONSTRAINT `FK_GioHang_NguoiDung` FOREIGN KEY (`Id_NguoiDung`) REFERENCES `nguoidung` (`Id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_GioHang_Sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `hinhanh`

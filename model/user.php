@@ -62,10 +62,10 @@ function checkuser($username, $password) {
 }
 
 function checkforgotpassword($taikhoan, $email){
-    global $global_conn;
+    $conn = pdo_get_connection();
     
     $sql = "SELECT * FROM nguoidung WHERE TaiKhoan=? AND Email=?";
-    $stmt = $global_conn->prepare($sql); // tạo 1 prepare statement
+    $stmt = $conn->prepare($sql); // tạo 1 prepare statement
     $stmt->execute([$taikhoan, $email]);
 
     // Kiểm tra lỗi ở đây
@@ -74,61 +74,65 @@ function checkforgotpassword($taikhoan, $email){
         $hashed_password = md5($matkhaumoi);
 
         $update_sql = "UPDATE nguoidung SET MatKhau=? WHERE TaiKhoan=? AND Email=?";
-        $update_stmt = $global_conn->prepare($update_sql); // tạo 1 prepare statement
+        $update_stmt = $conn->prepare($update_sql); // tạo 1 prepare statement
         $update_stmt->execute([$hashed_password, $taikhoan, $email]);
 
         //gửi mail, mật khẩu mới
         guimatkhaumoi($taikhoan, $email, $matkhaumoi);
 
-        echo "<script>alert('Mật khẩu mới của bạn là: $matkhaumoi'); window.location.href = 'index.php?pg=login';</script>";
+        echo "<script>alert('Mật khẩu mới của bạn đã được gửi đến email: $email'); window.location.href = 'index.php?pg=login';</script>";
         exit();
     } else {
         // Lưu thông báo lỗi vào session
         $_SESSION['forgotpassword_error'] = "Lỗi: Tài khoản hoặc email không hợp lệ";
 
         // Chuyển hướng người dùng về trang forgotpassword
-        header("Location: index.php?pg=home");
+        header("Location: index.php?pg=forgotpassword");
         exit();
     }
 }
 
 
 function guimatkhaumoi($taikhoan ,$email, $matkhaumoi){
-    require "PHPMailer-master/src/PHPMailer.php"; 
-    require "PHPMailer-master/src/SMTP.php"; 
-    require 'PHPMailer-master/src/Exception.php'; 
-    $mail = new PHPMailer\PHPMailer\PHPMailer(true);//true:enables exceptions
-    try {
-        $mail->SMTPDebug = 0; //0,1,2: chế độ debug
-        $mail->isSMTP();  
-        $mail->CharSet  = "utf-8";
-        $mail->Host = 'smtp.gmail.com';  //SMTP servers
-        $mail->SMTPAuth = true; // Enable authentication
-        $mail->Username = 'canthps36499@fpt.edu.vn'; // SMTP username
-        $mail->Password = 'kwwu utyg xmoo czep';   // SMTP password
-        $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
-        $mail->Port = 587;  // port to connect to                
-        $mail->setFrom('canthps36499@fpt.edu.vn', 'GalaxyBook' ); 
-        $mail->addAddress($email, $taikhoan); 
-        $mail->isHTML(true);  // Set email format to HTML
-        $mail->Subject = 'Thư gửi lại mật khẩu'; //tiêu đề thư
-        $noidungthu = '
-            <p>Bạn nhận được thư này, do bạn hoặc ai đó yêu cầu cập nhật mật khẩu mới từ Website galaxybook.shop</p>
-            Mật khẩu mới của bạn là '.$matkhaumoi
-        ; 
-        $mail->Body = $noidungthu;
-        $mail->smtpConnect( array(
-            "ssl" => array(
-                "verify_peer" => false,
-                "verify_peer_name" => false,
-                "allow_self_signed" => true
-            )
-        ));
-        $mail->send();
-        echo 'Đã gửi mail xong';
-    } catch (Exception $e) {
-        echo 'Error: ', $mail->ErrorInfo;
-    }
+    require "model/PHPMailer-master/src/PHPMailer.php"; 
+	require "model/PHPMailer-master/src/SMTP.php"; 
+	require 'model/PHPMailer-master/src/Exception.php'; 
+	$noidung="<p>Cập nhật mật khẩu cho tài khoản: ".$taikhoan."</p>";
+	$noidung .="<p>Mật khẩu mới của bạn là : " .$matkhaumoi. "</p>";
+	$noidung .="<p>KHÔNG CUNG CẤP MẬT KHẨU CHO NGƯỜI LẠ!<p> ";
+
+
+	$mail = new PHPMailer\PHPMailer\PHPMailer(true);
+	try {
+	  $mail->SMTPDebug = 0;  // 0,1,2: chế độ debug
+	  $mail->isSMTP();  
+	  $mail->CharSet  = "utf-8";
+	  $mail->Host = 'smtp.gmail.com'; //địa chỉ server
+	  $mail->SMTPAuth = true; 
+	  $tennguoigui = 'Long'; //Nhập tên người gửi
+	  $mail->Username='vangchian1010@gmail.com';
+	  $mail->Password = 'pitiayhzeifpnoye'; // mật khẩu ứng dụng
+	  $mail->SMTPSecure = 'ssl';   
+	  $mail->Port = 465;              
+	  $mail->setFrom('vangchian1010@gmail.com'); 
+	  $mail->addAddress($email); //mail người nhận  
+	  $mail->isHTML(true);  
+	  $mail->Subject = 'Cung cấp mật khẩu mới - GALAXYBOOK';      
+	  $mail->Body = nl2br($noidung); //nội dung thư
+	  $mail->smtpConnect( array("ssl" => array(
+		  "verify_peer" => false,
+		  "verify_peer_name" => false,
+		  "allow_self_signed" => true
+	  )));
+	  $mail->send();
+	//   echo "<script> 
+	//         alert('Chúng tôi đã nhận được thư góp ý của bạn. Xin trân trọng cảm ơn thư góp ý của bạn.');
+	// 		document.location='index.php';
+	// 		</script>
+	// 		";
+	} catch (Exception $e) {
+	   echo 'Mail không gửi được. Lỗi: ', $mail->ErrorInfo;
+	}
 }
 // function get_user($id){
 //     $sql="Select * from user where id=? ";

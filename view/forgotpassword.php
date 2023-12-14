@@ -36,10 +36,6 @@
                                     placeholder="Email" required />
                             </p>
                             <p class="form-input">
-                                <input type="text" name="maxacminh" class="input" value=""
-                                    placeholder="Mã xác minh" required />
-                            </p>
-                            <p class="form-input">
                                 <input type="submit" name="forgotpassword-submit" id="wp-submit" class="btn" value="Gửi mã xác minh" />
                             </p>
                         </form>

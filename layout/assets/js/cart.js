@@ -1,108 +1,78 @@
-  
+// Lấy giỏ hàng từ biến JavaScript được tạo từ PHP
+var cart = cartDataFromPHP || [];
 
-        function updateCart() { 
-            var cartTableBody = document.getElementById("cartTableBody");
-            var cartItems = JSON.parse(sessionStorage.getItem("cart")) || [];
+function addToCart(productId, productName, unitPrice, quantity) {
+    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+    var existingItemIndex = cart.findIndex(item => item.productId === productId);
 
-            // Xóa nội dung cũ
-            cartTableBody.innerHTML = "";
-
-            var totalQuantity = 0;
-            var totalAmount = 0;
-
-            // Hiển thị sản phẩm trong giỏ hàng
-            cartItems.forEach(function (item) {
-                console.log(item)
-                var row = cartTableBody.insertRow();
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                var cell5 = row.insertCell(4);
-                var cell6 = row.insertCell(5);
-
-                cell1.innerHTML = item.id;
-                cell2.innerHTML = item.name;
-                cell3.innerHTML = item.price;
-                cell4.innerHTML = item.quantity;
-                
-
-                // Tính thành tiền
-                var totalItemAmount = item.price * item.quantity;
-                totalAmount += totalItemAmount;
-                cell5.innerHTML =  totalItemAmount;
-
-                // Nút xóa
-                var deleteButton = document.createElement("button");
-                deleteButton.innerHTML = 'Xóa';
-                deleteButton.className = "nut";
-                deleteButton.onclick = function () {
-                    removeFromCart(item.id);
-                };
-                cell6.appendChild(deleteButton);
-
-                // Cập nhật tổng số lượng
-                totalQuantity += parseInt(item.quantity);
-                row.appendChild(cell1);
-                row.appendChild(cell2);
-                row.appendChild(cell3);
-                row.appendChild(cell4);
-                row.appendChild(cell5);
-                row.appendChild(cell6);
-                cartTableBody.appendChild(row)
-            });
-
-            // Hiển thị tổng số lượng và tổng tiền
-            document.getElementById("totalQuantity").innerText = totalQuantity;
-            document.getElementById("totalAmount").innerText = totalAmount + " VND";
-        }
-
-        function removeFromCart(id, season) {
-            // Lấy thông tin giỏ hàng từ sessionStorage
-            var cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-            // Lọc ra sản phẩm cần xóa
-            var updatedCart = cart.filter(item => !(item.id === id));
-
-            // Lưu lại thông tin giỏ hàng mới
-            sessionStorage.setItem("cart", JSON.stringify(updatedCart));
-
-            alert("Đã xóa sản phẩm khỏi giỏ hàng!");
-            updateCart();
-        }
-
-        // Gọi hàm updateCart khi trang được tải
-        document.addEventListener("DOMContentLoaded", updateCart);
-
-        // Hiển thị biểu tượng giỏ hàng và kích vào sẽ mở giỏ hàng
-        document.getElementById("cartIcon").addEventListener("click", function () {
-            document.getElementById("cartTableBody").scrollIntoView({ behavior: 'smooth' });
+    if (existingItemIndex !== -1) {
+        // Nếu sản phẩm đã tồn tại, tăng số lượng
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        // Nếu sản phẩm chưa tồn tại, thêm mới vào giỏ hàng
+        cart.push({
+            productId: productId,
+            productName: productName,
+            unitPrice: unitPrice,
+            quantity: quantity
         });
+    }
 
-        function addToCart(id, name , price, quantity) {
-            // Lấy thông tin giỏ hàng từ sessionStorage
-            var cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    // Cập nhật giỏ hàng vào Session Storage
+    sessionStorage.setItem('cart', JSON.stringify(cart));
 
-            // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
-            var index = cart.findIndex(item => item.id === id);
-            if (index>=0) {
-                // Nếu sản phẩm đã tồn tại, tăng số lượng
-                cart[index].quantity = parseInt(cart[index].quantity) + parseInt(quantity);
-            } else {
-                // Nếu sản phẩm chưa tồn tại, thêm mới vào giỏ hàng
-                cart.push({
-                    name: name,
-                    id: id,
-                    quantity: quantity,
-                    price: price
+    // Hiển thị thông báo hoặc thực hiện các hành động khác nếu cần
+    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+}
 
-                    
-                });
-            }
 
-            // Lưu thông tin giỏ hàng vào sessionStorage
-            sessionStorage.setItem("cart", JSON.stringify(cart));
 
-            alert("Đã thêm sản phẩm vào giỏ hàng!");
-           // updateCart();
+
+function addToCart(productId, productName, unitPrice, quantity) {
+    // Lấy giỏ hàng từ Session Storage hoặc tạo mới nếu chưa tồn tại
+    var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+    var existingItemIndex = cart.findIndex(item => item.productId === productId);
+
+    if (existingItemIndex !== -1) {
+        // Nếu sản phẩm đã tồn tại, cập nhật số lượng
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        // Nếu sản phẩm chưa tồn tại, thêm mới vào giỏ hàng
+        cart.push({
+            productId: productId,
+            productName: productName,
+            unitPrice: unitPrice,
+            quantity: quantity
+        });
+    }
+
+    // Cập nhật giỏ hàng vào Session Storage
+    sessionStorage.setItem('cart', JSON.stringify(cart));
+
+    // Hiển thị thông báo hoặc thực hiện các hành động khác nếu cần
+    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+
+    // Gọi hàm để cập nhật giỏ hàng trên server (ví dụ: thông qua AJAX)
+    updateCartOnServer(cart);
+}
+
+// Hàm để cập nhật giỏ hàng trên server
+function updateCartOnServer(cart) {
+    // Gửi yêu cầu AJAX để cập nhật giỏ hàng trên server
+    var xhr = new XMLHttpRequest();
+    var url = 'model/m_cart.php'; // Đường dẫn đến file PHP xử lý cập nhật giỏ hàng
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText); // In phản hồi từ server (có thể xóa dòng này trong production)
         }
+    };
+
+    // Chuyển đổi mảng giỏ hàng thành chuỗi JSON và gửi đi
+    var jsonData = JSON.stringify({ cart: cart });
+    xhr.send(jsonData);
+}

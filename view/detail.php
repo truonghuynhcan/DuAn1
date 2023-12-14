@@ -65,10 +65,20 @@ if (isset($_GET['id_sach'])) {
                 <a href="#">Viết Đánh Giá</a>
               </div><!-- /.top-meta -->
 
-              <div class="rating" style="width:100%">
-                <input type="hidden" class="rating-tooltip-manual" data-filled="fa fa-star" data-empty="fa fa-star-o"
-                  data-fractions="5" />
-              </div><!-- /.rating -->
+              <div class="rating">
+                <input type="hidden" class="rating-tooltip-manual" id="danhgia_<?= $sach['Id'] ?>"
+                  data-filled="fa fa-star" data-empty="fa fa-star-o" data-fractions="5"
+                  value="<?= number_format($sach['DanhGia'], 2) ?>" />
+              </div>
+              <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+              <script src="link_den_bootstrap_rating"></script>
+              <script>
+                $(document).ready(function () {
+                  var danhgia = <?= number_format($banchay['DanhGia'], 2) ?>;
+                  $('#danhgia_<?= $banchay['Id'] ?>').rating('rate', danhgia);
+                });
+              </script>
+              <!-- /.rating -->
               <br>
               <div class="col-md-6" style="font-family:Arial">
                 Nhà xuất bản : <strong style="font-family:Helvetica">
@@ -77,7 +87,8 @@ if (isset($_GET['id_sach'])) {
               </div>
               <div class="col-md-6" style="font-family:Arial">
                 Tác giả:<strong style="font-family:Helvetica">
-                <?= $sach['TacGia'] ?></strong> <br>
+                  <?= $sach['TacGia'] ?>
+                </strong> <br>
                 Thể loại:<strong style="font-family:Helvetica">
                   <?= $sach['TheLoai'] ?>
                 </strong>
@@ -99,9 +110,12 @@ if (isset($_GET['id_sach'])) {
               </p><!-- /.short-description -->
 
               <div class="buttons">
-                <button class="add-to-cart"
-                  onclick="addToCart(<?= $sach['Id'] ?> ,' <?= $sach['TenSach'] ?>' , <?= $sach['DonGia'] ?>, 1)">Thêm vào giỏ
-                  hàng<i class="fa fa-shopping-cart"></i></button>
+                <button class="add-to-cart">
+                  <a href="index.php?pg=cart&addItemId=<?= $sach['Id'] ?>" style="color:inherit">
+                    Thêm vào giỏ
+                    <i class="fa fa-shopping-cart"></i>
+                  </a>
+                </button>
                 <button class="wish-list"><i class="fa fa-heart"></i></button>
               </div>
             </div><!-- /.about-product -->
@@ -287,8 +301,8 @@ if (isset($_GET['id_sach'])) {
               </div><!-- /.previous-price -->
               <!-- <a href="#" class="btn" onclick="addToCart(<?= $sp['Id'] ?> ,' <?= $sp['TenSach'] ?>' , <?= $sp['DonGia'] ?>, 1)">Thêm vào giỏ</a>/.btn -->
               <button class="add-to-cart btn"
-                onclick="addToCart(<?= $sach['Id'] ?> ,' <?= $sach['TenSach'] ?>' , <?= $sach['DonGia'] ?>, 1)">Thêm vào giỏ<i
-                  class="fa fa-shopping-cart"></i></button>
+                onclick="addToCart(<?= $sach['Id'] ?> ,' <?= $sach['TenSach'] ?>' , <?= $sach['DonGia'] ?>, 1)">Thêm vào
+                giỏ<i class="fa fa-shopping-cart"></i></button>
 
             </div>
           </div>
