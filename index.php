@@ -31,8 +31,46 @@ if (isset($_GET['pg'])) {
             $content = 'timkiem';
             break;
         case 'checkout':
-            $content = "checkout";
+            if (isset($_POST['btn-checkout'])) {
+                // Lấy thông tin từ form
+                $tenNguoiNhan = $_POST['TenNguoiNhan'];
+                $sdtNguoiNhan = $_POST['SDTNguoiNhan'];
+                $diaChiNguoiNhan = $_POST['DiaChiNguoiNhan'];
+                $TrangThai = $_POST['TrangThai'];
 
+                // Lấy thông tin người dùng hiện tại
+                $idNguoiDung = $_SESSION['user']['Id'];
+
+                // Tính tổng tiền đơn hàng
+                $tongDon = $_SESSION['totalAmount'];
+
+
+                if (empty($tenNguoiNhan) || empty($sdtNguoiNhan) || empty($diaChiNguoiNhan) || empty($TrangThai) || empty($idNguoiDung) || empty($tongDon)) {
+                    echo '<script>';
+                    echo 'alert("Vui lòng điền đầy đủ thông tin!");';
+                    echo 'window.location.href ="index.php?pg=checkout";';
+                    echo '</script>';
+                } else {
+                    // Nếu không có lỗi, tiếp tục xử lý dữ liệu và thêm vào cơ sở dữ liệu
+                    $flag = insertHoaDon($idNguoiDung, $tongDon, $tenNguoiNhan, $TrangThai, $sdtNguoiNhan, $diaChiNguoiNhan);
+                    if ($flag == true) {
+                        # code...
+                        echo '<script>';
+                        echo 'alert("Đặt hàng thành công!");';
+                        echo 'window.location.href ="index.php?pg=home";';
+                        echo '</script>';
+                    }else{
+                        
+                        echo '<script>';
+                        echo 'alert("Có lỗi trong quá trình đặt hàng!");';
+                        echo 'window.location.href ="index.php?pg=checkout";';
+                        echo '</script>';
+                    }
+                }
+            }
+
+
+            $content = "checkout";
             break;
         case 'thank':
             $content = "thank";
@@ -45,7 +83,7 @@ if (isset($_GET['pg'])) {
                     $newBookId = $_GET['addItemId'];
                     // Mảng hiện tại trong session
                     $cart = getCartByUserId($userId);
-                    if ( $cart !== null) {
+                    if ($cart !== null) {
                         $exit = false;
                         foreach ($cart as $item) {
                             if ($item['Id_Sach'] == $newBookId) {
@@ -53,13 +91,13 @@ if (isset($_GET['pg'])) {
                                 updateSoLuongInGioHang($newBookId, $newSoLuong, $userId);
                                 $exit = true;
                                 break;
-                            } 
+                            }
                         }
                         if (!$exit) {
                             insertIntoGioHang($newBookId, $userId);
                         }
-                    }else{
-                        insertIntoGioHang($newBookId, $userId); 
+                    } else {
+                        insertIntoGioHang($newBookId, $userId);
                     }
                     loadCart();
                     header('LOCATION: index.php?pg=cart');
@@ -149,7 +187,7 @@ if (isset($_GET['pg'])) {
 
                     $_SESSION['user'] = $user_info;
                     loadCart();
-                  
+
                     header('location: index.php?pg=home');
                     exit();
                 } else {

@@ -7,8 +7,8 @@ $cart = $_SESSION['cart'] ?? null;
 
 
     <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Giỏ hàng của bạn</h2>
+        <div style="margin: 1rem">
+            <h2 style="font-family:Arial; text-align:center; font-size:1.5rem">GIỎ HÀNG CỦA BẠN</h2>
         </div>
         <table class="cartTable table">
             <thead>
@@ -25,8 +25,11 @@ $cart = $_SESSION['cart'] ?? null;
             <tbody id="cartTableBody">
                 <!-- Nội dung giỏ hàng sẽ được thêm vào đây bằng JavaScript -->
                 <?php
+                $_SESSION['totalAmount'] = 0;
                 if (!empty($cart)) {
                     foreach ($cart as $key => $book):
+                        $_SESSION['totalAmount'] = $_SESSION['totalAmount'] + ($book['DonGia'] * $book['SoLuong'] * (1 - $book['GiamGia'] / 100));
+
                         ?>
                         <tr>
                             <td scope="col">
@@ -48,7 +51,8 @@ $cart = $_SESSION['cart'] ?? null;
                                 <?= number_format(($book['DonGia'] * $book['SoLuong'] * (1 - $book['GiamGia'] / 100)), 0, ',', '.') ?>
                             </td>
                             <td scope="col" style="text-align:center">
-                        <a href="index.php?pg=cart&deleteBookId=<?= $book['Id_Sach'] ?>">Xóa</a></td>
+                                <a href="index.php?pg=cart&deleteBookId=<?= $book['Id_Sach'] ?>">Xóa</a>
+                            </td>
                         </tr>
                         <?php
                     endforeach;
@@ -112,16 +116,16 @@ $cart = $_SESSION['cart'] ?? null;
             });
         </script> -->
         <form id="frmcart" method="post"
-            style=" margin-left:50%; margin-bottom:5%; width: 50%; border: 1px solid darkcyan; padding: 20px">
-            <div class="d-flex justify-content-end">
-                <p class="fw-bold">Tổng số lượng: <span id="totalQuantity">0</span></p>
-                <p class="fw-bold mx-4">Tổng tiền: <span id="totalAmount">VNĐ</span></p>
-            </div>
-            <div>
-                <a href="index.php?pg=checkout" class="nuthanhtoan" style=" border:1px solid #000; ">Thanh Toán</a>
-            </div>
+            style=" margin-left:50%; margin-bottom:5%; width: 50%; border: 1px solid darkcyan; padding: 20px; display:flex; flex-direction:column; gap:1rem; font-size: 1.5rem">
+            <p style="font-size: inherit;" class="fw-bold">Tổng số lượng:
+                <?= $_SESSION['totalQuantity'] ?? '0' ?>
+            </p>
+            <p style="font-size: inherit;" class="fw-bold mx-4">Tổng tiền:
+                <?= number_format($_SESSION['totalAmount'], 0, ',', '.') ?? '0'; ?> VND
+            </p>
+            <a href="index.php?pg=checkout" class="" style="">Thanh Toán</a>
+        </form>
     </div>
-    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

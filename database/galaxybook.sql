@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 12, 2023 lúc 11:43 AM
+-- Thời gian đã tạo: Th12 14, 2023 lúc 03:34 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -35,6 +35,31 @@ CREATE TABLE `binhluan` (
   `NgayBinhLuan` date NOT NULL,
   `TrangThai` bit(1) DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `giohang`
+--
+
+CREATE TABLE `giohang` (
+  `Id` int(5) NOT NULL,
+  `Id_Sach` int(5) NOT NULL,
+  `SoLuong` int(5) NOT NULL DEFAULT 1,
+  `Id_NguoiDung` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `giohang`
+--
+
+INSERT INTO `giohang` (`Id`, `Id_Sach`, `SoLuong`, `Id_NguoiDung`) VALUES
+(6, 86, 1, 9),
+(46, 102, 1, 5),
+(47, 95, 1, 11),
+(49, 96, 2, 11),
+(50, 80, 1, 11),
+(51, 81, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -263,10 +288,11 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`Id`, `HoVaTen`, `Avatar`, `DiaChi`, `Email`, `SDT`, `TaiKhoan`, `MatKhau`, `NgayTao`, `VaiTro`) VALUES
-(5, 'can', 'avatar1.jpg', 'Gò Vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'huynhcan', '25f9e794323b453885f5181f1b624d0b', '2023-11-13', 1),
+(5, 'Trương Huỳnh Can', 'avatar1.jpg', 'Gò Vấp, TP HCM', 'truonghuynhcan@gmail.com', '0971735117', 'huynhcan', '25f9e794323b453885f5181f1b624d0b', '2023-11-13', 1),
 (8, 'chi an', 'avatar1.jpg', '600/5 quang trung gò vấp', 'vangchian1010@gmail.com', '0832447737', 'chian', '60208451b29da10a0294f0ddbdb91511', '2023-11-15', 0),
 (9, 'Trương Huỳnh', 'avatar1.jpg', 'gò vấp', 'canthps36499@fpt.edu.vn', '0971735117', 'canthps36499', '25f9e794323b453885f5181f1b624d0b', '2023-11-28', 0),
-(10, 'nhóm 5', 'avatar1.jpg', 'quận 12', 'galaxybook@gmail.com', '0971735117', 'galaxybook', 'f9bf0052a297facb36e7eb4a7c453a0f', '2023-12-01', 0);
+(10, 'nhóm 5', 'avatar1.jpg', 'quận 12', 'truonghuynhcan@gmail.com', '0971735117', 'galaxy', '3de74f78d82c374f9edd8dc7f3b126ed', '2023-12-01', 1),
+(11, 'trương huỳnh can', 'avatar1.jpg', 'gò vấp', 'truonghuynhcan@gmail.com', '0971735117', 'can', '650bd49bc527ecd4812402aa86bb891e', '2023-12-14', 0);
 
 -- --------------------------------------------------------
 
@@ -503,7 +529,6 @@ CREATE TABLE `tacgia` (
 --
 
 INSERT INTO `tacgia` (`Id`, `HoVaTen`) VALUES
-(1, 'phạm văn đức (chủ biên) '),
 (2, 'bộ thông tin và truyền thông'),
 (3, 'ts. vũ việt vũ '),
 (4, 'hồ văn canh'),
@@ -592,6 +617,14 @@ ALTER TABLE `binhluan`
   ADD KEY `FK_binhluan(Id_NguoiDung)_NguoiDung` (`Id_NguoiDung`);
 
 --
+-- Chỉ mục cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `FK_GioHang_NguoiDung` (`Id_NguoiDung`),
+  ADD KEY `FK_GioHang_Sach` (`Id_Sach`);
+
+--
 -- Chỉ mục cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
@@ -664,6 +697,12 @@ ALTER TABLE `binhluan`
   MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+
+--
 -- AUTO_INCREMENT cho bảng `hinhanh`
 --
 ALTER TABLE `hinhanh`
@@ -685,7 +724,7 @@ ALTER TABLE `hoadonchitiet`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `Id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `sach`
@@ -727,6 +766,13 @@ ALTER TABLE `theloai`
 ALTER TABLE `binhluan`
   ADD CONSTRAINT `FK_binhluan(Id_NguoiDung)_NguoiDung` FOREIGN KEY (`Id_NguoiDung`) REFERENCES `nguoidung` (`Id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_binhluan(Id_Sach)_sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `giohang`
+--
+ALTER TABLE `giohang`
+  ADD CONSTRAINT `FK_GioHang_NguoiDung` FOREIGN KEY (`Id_NguoiDung`) REFERENCES `nguoidung` (`Id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_GioHang_Sach` FOREIGN KEY (`Id_Sach`) REFERENCES `sach` (`Id`) ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `hinhanh`

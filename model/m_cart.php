@@ -1,11 +1,63 @@
 <?php
 include_once("pdo.php");
+
+// thanh toán
+
+function insertHoaDon($idNguoiDung, $tongDon, $tenNguoiNhan, $TrangThai, $sdtNguoiNhan, $diaChiNguoiNhan)
+{
+    try {
+        // Insert đơn hàng vào bảng hoadon
+        $sqlInsertHoaDon = "INSERT INTO hoadon (Id_NguoiDung, TongDon, TenNguoiNhan, TrangThai,  SDTNguoiNhan, DiaChiNguoiNhan) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        $lastInsertedId = pdo_execute_returnid($sqlInsertHoaDon, $idNguoiDung, $tongDon, $tenNguoiNhan, $sdtNguoiNhan, $TrangThai, $diaChiNguoiNhan);
+
+        // Insert chi tiết đơn hàng vào bảng hoadonchitiet
+        foreach ($_SESSION['cart'] as $key => $book) {
+            $idSach = $book['Id'];
+            $soLuong = $book['SoLuong'];
+            $gia = $book['DonGia'] * (1 - $book['GiamGia'] / 100);
+
+            $sqlInsertChiTiet = "INSERT INTO hoadonchitiet (Id_HoaDon, Id_Sach, SoLuong, Gia) VALUES (?, ?, ?, ?)";
+            pdo_execute($sqlInsertChiTiet, $lastInsertedId, $idSach, $soLuong, $gia);
+        }
+
+        // xóa giỏ hàng cũ của người dùng
+        $conn = pdo_get_connection();
+
+        if ($conn) {
+            try {
+                $deleteSql = "DELETE FROM giohang WHERE Id_NguoiDung = :userId";
+                $deleteStmt = $conn->prepare($deleteSql);
+                $deleteStmt->bindParam(':userId', $idNguoiDung, PDO::PARAM_INT);
+                $deleteStmt->execute();
+
+                $conn = null;
+                return true;
+            } catch (PDOException $e) {
+                echo "Lỗi truy vấn: " . $e->getMessage();
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+        loadCart();
+    } catch (PDOException $e) {
+        echo "Lỗi: " . $e->getMessage();
+    }
+}
+
+
+
+// giỏ hàng
+
 function loadCart()
 {
     if (isset($_SESSION['cart'])) {
         unset($_SESSION['cart']);
         $_SESSION['cart'] = getCartByUserId($_SESSION['user']['Id']);
-    }else {
+    } else {
         $_SESSION['cart'] = getCartByUserId($_SESSION['user']['Id']);
     }
     $_SESSION['totalQuantity'] = 0;
