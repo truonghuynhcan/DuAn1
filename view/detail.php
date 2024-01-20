@@ -276,8 +276,8 @@ if (isset($_GET['id_sach'])) {
 
           <div class="item">
             <a class="fancybox" href="<?= $src ?>">
-              <div class="item-thumbnail">
-                <img src="<?= $src ?>" alt="<?= $alt ?>">
+              <div class="item-thumbnail" style="height: 320px;">
+                <img src="<?= $src ?>" alt="<?= $alt ?>" style="height: 100%;">
                 <span class="ribbon sale">Giảm giá</span>
               </div>
             </a>
@@ -287,22 +287,28 @@ if (isset($_GET['id_sach'])) {
                   <?= $sach['TenSach'] ?>
                 </a></h3><!-- /.item-title -->
               <div class="item-price">
-                <span class="currency">VND</span><!-- /.currency -->
                 <span class="price">
-                  <?= $sach['DonGia'] ?>
+                  <?= number_format(($sach['DonGia']*(1-$sach['GiamGia']/100)),0, ',','.') ?> VND
+
                 </span><!-- /.price -->
               </div><!-- /.item-price -->
 
               <div class="previous-price">
-                <span class="currency">VND</span><!-- /.currency -->
                 <span class="price">
-                  <?= $sach['DonGia'] ?>
+                  <?= number_format($sach['DonGia'],0, ',','.') ?> VND
                 </span><!-- /.price -->
               </div><!-- /.previous-price -->
               <!-- <a href="#" class="btn" onclick="addToCart(<?= $sp['Id'] ?> ,' <?= $sp['TenSach'] ?>' , <?= $sp['DonGia'] ?>, 1)">Thêm vào giỏ</a>/.btn -->
-              <button class="add-to-cart btn"
+              <!-- <button class="add-to-cart btn"
                 onclick="addToCart(<?= $sach['Id'] ?> ,' <?= $sach['TenSach'] ?>' , <?= $sach['DonGia'] ?>, 1)">Thêm vào
-                giỏ<i class="fa fa-shopping-cart"></i></button>
+                giỏ<i class="fa fa-shopping-cart"></i>
+              </button> -->
+              <button class="add-to-cart btn">
+                <a href="index.php?pg=cart&addItemId=<?= $sach['Id'] ?>" style="color:inherit">
+                  Thêm vào giỏ
+                  <i class="fa fa-shopping-cart"></i>
+                </a>
+              </button>
 
             </div>
           </div>

@@ -8,9 +8,9 @@ function insertHoaDon($idNguoiDung, $tongDon, $tenNguoiNhan, $TrangThai, $sdtNgu
     try {
         // Insert đơn hàng vào bảng hoadon
         $sqlInsertHoaDon = "INSERT INTO hoadon (Id_NguoiDung, TongDon, TenNguoiNhan, TrangThai,  SDTNguoiNhan, DiaChiNguoiNhan) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?)";
+                            VALUES (?, ?, ?, ?, ?, ?)";
 
-        $lastInsertedId = pdo_execute_returnid($sqlInsertHoaDon, $idNguoiDung, $tongDon, $tenNguoiNhan, $sdtNguoiNhan, $TrangThai, $diaChiNguoiNhan);
+        $lastInsertedId = pdo_execute_returnid($sqlInsertHoaDon, $idNguoiDung, $tongDon, $tenNguoiNhan, $TrangThai,  $sdtNguoiNhan, $diaChiNguoiNhan);
 
         // Insert chi tiết đơn hàng vào bảng hoadonchitiet
         foreach ($_SESSION['cart'] as $key => $book) {

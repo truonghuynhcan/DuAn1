@@ -33,6 +33,9 @@
     if (isset($_GET['pg'])) {
         switch ($_GET['pg']) {
             // book ----------------------------------
+            case 'timkiem':
+                $css = "shop/shop.css";
+                break;
             case 'product':
                 $css = "shop/shop.css";
                 break;
@@ -102,7 +105,7 @@
                             if (isset($_SESSION['user'])) {
                                 if ($_SESSION['user']['VaiTro'] == 1) {
                                     echo '
-                                        <a href="index.php?pg=my-profile" style="">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <a href="index.php?pg=my-profile" style="font-family:Arial">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=ad&active=home">Admin</a></li>
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
@@ -112,7 +115,7 @@
                                     ';
                                 } else {
                                     echo '
-                                        <a href="index.php?pg=my-profile">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
+                                        <a href="index.php?pg=my-profile" style="font-family:Arial">' . $_SESSION['user']['HoVaTen'] . '<i class="ti-user"></i></a>
                                         <ul class="unsorted-list">
                                             <li><a href="index.php?pg=my-profile">Cá Nhân</a></li>
                                             <li><a href="index.php?pg=cart">Giỏ Hàng</a></li>

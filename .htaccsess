@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteRule "index.html" "index.php"
+RewriteRule "^([a-zA-Z0-9]+).html$" "index.php?pg=$1"

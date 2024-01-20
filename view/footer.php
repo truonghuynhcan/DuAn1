@@ -9,34 +9,30 @@
                                     style="filter: grayscale(100%);"></a>
                             <div class="widget-details">
                                 <p class="description">
-                                Đừng tức giận với nỗi đau trong sự khiển trách trong niềm vui mà anh ấy muốn được thoát khỏi nỗi đau với hy vọng rằng không có sự sinh sản. Ngoại trừ việc họ không bị dục vọng làm mờ mắt
                                 </p><!-- /.description -->
                                 <address>
-                                121 Phố King, Melbourne VIC 3000, Úc
+                                Địa chỉ: Quận 12, TP HCM
                                 </address>
-                                <span>+61 3 8376 6284</span>
-                                <span><a href="#">galaxybook@gmail.com</a></span>
+                                <span>Liên hệ với chúng tôi</span>
+                                <span><a href="index.php?pg=gop-y">galaxybook@gmail.com</a></span>
                             </div><!-- /.widget-details -->
                         </div><!-- /.widget -->
                     </div>
 
                     <div class="col-md-2 col-sm-6">
-                        <div class="widget widget_useful_links">
-                            <h4 class="widget-title">LIÊN KẾT HỮU ÍCH</h4>
+                        <div class="widget widget_useful_links"  style="">
+                            <h4 class="widget-title">CỬA HÀNG</h4>
                             <div class="widget-details">
-                                <span><i class="ti-control-record"></i><a href="#">Về chúng tôi</a></span>                  
-                                <span><i class="ti-control-record"></i><a href="#">Dịch vụ khách hàng</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Bộ sưu tập mới</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Bán chạy nhất</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Nhà sản xuất của</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Chính sách bảo mật</a></span>
-                                <span><i class="ti-control-record"></i><a href="#">Điều khoản & điều kiện</a></span>
+                                <span><i class="ti-control-record"></i><a href="index.php?pg=home">Trang chủ</a></span>
+                                <span><i class="ti-control-record"></i><a href="index.php?pg=about">Về chúng tôi</a></span>
+                                <span><i class="ti-control-record"></i><a href="index.php?pg=connect">Liên hệ</a></span>
+                                <span><i class="ti-control-record"></i><a href="index.php?pg=gop-y">Góp ý</a></span>
                             </div><!-- /.widget-details -->
                         </div><!-- /.widget -->
                     </div>
 
                     <div class="col-md-2 col-sm-6">
-                        <div class="widget widget_shop_links">
+                        <div class="widget widget_shop_links"  style="display: none;">
                             <h4 class="widget-title">CỬA HÀNG</h4>
                             <div class="widget-details">
                                 <span><i class="ti-control-record"></i><a href="#">Đang là xu hướng</a></span>
@@ -52,16 +48,13 @@
 
                     <div class="col-md-4 col-sm-6">
                         <div class="widget widget_instagram_feed">
-                            <h4 class="widget-title">CÁC ẢNH INSTAGRAM</h4>
+                            <h4 class="widget-title">ADMIN</h4>
                             <div class="widget-details">
-                                <a href="#"><img src="layout/images/instagram/1.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/2.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/3.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/4.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/5.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/6.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/7.png" alt="Instagram Image"></a>
-                                <a href="#"><img src="layout/images/instagram/8.png" alt="Instagram Image"></a>
+                                <a href="#"><img src="upload/avatar/can.jpg" alt="Instagram Image" height="70px"></a>
+                                <a href="#"><img src="upload/avatar/an.jpg" alt="Instagram Image" height="70px"></a>
+                                <a href="#"><img src="upload/avatar/cuong.jpg" alt="Instagram Image" height="70px"></a>
+                                <a href="#"><img src="upload/avatar/dat.jpg" alt="Instagram Image" height="70px"></a>
+                                <a href="#"><img src="upload/avatar/nhi.jpg" alt="Instagram Image" height="70px"></a>
                             </div><!-- /.widget-details -->
                         </div><!-- /.widget -->
                     </div>
@@ -72,7 +65,7 @@
     </div><!-- /.footer-top -->
 
     <div class="footer-bottom">
-        <div class="container">
+        <div class="container" style="display: none;">
             <div class="row">
                 <div class="col-sm-7 text-left">
                     <div class="copyright">
@@ -100,8 +93,6 @@
 <div id="scroll-to-top" class="scroll-to-top">
     <i class="fa fa-angle-double-up"></i>
 </div>
-
-
 
 <script src="layout/assets/js/plugins.js"></script>
 <script src="layout/assets/js/main.js"></script>

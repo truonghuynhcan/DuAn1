@@ -30,7 +30,7 @@ $listsp = san_pham_select_by_keyword($tukhoa, $page_num, $page_size = 4);
   <section class="page-name-sec page-name-sec-01">
     <div class="section-padding">
       <div class="container">
-        <h3 class="page-title">DANH MỤC SẢN PHẨM THEO LOẠI </h3><!-- /.page-title -->
+        <h3 class="page-title" style="font-family:Arial">DANH MỤC SẢN PHẨM THEO LOẠI </h3><!-- /.page-title -->
 
         <div class="row">
           <div class="col-sm-7">
@@ -41,9 +41,9 @@ $listsp = san_pham_select_by_keyword($tukhoa, $page_num, $page_size = 4);
 
           <div class="col-sm-5">
             <ol class="breadcrumb text-right">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Shop</a></li>
-              <li class="active">3Column</li>
+              <li><a href="index.php?pg=home">Trang chủ</a></li>
+              <li><a href="index.php?pg=home">Shop</a></li>
+              <li class="active">Tìm kiếm</li>
             </ol><!-- /.breadcrumb -->
           </div>
 
@@ -102,7 +102,7 @@ $listsp = san_pham_select_by_keyword($tukhoa, $page_num, $page_size = 4);
                     <?php foreach ($listsp as $sp) { ?>
                       <div class="col-sm-4">
                         <div class="item">
-                          <div class="item-thumbnail" style="width: 16.4rem; height:17.6rem; overflow: hidden;">
+                          <div class="item-thumbnail" style=" height:17.6rem; overflow: hidden;">
                             <a class="fancybox" href="images/home08/featured/1.jpg">
                               <img src="upload/sach/<?php echo layhinhSach($sp['Id']); ?>" alt="" height="100%">
                             </a>
